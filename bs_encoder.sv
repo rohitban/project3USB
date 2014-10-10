@@ -103,6 +103,7 @@ module BSfsm(
 
 	/* outputs to piso */
 	output logic d_shft, t_shft, h_shft,
+	output logic ld_d, ld_t, ld_h,
 	/* outputs to mux */
 	output logic [1:0] sel,
 	);
