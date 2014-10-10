@@ -6,6 +6,8 @@
 'define TOKEN 2'b1
 'define HSHAKE 2'b10
 
+'define SYNC 8'b0000_0001
+
 module bs_encoder(
 		input  logic        clk, rst_n,
 
@@ -34,20 +36,22 @@ module bs_encoder(
 		logic 			clr, ld_d, ld_t, ld_h;
 		logic				d_shft, t_shft, h_shft;
 
+	
+
 		/* data piso */
 		piso_register  #('DATA_SIZE,0)  dpiso(.clk, .rst_n, clr,
 														  	          .ld(ld_d), left(d_shft),
-														 		          .s_out(d_out), .D(data), .Q());
+														 		          .s_out(d_out), .D({'SYNC,data}), .Q());
 
 		/* token piso */
 		piso_register  #('TOKEN_SIZE,0)  tpiso(.clk, .rst_n, clr,
 																           .ld(ld_t), left(t_shft),
-																           .s_out(t_out), .D(token), .Q());
+																           .s_out(t_out), .D({'SYNC,token}), .Q());
 
 		/* handshake piso */
 		piso_register  #('HSHAKE_SIZE,0)   hpiso(.clk, .rst_n, clr,
 																  					 .ld(ld_h), left(h_shft),
-																  					 .s_out(h_out), .D(hshake), .Q());
+																  					 .s_out(h_out), .D({'SYNC,hshake}), .Q());
 
 		/* counts the number of bits of data/token/handshake */
 		counter  #(7)  bcount(.clk, .rst_n, .clr,
