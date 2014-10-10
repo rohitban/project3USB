@@ -1,3 +1,4 @@
+
 `define DATA_SIZE 7'd96
 `define TOKEN_SIZE 6'd32
 `define HSHAKE_SIZE 5'd16 
@@ -168,7 +169,7 @@ module BSfsm(
 				start = 1;
 			end
 			HS1 : begin
-				sel = 2'b11; /* choose handshake */
+				sel = `HSHAKE; /* choose handshake */
 				if(count >= `HSHAKE_SIZE) begin
 					ns = HS_WAIT;
 					clr = 1;
@@ -200,7 +201,7 @@ module BSfsm(
 				start = 1;
 			end
 			TOK1 : begin
-				sel = 2'b01; /* choose token */
+				sel = `TOKEN; /* choose token */
 				if(count >= `TOKEN_SIZE) begin
 					ns = TOK_WAIT;
 					clr = 1;
@@ -232,7 +233,7 @@ module BSfsm(
 				start = 1;
 			end
 			DATA1 : begin
-				sel = 2'b0; /* choose data */
+				sel = `DATA; /* choose data */
 				if(count >= `DATA_SIZE) begin
 					ns = DATA_WAIT;
 					clr = 1;
