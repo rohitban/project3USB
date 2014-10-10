@@ -60,6 +60,8 @@ module tb;
     wait(crc5_done);
     crc5_rec <= 1;
     @(posedge clk);
+    crc5_rec <= 0;
+    @(posedge clk);
     $display("State is $s",crc5_inst.fsm_inst.cs.name); 
     $finish;
     end
