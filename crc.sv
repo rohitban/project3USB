@@ -27,15 +27,19 @@ module crc(
 	output logic				s_out
 	);
 
+	logic crc5_ready, crc5_done, crc5_start;
 	logic re, we;
 	logic full, empty;
 	logic bit_out, bit_in;
 	logic incr, clr;
 	logic [5:0] delay_cnt;
 
-	assign sel_crctype = (pkt_type == 'TOKEN) ? 0 : 1;
+	assign sel_crctype = (pkt_type == `TOKEN) ? 0 : 1;
 
-	crc5			tcrc(.*);
+	crc5			tcrc(.clk, .rst_n, 
+								 .s_in,
+								 .crc5_start, .crc5_ready, .crc5_done,
+								 .crc5_out, .crc5_rec);
 	//crc16			dcrc(.*);
 
 	fifo					q(.clk, .rst_n,
@@ -54,7 +58,7 @@ module crc(
 										  .sel(sel_crc));
 
 	mux2to1				cmux(.Y(crc_out), 
-										 .I0(crc5_out), I1(crc16_out),
+										 .I1(crc5_out), .I1(crc16_out),
 										 .sel(sel_crctype));
 
 	fsm 					 ctrl(.*);
@@ -72,6 +76,7 @@ module fsm(
 	output logic 			 we, re,
 
 	/* inputs/outputs from crc5 */
+	input  logic 			 crc5_rec,
 	input  logic       crc5_ready,
 	input  logic			 crc5_done,
 	output logic       crc5_start,
@@ -98,6 +103,7 @@ module fsm(
 
 	always_comb begin
 		clr = 0; sel_crc = 0; re = 0; we = 0; incr = 0;	
+		crc5_rec = 0; crc5_start = 0; start_b = 0; endr_b = 0;
 		case(cs)
 			WAIT : begin
 				ns = (start) ? TOK0 : WAIT;
@@ -155,6 +161,8 @@ module fsm(
 				end
 				else if(crc5_done && empty)
 					ns = WAIT;
+					crc5_rec = 1;
+					endr_b = 1;
 			end
 	end
 
@@ -163,23 +171,25 @@ module fsm(
 endmodule: fsm
 
 
+
+
 module fifo
   (input  logic        clk, rst_n,
    input  logic        we, re,
    input  logic        bit_in,
    output logic        full, empty,
-   output logic        bit_out,
-	 output logic [5:0]  count);
-
+   output logic        bit_out);
+	
+	logic [5:0] count;
   logic [31:0] Q;
-  bit [4:0]  putPtr, getPtr; //pointers wrap
+  logic [4:0]  putPtr, getPtr; //pointers wrap
 
   assign empty = (count == 0),
-         full  = (count == 5'd32),
+         full  = (count == 6'd32),
          bit_out = Q[getPtr];
 
   //always_ff@(posedge clk, negedge rst_b)
-  always_ff@(posedge clk, negedge rst_b)
+  always_ff@(posedge clk, negedge rst_n)
   begin
     if (~rst_n) begin
       count <= 0;
