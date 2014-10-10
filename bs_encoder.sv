@@ -133,6 +133,7 @@ module BSfsm(
 		start = 0; endr = 0;
 		free_inbound = 0;
 		ld_h = 0; ld_t = 0; ld_d = 0;
+		pkt_received = 0;
 		case(cs)
 			
 			/* WAIT state */
@@ -141,16 +142,19 @@ module BSfsm(
 					ns = HS0;
 					ld_h = 1;
 					free_inbound = 0;
+					pkt_received = 1;
 				end
 				else if(pkt_type == 'TOKEN) begin
 					ns = TOK0;
 					ld_t = 1;
 					free_inbound = 0;
+					pkt_received = 1;
 				end
 				else if(pkt_type == 'DATA) begin
 					ns = DATA0;
 					ld_d = 1;
 					free_inbound = 0;
+					pkt_received = 1;
 				end
 				else begin
 					ns = WAIT;
