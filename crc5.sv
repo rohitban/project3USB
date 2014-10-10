@@ -15,11 +15,6 @@ module crc5(
 	/* ouputs to Bit Stuffer */
 	output logic        start_b, endr_b,
 	output logic				s_out,
-
-
-
-
-
 	);
 
 
