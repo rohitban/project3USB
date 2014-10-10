@@ -6,10 +6,10 @@ module crc5_fsm
      output logic       clr_cnt,en, 
      output logic       crc5_ready, crc5_done,
      input  logic [4:0] crc_cnt,
-     input  logic       crc5_start,
+     input  logic       crc5_start,crc5_rec,
      input  logic       clk, rst_n);
 
-    enum logic [1:0] {INIT,ADDR, PROC, STREAM} cs, ns;
+    enum logic [2:0] {INIT,ADDR, PROC, STREAM,BUFFER} cs, ns;
 
     always_ff@(posedge clk, negedge rst_n)
         if(~rst_n)
@@ -64,11 +64,14 @@ module crc5_fsm
               crc5_ready = 1;
             end
             else begin
-              ns = INIT;
-              clr = 1;
-              crc5_done = 1;
-              clr_cnt = 1;
+              ns = BUFFER;
             end
+         end
+         BUFFER: begin
+            ns = (crc5_rec)?INIT:BUFFER;
+            clr = (crc5_rec)?1:0;
+            clr_cnt = (crc5_rec)?1:0;
+            crc5_done = (crc5_rec)?0:1;
          end
          
        endcase
@@ -79,7 +82,7 @@ endmodule: crc5_fsm
 module crc5
     (output logic       crc5_out,
      output logic       crc5_ready,crc5_done,
-     input  logic       crc5_start, s_in,
+     input  logic       crc5_start, s_in,crc5_rec,
      input  logic        clk, rst_n);
 
     //DFF signals
