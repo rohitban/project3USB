@@ -1,6 +1,27 @@
 
 
 
+module sipo_register
+  #(parameter w = 3)
+  (output logic [w-1:0] Q,
+   input  logic         rst_n,
+   input  logic         clk,en,left,
+   input  logic         s_in);
+   
+   always_ff @(posedge clk, negedge rst_n)
+   if(~rst_n)
+     Q <= 0;
+   else if (en)begin
+     if (left)
+       Q <= (Q << 1) | s_in;
+     else
+       Q <= (Q >> 1) | (s_in << w-1);
+   end
+
+endmodule: sipo_register
+
+
+
 module gen_dff
     #(parameter FFID = 0)
     (input  logic d, clk, rst_n, sync_set,rd,
