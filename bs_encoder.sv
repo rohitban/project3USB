@@ -23,14 +23,17 @@ module bs_encoder(
 		/* outputs to ProtocolFSM */
 		output logic        pkt_received, 
 		output logic        free_inbound, /* ready to receive */
-		
-		
+			
+		/* inputs from dpdm */
+		input  logic 				sent_pkt,
+
 		/* input from bit stuff */
 		input  logic        pause,   /* pause bit streaming */
 		/* outputs to bitstuff */
 		output logic        start, endr, /* start/end bitstuffing */
 		output logic        s_out        /* serial out */
 		);
+		
 		logic [1:0] sel;
 		logic [6:0] count;
 		logic 			clr, ld_d, ld_t, ld_h;
