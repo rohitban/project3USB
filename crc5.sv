@@ -5,7 +5,7 @@ module crc5_fsm
      output logic       store_ld,store_shift,sel_comp,
      output logic       clr_cnt,en, 
      output logic       crc5_ready, crc5_done,
-     input  logic [4:0] crc_count,
+     input  logic [4:0] crc_cnt,
      input  logic       crc5_start,
      input  logic       clk, rst_n);
 
@@ -16,6 +16,61 @@ module crc5_fsm
           cs <= INIT;
         else
           cs <= ns;
+
+    always_comb begin
+       sync_set = 5'b0;
+       rd = 5'b11111;
+       clr = 0;
+       comp_ld = 0;
+       comp_shift = 0;
+       store_ld = 0;
+       store_shift = 0;
+       sel_comp = 0;
+       clr_cnt = 0;
+       en = 0;
+       crc5_ready = 0;
+       crc5_done = 0;
+       case(cs)
+         INIT:begin
+            ns = (crc5_start)?ADDR:INIT;
+            sync_set = (crc5_start)?5'b11111:0;
+         end
+         ADDR:begin
+            ns = (crc_cnt < 11)?ADDR:PROC;
+            rd = (crc_cnt < 11)?5'b11111:0;
+            en  = (crc_cnt < 11)?1:0;
+            clr_cnt = (crc_cnt < 11)?0:1;
+            comp_ld = (crc_cnt < 11)?0:1;
+         end
+         PROC: begin
+            if(crc_cnt < 5)begin
+              ns = PROC;
+              comp_shift = 1;
+              sel_comp = 1;
+              en = 1;
+            end
+            else begin
+              ns = STREAM;
+              store_ld = 1;
+              crc5_ready = 1;
+              clr_cnt = 1;
+            end
+         end
+         STREAM : begin
+            if(crc_cnt < 5)begin
+              ns = STREAM;
+              store_shift = 1;
+            end
+            else begin
+              ns = INIT;
+              clr = 1;
+              crc5_done = 1;
+              clr_cnt = 1;
+            end
+         end
+         
+       endcase
+    end
 
 endmodule: crc5_fsm
 
@@ -38,7 +93,7 @@ module crc5
 
     //Storage register signals
     logic  [4:0] store_out;
-    logic        store_ld, clr;
+    logic        store_ld;
 
     piso_register #(5,0) store_piso(.clk,.rst_n,.D(dff_out),.Q(store_out),
                                     .clr,.ld(store_ld),.left(store_shift),
@@ -57,9 +112,9 @@ module crc5
 
     //Counter
     logic clr_cnt, en;
-    logic [3:0] crc_cnt;
+    logic [4:0] crc_cnt;
 
-    counter #(4) crc_count(.clk,.rst_n,.count(crc_cnt),.clr(clr_cnt),.en);
+    counter #(5) crc_count(.clk,.rst_n,.count(crc_cnt),.clr(clr_cnt),.en);
 
 
    //CRC FFs
