@@ -52,7 +52,7 @@ module crc5_fsm
             else begin
               ns = STREAM;
               store_ld = 1;
-              crc5_ready = 1;
+              //crc5_ready = 1;
               clr_cnt = 1;
             end
          end
@@ -60,6 +60,8 @@ module crc5_fsm
             if(crc_cnt < 5)begin
               ns = STREAM;
               store_shift = 1;
+              en = 1;
+              crc5_ready = 1;
             end
             else begin
               ns = INIT;
