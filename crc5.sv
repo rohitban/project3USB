@@ -1,68 +1,83 @@
 
-/* num of clock cycles to get residue from complmeneted remainder */ 
-`define DELAY 7  
-`define SYNC 8'b0000_0001
+module crc5_fsm
+    (output logic [4:0] sync_set, rd,
+     output logic       clr, comp_ld, comp_shift,
+     output logic       store_ld,store_shift,sel_comp,
+     output logic       clr_cnt,en, 
+     output logic       crc5_ready, crc5_done,
+     input  logic [4:0] crc_count,
+     input  logic       crc5_start,
+     input  logic       clk, rst_n);
 
-module crc5(
-	input  logic clk, rst_n,
-	
-	/* inputs from Bit Stream Encorder */
-	input  logic 				s_in,
-	input  logic 				start, endr,
-	
-	/* inputs from Bit Stuffer */
-	input  logic        pause,
-	/* ouputs to Bit Stuffer */
-	output logic        start_b, endr_b,
-	output logic				s_out,
-	);
+    enum logic [1:0] {INIT,ADDR, PROC, STREAM} cs, ns;
+
+    always_ff@(posedge clk, negedge rst_n)
+        if(~rst_n)
+          cs <= INIT;
+        else
+          cs <= ns;
+
+endmodule: crc5_fsm
+
+module crc5
+    (output logic       crc5_out,
+     output logic       crc5_ready,crc5_done,
+     input  logic       crc5_start, s_in,
+     input  logic        clk, rst_n);
+
+    //DFF signals
+    logic [4:0] dff_in, dff_out;
+    logic [4:0] sync_set, rd;
+   
+
+    //Generator complement signals
+    logic  [4:0] comp_out;
+    logic        comp_serial;
+    logic        clr, comp_ld, comp_shift;
 
 
-endmodule : crc5
+    //Storage register signals
+    logic  [4:0] store_out;
+    logic        store_ld, clr;
+
+    piso_register #(5,0) store_piso(.clk,.rst_n,.D(dff_out),.Q(store_out),
+                                    .clr,.ld(store_ld),.left(store_shift),
+                                    .s_out(crc5_out));
+
+    //GEN COMPLEMENT register
+    piso_register #(5,0) comp_piso(.clk,.rst_n,.D(~dff_out),.Q(comp_out),
+                                   .clr,.ld(comp_ld),
+                                   .left(comp_shift),.s_out(comp_serial));
+    
+    //Selection mux
+    logic crc_in, sel_comp;
+
+    mux2to1 #(1) mux_inst(.I0(s_in), .I1(comp_serial), 
+                          .Y(crc_in), .sel(sel_comp));
+
+    //Counter
+    logic clr_cnt, en;
+    logic [3:0] crc_cnt;
+
+    counter #(4) crc_count(.clk,.rst_n,.count(crc_cnt),.clr(clr_cnt),.en);
 
 
-module fifo
-  # (parameter W = 32)
-  (input  bit         clk, rst_b,
-   input  bit         we, re,
-   input  pkt_t       data_in,
-   output bit         full, empty,
-   output pkt_t       data_out);
+   //CRC FFs
+   assign dff_in[0] = dff_out[4]^crc_in,
+          dff_in[1] = dff_out[0],
+          dff_in[2] = dff_out[1]^(crc_in^dff_out[4]),
+          dff_in[4:3] = dff_out[3:2];
 
-  pkt_t [3:0] Q;
-  bit [1:0]  putPtr, getPtr; //pointers wrap
-  bit [3:0]  count;
+   genvar i;
+   generate
+    for(i = 0; i < 5; i = i+1) 
 
-  assign empty = (count == 0),
-         full  = (count == 4'd4),
-         data_out = Q[getPtr];
+      gen_dff #(i) gen_ff_inst(.clk,.rst_n,.sync_set(sync_set[i]),
+                               .d(dff_in[i]),.q(dff_out[i]),.rd(rd[i]));
 
-  //always_ff@(posedge clk, negedge rst_b)
-  always_ff@(posedge clk, negedge rst_b)
-  begin
-    if (~rst_b) begin
-      count <= 0;
-      getPtr <= 0;
-      putPtr <= 0;
-    end
-    else begin
-      if(we & re & (!full) & (!empty)) begin
-        Q[putPtr] <= data_in;
-        putPtr <= putPtr + 1;
-        getPtr <= getPtr + 1;
-      end
-      else if(we & (!full)) begin
-        Q[putPtr] <= data_in;
-        putPtr <= putPtr + 1;
-        count <= count + 1;
-      end
-      else if(re & (!empty)) begin
-        getPtr <= getPtr + 1;
-        count <= count - 1;
-      end
-    end
-  end
+   endgenerate
 
-endmodule : fifo
+   crc5_fsm fsm_inst(.*);
 
+endmodule: crc5
 
