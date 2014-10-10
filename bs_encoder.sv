@@ -162,12 +162,12 @@ module BSfsm(
 			end
 			HS1 : begin
 				sel = 2'b11; /* choose handshake */
-				if(count >= 16) begin
+				if(count >= 'HSHAKE_SIZE) begin
 					ns = HS_WAIT;
 					clr = 1;
 					endr = 1;
 				end
-				else if(count < 16 && pause == 1'b0) begin
+				else if(count < 'HSHAKE_SIZE && pause == 1'b0) begin
 					ns = HS1;
 					incr = 1;
 					h_shft = 1;
@@ -194,12 +194,12 @@ module BSfsm(
 			end
 			TOK1 : begin
 				sel = 2'b01; /* choose token */
-				if(count >= 32) begin
+				if(count >= 'TOKEN_SIZE) begin
 					ns = TOK_WAIT;
 					clr = 1;
 					endr = 1;
 				end
-				else if(count < 32 && pause == 1'b0) begin
+				else if(count < 'TOKEN_SIZE && pause == 1'b0) begin
 					ns = TOK1;
 					incr = 1;
 					t_shft = 1;
@@ -226,12 +226,12 @@ module BSfsm(
 			end
 			DATA1 : begin
 				sel = 2'b0; /* choose data */
-				if(count >= 96) begin
+				if(count >= 'DATA_SIZE) begin
 					ns = DATA_WAIT;
 					clr = 1;
 					endr = 1;
 				end
-				else if(count < 96 && pause == 1'b0) begin
+				else if(count < 'DATA_SIZE && pause == 1'b0) begin
 					ns = DATA1;
 					incr = 1;
 					t_shft = 1;
