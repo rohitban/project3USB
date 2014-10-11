@@ -56,8 +56,9 @@ module stuff_test;
 
         for(int i = 0; i < n; i++) begin
           in = data.getc(i);
+          /*
           if((in.atoi()!= 0)||(in.atoi()!= 1))
-            $display("Error in is %d",in.atoi());
+            $display("Error in is %d",in.atoi());*/
           s_in <= in.atoi();
           @(posedge clk);
         end
@@ -77,7 +78,14 @@ module stuff_test;
         left <= 0;
         @(posedge clk);
         @(posedge clk);
-        $display("Simulation completed at state (%s)",dut.ctrl.crc_cs.name);
+        $display("Simulation completed with crc at state (%s)",
+                  dut.ctrl.crc_cs.name);
+        $display("Simulation completed with crc5 at state(%s)",
+                 dut.tcrc.fsm_inst.cs.name);
+        $display("Simulation completed with bitstuffer at state(%s)",
+                 device.stuff.bs_cs.name);
+        $display("Simulation completed with nrzi at state(%s)",
+                  mod.nz_fsm.nrzi_cs.name);
 		$finish;
 	end
 
