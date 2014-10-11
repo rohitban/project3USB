@@ -35,13 +35,15 @@ module crc(
 	logic bit_out, bit_in;
 	logic incr, clr;
 	logic [5:0] delay_count;
-	logic send //delete afterward!!!!!!!!!!
+	logic send; //delete afterward!!!!!!!!!!
+	
 	assign sel_crctype = (pkt_type == `TOKEN) ? 0 : 1;
 
 	crc5			tcrc(.clk, .rst_n, 
 								 .s_in,
 								 .crc5_start, .crc5_ready, .crc5_done,
-								 .crc5_out, .crc5_rec);
+								 .crc5_out, .crc5_rec,
+								 .send);
 	//crc16			dcrc(.*);
 
 	fifo					q(.clk, .rst_n,
@@ -167,7 +169,7 @@ module fsm(
 				else begin
 					ns = TOK4;
 					we = 1;
-					re = 1;
+					re = (empty) ? 0 : 1;
 					send = 1; //ask crc5 to send data
 					sel_crc = 1;
 				end
