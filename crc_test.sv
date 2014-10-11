@@ -1,14 +1,33 @@
 `define TOKEN 2'b1
 
+module special_register
+	#(parameter w = 32)
+	(input logic bit_in,
+	 output logic [w-1:0] data_out,
+	 input  logic shift_ld, clr,rst_n);
+	
+	always_ff@(posedge clk, negedge rst_n)
+		if(~rst_n)
+			data_out <= 0;
+		else if(clr)
+			data_out <= 0;
+		else if(shift_ld) begin
+			data_out[0] <= bit_in;
+			data_out <= data_out<< 1;
+		end
+			
+endmodule : special_register
+
 module crc_test;
 	logic clk, rst_n;
 	logic s_in, start, endr;
 	logic [1:0] pkt_type;
 	logic pause, start_b, endr_b, s_out;
 	logic [26:0] data;
-
+	logic [31:0] dout;
+	logic        s_ld, clr;
 	crc     dut(.*);
-
+	special_register 	(.bit_in(s_out), .data_out(dout), .shift_ld(s_ld), .clr(clr), .rst_n);
 	assign data = 27'b0000_0001_1000_0001_0000_1000_111;
 
 	initial begin
@@ -88,7 +107,7 @@ module crc_test;
 		endr <= 1;
 		@(posedge clk);
 		endr <= 0;
-		for(int i = 0; i < 150; i++) begin
+		for(int i = 0; i < 50; i++) begin
 			@(posedge clk);	
 		end
 		@(posedge clk);	
