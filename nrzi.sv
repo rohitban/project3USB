@@ -3,7 +3,7 @@ module nrzi_fsm
     (output logic start_dpdm, eop, sync_set,
      input  logic start_nrzi, done,clk, rst_n);
 
-    enum logic {WAIT,SEND} nrzi_cs,nrzi_ns;
+    enum logic [1:0] {WAIT,READY,SEND,BUF} nrzi_cs,nrzi_ns;
 
     always_ff@(posedge clk, negedge rst_n)
         if(~rst_n)
@@ -17,13 +17,20 @@ module nrzi_fsm
         sync_set = 0;
         case(nrzi_cs)
             WAIT: begin
-                nrzi_ns = (start_nrzi)?SEND:WAIT;
+                nrzi_ns = (start_nrzi)?READY:WAIT;
                 sync_set = (start_nrzi)?1'b1:1'b0;
-                start_dpdm = (start_nrzi)?1'b1:1'b0;
+                //start_dpdm = (start_nrzi)?1'b1:1'b0;
+            end
+            READY: begin
+                nrzi_ns = SEND;
+                start_dpdm = 1;
             end
             SEND: begin
-                nrzi_ns = (done)?WAIT:SEND;
-                eop = (done)?1'b1:1'b0;
+                nrzi_ns = (done)?BUF:SEND;
+            end
+            BUF: begin
+                nrzi_ns = WAIT;
+                eop = 1;
             end
         endcase
     end
