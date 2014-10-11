@@ -49,6 +49,7 @@ module dpdm
                 dpdm_ns = WAIT;
                 enable = 1;
                 host_out = `J;
+                sent_pkt = 1;
             end
         endcase
     end
