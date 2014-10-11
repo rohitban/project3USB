@@ -18,7 +18,7 @@ module crc(
 	/* inputs from Bit Stream Encorder */
 	input  logic 				s_in,
 	input  logic 				start, endr,
-	input  logic [1:0]  pket_type,
+	input  logic [1:0]  pkt_type,
 	
 	/* inputs from Bit Stuffer */
 	input  logic        pause,
@@ -27,12 +27,14 @@ module crc(
 	output logic				s_out
 	);
 
-	logic crc5_ready, crc5_done, crc5_start;
+	logic crc_cout;
+	logic crc16_out;
+	logic crc5_ready, crc5_done, crc5_start, crc5_rec;
 	logic re, we;
 	logic full, empty;
 	logic bit_out, bit_in;
 	logic incr, clr;
-	logic [5:0] delay_cnt;
+	logic [5:0] delay_count;
 
 	assign sel_crctype = (pkt_type == `TOKEN) ? 0 : 1;
 
@@ -45,8 +47,7 @@ module crc(
 	fifo					q(.clk, .rst_n,
 									.we, .re,
 									.bit_in(s_in), .bit_out(s_out),
-									.full, .empty,
-									.count);
+									.full, .empty);
 
 	counter #(6)  delay(.clk, .rst_n,
 											.clr, .en(incr),
@@ -58,7 +59,7 @@ module crc(
 										  .sel(sel_crc));
 
 	mux2to1				cmux(.Y(crc_out), 
-										 .I1(crc5_out), .I1(crc16_out),
+										 .I0(crc5_out), .I1(crc16_out),
 										 .sel(sel_crctype));
 
 	fsm 					 ctrl(.*);
@@ -67,7 +68,8 @@ endmodule : crc
 
 
 module fsm(
-	input  logic clk, rst_n, clr,
+	input  logic clk, rst_n, 
+	output logic clr,
 	/* inputs from bit stream encoder */
 	input  logic 			 start, endr,
 	input  logic [1:0] pkt_type,
@@ -76,13 +78,13 @@ module fsm(
 	output logic 			 we, re,
 
 	/* inputs/outputs from crc5 */
-	input  logic 			 crc5_rec,
-	input  logic       crc5_ready,
-	input  logic			 crc5_done,
-	output logic       crc5_start,
+	output  logic 			 crc5_rec,
+	input   logic       crc5_ready,
+	input   logic			 crc5_done,
+	output  logic       crc5_start,
 
 	/* inputs/outputs from delay counter */
-	input  logic       delay_count,
+	input  logic [5:0] delay_count,
 	output logic 			 incr,
 
 	/* inputs/outputs from bit stuffer */
@@ -96,7 +98,7 @@ module fsm(
 	enum {WAIT, TOK0, TOK1, TOK2, TOK3, TOK4} cs, ns;
 
 	always_ff@(posedge clk)
-		if(rst_n)
+		if(~rst_n)
 			cs <= WAIT;
 		else
 			cs <= ns;
@@ -130,40 +132,44 @@ module fsm(
 				else if(delay_count >=16 && pause) begin
 					ns = TOK2;
 					we = 1;
-					start_crc5 = 1;
+					crc5_start = 1;
 				end
 				else if(delay_count >= 16 && ~pause) begin
 					ns = TOK2;
 					we = 1;
 					re = 1;
-					start_crc5 = 1;
+					crc5_start = 1;
 				end
 			end
 			TOK2 : begin 
 				ns = (endr) ? TOK3 : TOK2;
 				we = (endr) ? 0 : 1;
 				re = 1;
+				we = (endr) ? 0 : 1;
 			end
 			TOK3 : begin
 				ns = (crc5_ready) ? TOK4 : TOK3;
 				re = 1;
 			end			
 			TOK4 : begin
-				if(~crc5_done) begin
+				if(crc5_done)
+					if(~empty) begin
+						ns = TOK4;
+						re = 1;
+					end
+					else begin
+						ns = WAIT;
+						crc5_rec = 1;
+						endr_b = 1;
+					end
+				else begin
 					ns = TOK4;
 					we = 1;
 					re = 1;
 					sel_crc = 1;
 				end
-				else if(crc5_done && ~empty)
-					ns = TOK4;
-					re = 1;
-				end
-				else if(crc5_done && empty)
-					ns = WAIT;
-					crc5_rec = 1;
-					endr_b = 1;
 			end
+		endcase
 	end
 
 
@@ -181,7 +187,7 @@ module fifo
    output logic        bit_out);
 	
 	logic [5:0] count;
-  logic [31:0] Q;
+  bit [31:0] Q;
   logic [4:0]  putPtr, getPtr; //pointers wrap
 
   assign empty = (count == 0),
