@@ -7,8 +7,8 @@ module crc5_fsm
      output logic       crc5_ready, crc5_done,
      input  logic [4:0] crc_cnt,
      input  logic       crc5_start,crc5_rec,
+		 input  logic 			send, //test erase this afterwards
      input  logic       clk, rst_n);
-
     enum logic [2:0] {INIT,ADDR, PROC, STREAM,BUFFER} cs, ns;
 
     always_ff@(posedge clk, negedge rst_n)
@@ -58,20 +58,28 @@ module crc5_fsm
          end
          STREAM : begin
             if(crc_cnt < 5)begin
-              ns = STREAM;
-              store_shift = 1;
-              en = 1;
-              crc5_ready = 1;
-            end
+							if(send) begin
+              	ns = STREAM;
+              	store_shift = 1;
+              	en = 1;
+              	crc5_ready = 1;
+            	end
+							else begin 
+								ns = STREAM;
+								crc5_ready = 1;
+							end
+						end
             else begin
+							crc5_done = 1;
               ns = BUFFER;
             end
          end
+				 
          BUFFER: begin
             ns = (crc5_rec)?INIT:BUFFER;
             clr = (crc5_rec)?1:0;
             clr_cnt = (crc5_rec)?1:0;
-            crc5_done = (crc5_rec)?0:1;
+            crc5_done = 1;
          end
          
        endcase
@@ -83,8 +91,8 @@ module crc5
     (output logic       crc5_out,
      output logic       crc5_ready,crc5_done,
      input  logic       crc5_start, s_in,crc5_rec,
-     input  logic        clk, rst_n);
-
+		 input  logic  send, // erase afterward !!!!!!!
+     input  logic       clk, rst_n);
     //DFF signals
     logic [4:0] dff_in, dff_out;
     logic [4:0] sync_set, rd;
