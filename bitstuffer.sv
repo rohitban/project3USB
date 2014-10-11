@@ -4,7 +4,7 @@ module bit_stuff_fsm
     (output logic       s_out,start_nrzi,done,pause,
      output logic       clr_ones,clr_sp,incr_sp,incr_ones,
      input  logic [4:0] ones_count,      sp_count,
-     input  logic       s_in, start,     endr,
+     input  logic       s_in, start,     endb,
      input  logic       clk,  rst_n);
 
     enum logic [1:0] {WAIT,READY,STUFF} bs_cs,bs_ns;
@@ -38,7 +38,7 @@ module bit_stuff_fsm
                   s_out = s_in;
                 end
                 else
-                  if(endr) begin
+                  if(endb) begin
                     bs_ns = WAIT;
                     done = 1;
                   end
@@ -50,8 +50,8 @@ module bit_stuff_fsm
                   end
             end
             STUFF:begin
-                bs_ns = (endr)?WAIT:STUFF;
-                done = (endr)?1'b1:1'b0;
+                bs_ns = (endb)?WAIT:STUFF;
+                done = (endb)?1'b1:1'b0;
                 if(ones_count >= 6) begin
                   s_out = 0;
                   pause = 1;
@@ -61,6 +61,8 @@ module bit_stuff_fsm
                   s_out = s_in;
                   if(s_in == 1)
                     incr_ones = 1;
+                  else
+                    clr_ones = 1;
                 end
             end
         endcase
@@ -70,7 +72,7 @@ endmodule: bit_stuff_fsm
 
 module bit_stuff
     (output logic s_out,start_nrzi,done,pause,
-     input  logic s_in, start     ,endr,
+     input  logic s_in, start     ,endb,
      input  logic clk,  rst_n);
 
     
