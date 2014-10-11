@@ -35,7 +35,7 @@ module crc(
 	logic bit_out, bit_in;
 	logic incr, clr;
 	logic [5:0] delay_count;
-
+	logic send //delete afterward!!!!!!!!!!
 	assign sel_crctype = (pkt_type == `TOKEN) ? 0 : 1;
 
 	crc5			tcrc(.clk, .rst_n, 
@@ -82,6 +82,7 @@ module fsm(
 	input   logic       crc5_ready,
 	input   logic			 crc5_done,
 	output  logic       crc5_start,
+	output  logic 			send,
 
 	/* inputs/outputs from delay counter */
 	input  logic [5:0] delay_count,
@@ -104,6 +105,7 @@ module fsm(
 			cs <= ns;
 
 	always_comb begin
+		send = 0; //delete!!!!!!
 		clr = 0; sel_crc = 0; re = 0; we = 0; incr = 0;	
 		crc5_rec = 0; crc5_start = 0; start_b = 0; endr_b = 0;
 		case(cs)
@@ -166,6 +168,7 @@ module fsm(
 					ns = TOK4;
 					we = 1;
 					re = 1;
+					send = 1; //ask crc5 to send data
 					sel_crc = 1;
 				end
 			end
