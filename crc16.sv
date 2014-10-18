@@ -4,14 +4,13 @@
  */
 module crc16_fsm
     (output logic [15:0] sync_set, rd,
-     output logic        clr, comp_ld, comp_shift,
-//     output logic        store_ld,store_shift,sel_comp,
+     output logic        clr, comp_ld, comp_shift
      output logic        clr_cnt,en, 
      output logic        crc16_ready, crc16_done,
-     input  logic [7:0]  crc_cnt,
+     input  logic [6:0]  crc_cnt,
      input  logic        crc16_start,crc16_rec,
      input  logic        clk, rst_n);
-    enum logic [2:0] {INIT,ADDR, PROC, STREAM,BUFFER} cs, ns;
+    enum logic [2:0] {INIT,ADDR,STREAM,BUFFER} cs, ns;
 
     always_ff@(posedge clk, negedge rst_n)
         if(~rst_n)
@@ -25,9 +24,6 @@ module crc16_fsm
        clr = 0;
        comp_ld = 0;
        comp_shift = 0;
-     //  store_ld = 0;
-     //  store_shift = 0;
-     //  sel_comp = 0;
        clr_cnt = 0;
        en = 0;
        crc16_ready = 0;
@@ -38,34 +34,20 @@ module crc16_fsm
             sync_set = (crc16_start)?16'hffff:0;
          end
          ADDR:begin
-            ns = (crc_cnt < 64)?ADDR:PROC;
+            ns = (crc_cnt < 64)?ADDR:STREAM;
             rd = (crc_cnt < 64)?16'hffff:0;
             en  = (crc_cnt < 64)?1:0;
             clr_cnt = (crc_cnt < 64)?0:1;
             comp_ld = (crc_cnt < 64)?0:1;
          end
- /*        PROC: begin
-            if(crc_cnt < 16)begin
-              ns = PROC;
-              comp_shift = 1;
-              sel_comp = 1;
-              en = 1;
-            end
-            else begin
-              ns = STREAM;
-              store_ld = 1;
-              clr_cnt = 1;
-              rd = 0;
-            end
-         end*/
          STREAM : begin
             if(crc_cnt < 16)begin
-			  			ns = STREAM;
+			  ns = STREAM;
               comp_shift = 1;
               en = 1;
               crc16_ready = 1;
             end
-						else
+			else
               ns = BUFFER;
          end
 				 
@@ -97,31 +79,16 @@ module crc16
     logic         comp_serial;
     logic         clr, comp_ld, comp_shift;
 
-
-    //Storage register signals
-//    logic  [15:0] store_out;
-//    logic         store_ld;
-
-//    piso_register #(16,0) store_piso(.clk,.rst_n,.D(dff_out),.Q(store_out),
-//                                     .clr,.ld(store_ld),.left(store_shift),
-//                                     .s_out(crc16_out));
-
     //GEN COMPLEMENT register
     piso_register #(16,0) comp_piso(.clk,.rst_n,.D(~dff_out),.Q(comp_out),
                                     .clr,.ld(comp_ld),
                                     .left(comp_shift),.s_out(crc16_out));
-    
-    //Selection mux
-//    logic crc_in, sel_comp;
-
-//    mux2to1 #(1) mux_inst(.I0(s_in), .I1(comp_serial), 
-//                          .Y(crc_in), .sel(sel_comp));
 
     //Counter
     logic clr_cnt, en;
-    logic [7:0] crc_cnt;
+    logic [6:0] crc_cnt;
 
-    counter #(8) crc_count(.clk,.rst_n,.count(crc_cnt),.clr(clr_cnt),.en);
+    counter #(7) crc_count(.clk,.rst_n,.count(crc_cnt),.clr(clr_cnt),.en);
 
 
    //CRC FFs
