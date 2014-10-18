@@ -1,16 +1,14 @@
 
-`define DATA_SIZE 7'd96
-`define TOKEN_SIZE 6'd32
+`define DATA_SIZE 7'd80
+`define TOKEN_SIZE 6'd27
 `define HSHAKE_SIZE 5'd16 
 
 `define DATA 2'b11
 `define TOKEN 2'b01
 `define HSHAKE 2'b10
 
-`define SYNC 8'b0000_0001
-
 /* num of clock cycles to get residue from complmeneted remainder */ 
-`define DELAY 6'd15  
+`define DELAY_T 6'd15  
 
 module crc(
 	input  logic clk, rst_n,
@@ -29,7 +27,7 @@ module crc(
 
     
     /*Main CRC*/
-	logic crc_out;
+		logic crc_out;
     logic sel_16;
     logic sel_crc;
 
@@ -38,25 +36,31 @@ module crc(
     logic crc5_ready, crc5_done;
     logic crc5_start, crc5_rec;
 
-    /*CRC16
-	logic crc16_out;
-	logic crc16_ready, crc16_done; 
-    logic crc16_start, crc16_rec;*/
+    /*CRC16*/
+		logic crc16_out;
+		logic crc16_ready, crc16_done; 
+  	logic crc16_start, crc16_rec;
 
     /*Queue signals*/
-	logic re, we;
-	logic full, empty;
-	logic bit_in;
+		logic re, we;
+		logic full, empty;
+		logic bit_in;
 
     /*Delay counter*/
-	logic incr, clr;
-	logic [5:0] delay_count;
+		logic incr, clr;
+		logic [5:0] delay_count;
 
 	crc5			tcrc(.clk, .rst_n, 
 								 .s_in,
 								 .crc5_start, .crc5_ready, .crc5_done,
 								 .crc5_out, .crc5_rec);
-	//crc16			dcrc(.*);
+
+
+	crc16			dcrc(.clk, .rst_n,
+								 .s_in,
+								 .crc16_start, .crc16_ready, .crc16_done,
+								 .crc16_out, .crc16_rec);
+
 
 	fifo					q(.clk, .rst_n,
 									.we, .re,
@@ -69,13 +73,14 @@ module crc(
 
 
 	mux2to1 			 qmux(.Y(bit_in), 
-										  .I0(s_in),.I1(crc5_out),
-                                          /*.I1(crc_out),*/
+										  .I0(s_in),.I1(crc_out),
 										  .sel(sel_crc));
 
-	/*mux2to1				cmux(.Y(crc_out), 
+	mux2to1				cmux(.Y(crc_out), 
 										 .I0(crc5_out), .I1(crc16_out),
-										 .sel(sel_16));*/
+										 .sel(sel_16));
+
+
     crc_master_fsm      ctrl(.*);
 
 endmodule : crc
@@ -85,10 +90,10 @@ module crc_master_fsm
     //Queue control
     output logic re, we,
     //Queue status
-	input logic empty,
+	  input logic empty,
 
     //MUX control
-    //output logic sel_16,
+    output logic sel_16,
     output logic sel_crc,
 
     //Counter control
@@ -101,11 +106,11 @@ module crc_master_fsm
     //CRC5 status
     input logic crc5_ready, crc5_done,
 
-    /*
+    
     //CRC16 status
-   	input logic crc16_ready, crc16_done; 
+   	input logic crc16_ready, crc16_done,
     //CRC16 control
-    output logic crc16_start, crc16_rec;*/
+    output logic crc16_start, crc16_rec,
 
     //Inputs from bs_encoder i.e. the crc god
     input logic [1:0] pkt_in,
@@ -120,7 +125,8 @@ module crc_master_fsm
     input logic clk, rst_n);
 
    
-    enum logic [3:0] {WAIT,TOK0,TOK1,TOK2,TOK3} crc_cs,crc_ns;
+    enum logic [3:0] {WAIT,TOK0,TOK1,TOK2,TOK3,DATA0,DATA1,DATA2,DATA3,
+											HS0, HS1, HS2, HS3} crc_cs,crc_ns;
 
     always_ff@(posedge clk, negedge rst_n)
         if(~rst_n)
@@ -132,10 +138,14 @@ module crc_master_fsm
         re = 0;
         we = 0;
         sel_crc = 0;
-        //sel_16 = 0;
+				/* crc 16 */
+        crc16_start = 0;
+				crc5_rec = 0;
+				sel_16 = 0;
         clr = 0;
         incr = 0;
-        crc5_start = 0;
+        /* crc 5 */
+				crc5_start = 0;
         crc5_rec = 0;
         start_b = 0;
         endb = 0;
@@ -144,13 +154,15 @@ module crc_master_fsm
             WAIT:begin
                 case(pkt_in)
                     `TOKEN: crc_ns = TOK0;
-                    //`DATA: crc_ns = DATA0;
-                    //`HSHAKE: crc_ns = HS0;
+                    `DATA: crc_ns = DATA0;
+                    `HSHAKE: crc_ns = HS0;
                     default: crc_ns = WAIT;
                 endcase
             end
+
+						/* TOKEN */
             TOK0: begin
-                if(delay_count < `DELAY) begin
+                if(delay_count < `DELAY_T) begin
                   crc_ns = TOK0;
                   we = 1;
                   incr = 1;
@@ -160,29 +172,108 @@ module crc_master_fsm
                   we = 1;
                   crc5_start = 1;
                   clr = 1;
+                  start_b = 1;
                 end
             end
             TOK1: begin
+								re = 1;
                 if(endr) begin
                   crc_ns = TOK2;
-                  start_b = 1;
+                  //start_b = 1;
                 end
                 else begin
                   crc_ns = TOK1;
                   we = 1;
+                  //re = 1;
                 end
             end
             TOK2: begin
-              crc_ns = (crc5_done)?TOK3:TOK2;
-              re = (pause)?1'b0:1'b1;
-              we = (crc5_ready)?1'b1:1'b0;
+              crc_ns = (crc5_done) ? TOK3 : TOK2;
+              re = (pause) ? 1'b0 : 1'b1;
+              we = (crc5_ready) ? 1'b1 : 1'b0;
               sel_crc = 1;
-              crc5_rec = (crc5_done)?1'b1:1'b0;
+              crc5_rec = (crc5_done) ? 1'b1 : 1'b0;
             end
             TOK3: begin
-               crc_ns = (empty)?WAIT:TOK3;
-               endb = (empty)?1'b1:1'b0;
-               re = (empty)?1'b0:1'b1;
+               crc_ns = (empty) ? WAIT : TOK3;
+               endb = (empty) ? 1'b1 : 1'b0;
+               re = (~empty & ~pause) ? 1'b1 : 1'b0;
+            end
+						
+						/* DATA */
+            DATA0: begin
+                if(delay_count < `DELAY_T) begin
+                  crc_ns = DATA0;
+                  we = 1;
+                  incr = 1;
+                end
+                else begin
+                  crc_ns = DATA1;
+                  we = 1;
+                  crc16_start = 1;
+                  clr = 1;
+                  start_b = 1;
+									sel_16 = 1;
+                end
+            end
+            DATA1: begin
+								sel_16 = 1;
+								re = 1;
+                if(endr) begin
+                  crc_ns = DATA2;
+                  //start_b = 1;
+                end
+                else begin
+                  crc_ns = DATA1;
+                  we = 1;
+                  //re = 1;
+                end
+            end
+            DATA2: begin
+							sel_16 = 1;
+              crc_ns = (crc16_done)? DATA3 : DATA2;
+              re = (pause)? 1'b0 : 1'b1;
+              we = (crc16_ready)? 1'b1 : 1'b0;
+              sel_crc = 1;
+              crc16_rec = (crc16_done)? 1'b1 : 1'b0;
+            end
+            DATA3: begin
+							 sel_16 =1;
+               crc_ns = (empty)?WAIT : DATA3;
+               endb = (empty)? 1'b1 : 1'b0;
+               re = (~empty & ~pause)? 1'b1 : 1'b0;
+            end
+
+						/* HandShake */
+            HS0: begin
+                if(delay_count < `DELAY_T) begin
+                  crc_ns = HS0;
+                  we = 1;
+                  incr = 1;
+                end
+                else begin
+                  crc_ns = HS1;
+                  we = 1;
+                  clr = 1;
+                  start_b = 1;
+                end
+            end
+            HS1: begin
+								re = 1;
+                if(endr) begin
+                  crc_ns = HS2;
+                  //start_b = 1;
+                end
+                else begin
+                  crc_ns = HS1;
+                  we = 1;
+                  //re = 1;
+                end
+            end
+            HS2: begin
+               crc_ns = (empty)? WAIT : HS2;
+               endb = (empty)? 1'b1 : 1'b0;
+               re = (~empty)? 1'b1 : 1'b0;
             end
         endcase
     end
