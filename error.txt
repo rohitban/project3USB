@@ -1,0 +1,352 @@
+                   0 THUMBDRIVE: INFO bit-stuff sees 0
+                   5 THUMBDRIVE: INFO bit-stuff sees 0
+                  15 THUMBDRIVE: INFO bit-stuff sees 0
+                  25 THUMBDRIVE: INFO bit-stuff sees 0
+                  35 THUMBDRIVE: INFO bit-stuff sees 0
+                  45 THUMBDRIVE: INFO bit-stuff sees 0
+                  55 THUMBDRIVE: INFO bit-stuff sees 0
+                  65 THUMBDRIVE: INFO bit-stuff sees 0
+                  75 THUMBDRIVE: INFO bit-stuff sees 0
+                  85 THUMBDRIVE: INFO bit-stuff sees 0
+                  95 THUMBDRIVE: INFO bit-stuff sees 0
+                 105 THUMBDRIVE: INFO bit-stuff sees 0
+                 115 THUMBDRIVE: INFO bit-stuff sees 0
+                 125 THUMBDRIVE: INFO bit-stuff sees 0
+                 135 THUMBDRIVE: INFO bit-stuff sees 0
+                 145 THUMBDRIVE: INFO bit-stuff sees 0
+                 155 THUMBDRIVE: INFO bit-stuff sees 0
+                 165 THUMBDRIVE: INFO bit-stuff sees 0
+                 175 THUMBDRIVE: INFO bit-stuff sees 0
+                 185 THUMBDRIVE: INFO bit-stuff sees 0
+                 195 THUMBDRIVE: INFO NRZI saw K
+                 195 THUMBDRIVE: INFO bit-stuff sees 0
+                 205 THUMBDRIVE: INFO NRZI saw J
+                 205 THUMBDRIVE: INFO bit-stuff sees 0
+                 215 THUMBDRIVE: INFO NRZI saw K
+                 215 THUMBDRIVE: INFO bit-stuff sees 0
+                 225 THUMBDRIVE: INFO NRZI saw J
+                 225 THUMBDRIVE: INFO bit-stuff sees 0
+                 235 THUMBDRIVE: INFO NRZI saw K
+                 235 THUMBDRIVE: INFO bit-stuff sees 0
+                 245 THUMBDRIVE: INFO NRZI saw J
+                 245 THUMBDRIVE: INFO bit-stuff sees 0
+                 255 THUMBDRIVE: INFO NRZI saw K
+                 255 THUMBDRIVE: INFO bit-stuff sees 0
+                 255 THUMBDRIVE: SYNC FOUND!
+                 265 THUMBDRIVE: INFO NRZI saw K
+                 265 THUMBDRIVE: INFO bit-stuff sees 0
+
+Receiving new package:                 275
+                 275 THUMBDRIVE: INFO NRZI saw K
+                 275 THUMBDRIVE: INFO bit-stuff sees 1
+                 285 THUMBDRIVE: INFO NRZI saw J
+                 285 THUMBDRIVE: INFO bit-stuff sees 0
+                 295 THUMBDRIVE: INFO NRZI saw K
+                 295 THUMBDRIVE: INFO bit-stuff sees 0
+                 305 THUMBDRIVE: INFO NRZI saw J
+                 305 THUMBDRIVE: INFO bit-stuff sees 0
+                 315 THUMBDRIVE: INFO NRZI saw K
+                 315 THUMBDRIVE: INFO bit-stuff sees 0
+                 325 THUMBDRIVE: INFO NRZI saw K
+                 325 THUMBDRIVE: INFO bit-stuff sees 1
+                 335 THUMBDRIVE: INFO NRZI saw K
+                 335 THUMBDRIVE: INFO bit-stuff sees 1
+                 335 THUMBDRIVE: PID = 0001, Inverted PID=1110
+
+                 345 THUMBDRIVE: INFO NRZI saw K
+                 345 THUMBDRIVE: INFO bit-stuff sees 1
+                 355 THUMBDRIVE: INFO NRZI saw K
+                 355 THUMBDRIVE: INFO bit-stuff sees 1
+                 365 THUMBDRIVE: INFO NRZI saw J
+                 365 THUMBDRIVE: INFO bit-stuff sees 0
+                 375 THUMBDRIVE: INFO NRZI saw J
+                 375 THUMBDRIVE: INFO bit-stuff sees 1
+                 385 THUMBDRIVE: INFO NRZI saw K
+                 385 THUMBDRIVE: INFO bit-stuff sees 0
+                 395 THUMBDRIVE: INFO NRZI saw J
+                 395 THUMBDRIVE: INFO bit-stuff sees 0
+                 405 THUMBDRIVE: INFO NRZI saw K
+                 405 THUMBDRIVE: INFO bit-stuff sees 0
+                 405 ADDR = 05
+
+                 405                  405 Addr is good
+                 405 ADDR = 05
+
+                 405                  405 Addr is good
+                 415 THUMBDRIVE: INFO NRZI saw J
+                 415 THUMBDRIVE: INFO bit-stuff sees 0
+                 425 THUMBDRIVE: INFO NRZI saw K
+                 425 THUMBDRIVE: INFO bit-stuff sees 0
+                 435 THUMBDRIVE: INFO NRZI saw J
+                 435 THUMBDRIVE: INFO bit-stuff sees 0
+                 445 THUMBDRIVE: INFO NRZI saw J
+                 445 THUMBDRIVE: INFO bit-stuff sees 1
+                 455 THUMBDRIVE: INFO NRZI saw K
+                 455 THUMBDRIVE: INFO bit-stuff sees 0
+                 465 THUMBDRIVE: INFO NRZI saw J
+                 465 THUMBDRIVE: INFO bit-stuff sees 0
+                 475 THUMBDRIVE: INFO NRZI saw K
+                 475 THUMBDRIVE: INFO bit-stuff sees 0
+                 485 THUMBDRIVE: INFO NRZI saw J
+                 485 THUMBDRIVE: INFO bit-stuff sees 0
+                 495 THUMBDRIVE: INFO NRZI saw K
+                 495 THUMBDRIVE: INFO bit-stuff sees 0
+                 505 THUMBDRIVE: INFO NRZI saw K
+                 505 THUMBDRIVE: INFO bit-stuff sees 1
+                 505 THUMBDRIVE: Correct CRC5 residue
+                 505 THUMBDRIVE: Correct CRC5 residue
+                 505 THUMBDRIVE: Correct CRC5 residue
+                 515 THUMBDRIVE: INFO bit-stuff sees 0
+                 525 THUMBDRIVE: INFO bit-stuff sees 0
+                 525 THUMBDRIVE: Good EOP!
+                 535 THUMBDRIVE: INFO NRZI saw J
+                 535 THUMBDRIVE: INFO bit-stuff sees 0
+Raw data:       KJKJKJKK_KJKJKKKK_KJJKJKJ_KJJK_JKJKK_XXJ
+Decoded data:   00000001_10000111_1010000_0010_00001 
+Unstuffed data:                   1010000_0010_00001    
+Received CRC:   00001
+Calculated CRC: 00001
+PID:            OUT
+ADDR:           0x05
+ENDP:           0x4
+
+                 545 THUMBDRIVE: INFO bit-stuff sees 0
+                 555 THUMBDRIVE: INFO bit-stuff sees 0
+                 565 THUMBDRIVE: INFO bit-stuff sees 0
+                 575 THUMBDRIVE: INFO bit-stuff sees 0
+                 585 THUMBDRIVE: INFO bit-stuff sees 0
+                 595 THUMBDRIVE: INFO bit-stuff sees 0
+                 605 THUMBDRIVE: INFO bit-stuff sees 0
+                 615 THUMBDRIVE: INFO bit-stuff sees 0
+                 625 THUMBDRIVE: INFO bit-stuff sees 0
+                 635 THUMBDRIVE: INFO bit-stuff sees 0
+                 645 THUMBDRIVE: INFO bit-stuff sees 0
+                 655 THUMBDRIVE: INFO bit-stuff sees 0
+                 665 THUMBDRIVE: INFO bit-stuff sees 0
+                 675 THUMBDRIVE: INFO bit-stuff sees 0
+                 685 THUMBDRIVE: INFO bit-stuff sees 0
+                 695 THUMBDRIVE: INFO bit-stuff sees 0
+                 705 THUMBDRIVE: INFO bit-stuff sees 0
+                 715 THUMBDRIVE: INFO bit-stuff sees 0
+                 725 THUMBDRIVE: INFO bit-stuff sees 0
+                 735 THUMBDRIVE: INFO NRZI saw K
+                 735 THUMBDRIVE: INFO bit-stuff sees 0
+                 745 THUMBDRIVE: INFO NRZI saw J
+                 745 THUMBDRIVE: INFO bit-stuff sees 0
+                 755 THUMBDRIVE: INFO NRZI saw K
+                 755 THUMBDRIVE: INFO bit-stuff sees 0
+                 765 THUMBDRIVE: INFO NRZI saw J
+                 765 THUMBDRIVE: INFO bit-stuff sees 0
+                 775 THUMBDRIVE: INFO NRZI saw K
+                 775 THUMBDRIVE: INFO bit-stuff sees 0
+                 785 THUMBDRIVE: INFO NRZI saw J
+                 785 THUMBDRIVE: INFO bit-stuff sees 0
+                 795 THUMBDRIVE: INFO NRZI saw K
+                 795 THUMBDRIVE: INFO bit-stuff sees 0
+                 795 THUMBDRIVE: SYNC FOUND!
+                 805 THUMBDRIVE: INFO NRZI saw K
+                 805 THUMBDRIVE: INFO bit-stuff sees 0
+
+Receiving new package:                 815
+                 815 THUMBDRIVE: INFO NRZI saw K
+                 815 THUMBDRIVE: INFO bit-stuff sees 1
+                 825 THUMBDRIVE: INFO NRZI saw K
+                 825 THUMBDRIVE: INFO bit-stuff sees 1
+                 835 THUMBDRIVE: INFO NRZI saw J
+                 835 THUMBDRIVE: INFO bit-stuff sees 0
+                 845 THUMBDRIVE: INFO NRZI saw K
+                 845 THUMBDRIVE: INFO bit-stuff sees 0
+                 855 THUMBDRIVE: INFO NRZI saw J
+                 855 THUMBDRIVE: INFO bit-stuff sees 0
+                 865 THUMBDRIVE: INFO NRZI saw K
+                 865 THUMBDRIVE: INFO bit-stuff sees 0
+                 875 THUMBDRIVE: INFO NRZI saw K
+                 875 THUMBDRIVE: INFO bit-stuff sees 1
+                 875 THUMBDRIVE: PID = 0011, Inverted PID=1100
+
+                 885 THUMBDRIVE: INFO NRZI saw K
+                 885 THUMBDRIVE: INFO bit-stuff sees 1
+                 895 THUMBDRIVE: INFO NRZI saw K
+                 895 THUMBDRIVE: INFO bit-stuff sees 1
+                 905 THUMBDRIVE: INFO NRZI saw K
+                 905 THUMBDRIVE: INFO bit-stuff sees 1
+                 915 THUMBDRIVE: INFO NRZI saw K
+                 915 THUMBDRIVE: INFO bit-stuff sees 1
+                 925 THUMBDRIVE: INFO NRZI saw K
+                 925 THUMBDRIVE: INFO bit-stuff sees 1
+                 935 THUMBDRIVE: INFO NRZI saw J
+                 935 THUMBDRIVE: INFO bit-stuff sees 0
+                 945 THUMBDRIVE: INFO NRZI saw J
+                 945 THUMBDRIVE: INFO bit-stuff sees 1
+                 955 THUMBDRIVE: INFO NRZI saw J
+                 955 THUMBDRIVE: INFO bit-stuff sees 1
+                 965 THUMBDRIVE: INFO NRZI saw J
+                 965 THUMBDRIVE: INFO bit-stuff sees 1
+                 975 THUMBDRIVE: INFO NRZI saw K
+                 975 THUMBDRIVE: INFO bit-stuff sees 0
+                 985 THUMBDRIVE: INFO NRZI saw K
+                 985 THUMBDRIVE: INFO bit-stuff sees 1
+                 995 THUMBDRIVE: INFO NRZI saw K
+                 995 THUMBDRIVE: INFO bit-stuff sees 1
+                1005 THUMBDRIVE: INFO NRZI saw K
+                1005 THUMBDRIVE: INFO bit-stuff sees 1
+                1015 THUMBDRIVE: INFO NRZI saw K
+                1015 THUMBDRIVE: INFO bit-stuff sees 1
+                1025 THUMBDRIVE: INFO NRZI saw K
+                1025 THUMBDRIVE: INFO bit-stuff sees 1
+                1035 THUMBDRIVE: INFO NRZI saw J
+                1035 THUMBDRIVE: INFO bit-stuff sees 0
+                1045 THUMBDRIVE: INFO NRZI saw J
+                1045 THUMBDRIVE: INFO bit-stuff sees 1
+                1055 THUMBDRIVE: INFO NRZI saw J
+                1055 THUMBDRIVE: INFO bit-stuff sees 1
+                1065 THUMBDRIVE: INFO NRZI saw K
+                1065 THUMBDRIVE: INFO bit-stuff sees 0
+                1075 THUMBDRIVE: INFO NRZI saw K
+                1075 THUMBDRIVE: INFO bit-stuff sees 1
+                1085 THUMBDRIVE: INFO NRZI saw K
+                1085 THUMBDRIVE: INFO bit-stuff sees 1
+                1095 THUMBDRIVE: INFO NRZI saw J
+                1095 THUMBDRIVE: INFO bit-stuff sees 0
+                1105 THUMBDRIVE: INFO NRZI saw J
+                1105 THUMBDRIVE: INFO bit-stuff sees 1
+                1115 THUMBDRIVE: INFO NRZI saw K
+                1115 THUMBDRIVE: INFO bit-stuff sees 0
+                1125 THUMBDRIVE: INFO NRZI saw K
+                1125 THUMBDRIVE: INFO bit-stuff sees 1
+                1135 THUMBDRIVE: INFO NRZI saw J
+                1135 THUMBDRIVE: INFO bit-stuff sees 0
+                1145 THUMBDRIVE: INFO NRZI saw J
+                1145 THUMBDRIVE: INFO bit-stuff sees 1
+                1155 THUMBDRIVE: INFO NRZI saw J
+                1155 THUMBDRIVE: INFO bit-stuff sees 1
+                1165 THUMBDRIVE: INFO NRZI saw J
+                1165 THUMBDRIVE: INFO bit-stuff sees 1
+                1175 THUMBDRIVE: INFO NRZI saw J
+                1175 THUMBDRIVE: INFO bit-stuff sees 1
+                1185 THUMBDRIVE: INFO NRZI saw K
+                1185 THUMBDRIVE: INFO bit-stuff sees 0
+                1195 THUMBDRIVE: INFO NRZI saw K
+                1195 THUMBDRIVE: INFO bit-stuff sees 1
+                1205 THUMBDRIVE: INFO NRZI saw K
+                1205 THUMBDRIVE: INFO bit-stuff sees 1
+                1215 THUMBDRIVE: INFO NRZI saw J
+                1215 THUMBDRIVE: INFO bit-stuff sees 0
+                1225 THUMBDRIVE: INFO NRZI saw J
+                1225 THUMBDRIVE: INFO bit-stuff sees 1
+                1235 THUMBDRIVE: INFO NRZI saw J
+                1235 THUMBDRIVE: INFO bit-stuff sees 1
+                1245 THUMBDRIVE: INFO NRZI saw J
+                1245 THUMBDRIVE: INFO bit-stuff sees 1
+                1255 THUMBDRIVE: INFO NRZI saw J
+                1255 THUMBDRIVE: INFO bit-stuff sees 1
+                1265 THUMBDRIVE: INFO NRZI saw J
+                1265 THUMBDRIVE: INFO bit-stuff sees 1
+                1275 THUMBDRIVE: INFO NRZI saw K
+                1275 THUMBDRIVE: INFO bit-stuff sees 0
+                1285 THUMBDRIVE: INFO NRZI saw K
+                1285 THUMBDRIVE: INFO bit-stuff sees 1
+                1295 THUMBDRIVE: INFO NRZI saw J
+                1295 THUMBDRIVE: INFO bit-stuff sees 0
+                1305 THUMBDRIVE: INFO NRZI saw J
+                1305 THUMBDRIVE: INFO bit-stuff sees 1
+                1315 THUMBDRIVE: INFO NRZI saw K
+                1315 THUMBDRIVE: INFO bit-stuff sees 0
+                1325 THUMBDRIVE: INFO NRZI saw K
+                1325 THUMBDRIVE: INFO bit-stuff sees 1
+                1335 THUMBDRIVE: INFO NRZI saw K
+                1335 THUMBDRIVE: INFO bit-stuff sees 1
+                1345 THUMBDRIVE: INFO NRZI saw K
+                1345 THUMBDRIVE: INFO bit-stuff sees 1
+                1355 THUMBDRIVE: INFO NRZI saw J
+                1355 THUMBDRIVE: INFO bit-stuff sees 0
+                1365 THUMBDRIVE: INFO NRZI saw J
+                1365 THUMBDRIVE: INFO bit-stuff sees 1
+                1375 THUMBDRIVE: INFO NRZI saw K
+                1375 THUMBDRIVE: INFO bit-stuff sees 0
+                1385 THUMBDRIVE: INFO NRZI saw K
+                1385 THUMBDRIVE: INFO bit-stuff sees 1
+                1395 THUMBDRIVE: INFO NRZI saw K
+                1395 THUMBDRIVE: INFO bit-stuff sees 1
+                1405 THUMBDRIVE: INFO NRZI saw K
+                1405 THUMBDRIVE: INFO bit-stuff sees 1
+                1415 THUMBDRIVE: INFO NRZI saw K
+                1415 THUMBDRIVE: INFO bit-stuff sees 1
+                1425 THUMBDRIVE: INFO NRZI saw K
+                1425 THUMBDRIVE: INFO bit-stuff sees 1
+                1435 THUMBDRIVE: INFO NRZI saw K
+                1435 THUMBDRIVE: INFO bit-stuff sees 1
+                1445 THUMBDRIVE: INFO NRZI saw J
+                1445 THUMBDRIVE: INFO bit-stuff sees 0
+                1455 THUMBDRIVE: INFO NRZI saw J
+                1455 THUMBDRIVE: INFO bit-stuff sees 1
+                1465 THUMBDRIVE: INFO NRZI saw K
+                1465 THUMBDRIVE: INFO bit-stuff sees 0
+                1475 THUMBDRIVE: INFO NRZI saw K
+                1475 THUMBDRIVE: INFO bit-stuff sees 1
+                1485 THUMBDRIVE: INFO NRZI saw J
+                1485 THUMBDRIVE: INFO bit-stuff sees 0
+                1495 THUMBDRIVE: INFO NRZI saw J
+                1495 THUMBDRIVE: INFO bit-stuff sees 1
+                1505 THUMBDRIVE: INFO NRZI saw K
+                1505 THUMBDRIVE: INFO bit-stuff sees 0
+                1515 THUMBDRIVE: INFO NRZI saw J
+                1515 THUMBDRIVE: INFO bit-stuff sees 0
+                1525 THUMBDRIVE: INFO NRZI saw J
+                1525 THUMBDRIVE: INFO bit-stuff sees 1
+                1535 THUMBDRIVE: INFO NRZI saw J
+                1535 THUMBDRIVE: INFO bit-stuff sees 1
+                1545 THUMBDRIVE: INFO NRZI saw J
+                1545 THUMBDRIVE: INFO bit-stuff sees 1
+                1555 THUMBDRIVE: INFO NRZI saw J
+                1555 THUMBDRIVE: INFO bit-stuff sees 1
+                1565 THUMBDRIVE: INFO NRZI saw K
+                1565 THUMBDRIVE: INFO bit-stuff sees 0
+                1575 THUMBDRIVE: INFO NRZI saw K
+                1575 THUMBDRIVE: INFO bit-stuff sees 1
+                1585 THUMBDRIVE: INFO NRZI saw K
+                1585 THUMBDRIVE: INFO bit-stuff sees 1
+                1595 THUMBDRIVE: INFO NRZI saw J
+                1595 THUMBDRIVE: INFO bit-stuff sees 0
+                1605 THUMBDRIVE: INFO NRZI saw J
+                1605 THUMBDRIVE: INFO bit-stuff sees 1
+                1615 THUMBDRIVE: INFO NRZI saw J
+                1615 THUMBDRIVE: INFO bit-stuff sees 1
+                1625 THUMBDRIVE: INFO NRZI saw J
+                1625 THUMBDRIVE: INFO bit-stuff sees 1
+                1635 THUMBDRIVE: INFO NRZI saw J
+                1635 THUMBDRIVE: INFO bit-stuff sees 1
+                1645 THUMBDRIVE: INFO NRZI saw K
+                1645 THUMBDRIVE: INFO bit-stuff sees 0
+                1655 THUMBDRIVE: INFO NRZI saw J
+                1655 THUMBDRIVE: INFO bit-stuff sees 0
+                1665 THUMBDRIVE: INFO NRZI saw K
+                1665 THUMBDRIVE: INFO bit-stuff sees 0
+                1675 THUMBDRIVE: INFO NRZI saw K
+                1675 THUMBDRIVE: INFO bit-stuff sees 1
+                1685 THUMBDRIVE: INFO NRZI saw J
+                1685 THUMBDRIVE: INFO bit-stuff sees 0
+                1695 THUMBDRIVE: INFO NRZI saw J
+                1695 THUMBDRIVE: INFO bit-stuff sees 1
+                1695 THUMBDRIVE: ERROR-incorrect CRC16 ending residue: 800d
+                1695 THUMBDRIVE: Correct CRC16 residue
+                1695 THUMBDRIVE: Correct CRC16 residue
+                1695 THUMBDRIVE: Correct CRC16 residue
+                1705 THUMBDRIVE: INFO bit-stuff sees 0
+                1715 THUMBDRIVE: INFO bit-stuff sees 0
+                1715 THUMBDRIVE: Good EOP!
+                1725 THUMBDRIVE: INFO NRZI saw J
+                1725 THUMBDRIVE: INFO bit-stuff sees 0
+Raw data:       KJKJKJKK_KKJKJKKK_KKKKJJJJKKKKKKJJJKKKJJKKJJJJJKKKJJJJJJKKJJKKKKJJKKKKKKKJJKKJJKJJJ_JJKKKJJJJJKJKKJJ_XXJ
+Decoded data:   00000001_11000011_11110111011111011011010101111011011111010101110101111110101010011_1101101111000101 
+Unstuffed data:                   1111011101111101101101010111101101111101010111010111111 101010011_1101101111000101    
+Received CRC:   1101101111000101
+Calculated CRC: 1101101111000101
+PID:            DATA0
+Data:           0xcafebabedeadbeef
+
+                1735 THUMBDRIVE: INFO bit-stuff sees 0
+                1745 THUMBDRIVE: INFO bit-stuff sees 0
+                1755 THUMBDRIVE: INFO bit-stuff sees 0
+$finish called from file "tb.sv", line 27.
+$finish at simulation time                 1757
