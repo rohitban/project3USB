@@ -123,12 +123,23 @@ module rc_dpdm
             end
             RC: begin
                 if(count < total_bits) begin
-                  ns = RC;
-                  en = 1;
-                  if(seen_K)
+                  if(seen_K) begin
+                    ns = RC;
                     s_out = 0;
-                  else if(seen_J)
+                    en = 1;
+                  end
+                  else if(seen_J) begin
+                    ns = RC;
                     s_out = 1;
+                    en = 1;
+                  end
+                  else begin 
+                    //We see neither J nor K on the bus
+                    //So we have unknown data
+                    ns = ERROR;
+                    clr = 1;
+                    EOP_error = 1;
+                  end
                 end
                 else begin
                   ns = (seen_X)?EOP1:ERROR;
