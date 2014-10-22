@@ -1,4 +1,4 @@
-`define DATA_BITS 7'd88
+`define DATA_BITS 7'd101
 `define HSHAKE_BITS 7'd8
 
 `define J 2'b10
@@ -6,34 +6,33 @@
 `define X 2'b00
 
 module rc_dpdm
-        (input  logic 			rst_n, clk,
+        (input  logic        rst_n, clk,
 		 
 		 /*outputs to rc_nrzi */
 		 output logic        s_out,
-		 output logic	      start_rc_nrzi, 
-		 output logic 		   end_rc_nrzi,
+		 output logic	     start_rc_nrzi, 
+		 output logic 		 end_rc_nrzi,
 
 		 /* inputs from protocolFSM */
          //Note that the receive_data/hshake must be constantly asserted
          //by the protocolFSM while it waits for a incoming pkt
 		 input  logic        receive_data,   //expecting a 64bit data
-		 input  logic		   receive_hshake, //expecting a handshake
-		 input  logic 		   rc_EOPerr,	   
-		 //protocolFSM signals rc_dpdm that it received the error signal
+		 input  logic		 receive_hshake, //expecting a handshake	   
+		 
 
 		 //Synchronous reset(DA BIG HAMMERRR!!!!!!)
-		 input logic        abort,
+		 input logic         abort,
          //Abort should take priority so it is the same as a synchronous reset
 
 		 /* ouputs to protocolFSM */
-		 output logic 			EOP_error,      //EOP error
-		 output logic 			got_sync, 		 //found SYNC!
+		 output logic 		 EOP_error,      //EOP error
+		 output logic 		 got_sync, 		 //found SYNC!
 	
-   	    input  logic [1:0]  bus_in,
+    	 input  logic [1:0]  bus_in,
      	 input  logic        enable);
 
     enum logic [3:0] {WAIT,ONLYK,KJ,KJK,KJKJ,KJKJK,KJKJKJ,KJKJKJK,
-                      RC,EOP1,EOP2,ERROR} cs,ns;
+                      RC_HS,RC_DATA,EOP1,EOP2,ERROR} cs,ns;
     
     logic seen_J, seen_K, seen_X;
 
@@ -60,7 +59,7 @@ module rc_dpdm
     logic       ld;
 
     register #(7) bit_reg(.D(mux_out),.Q(total_bits),
-                          .ld,.clr( ),.rst_n,.clk);
+                          .ld,.clr,.rst_n,.clk);
 
 
     always_ff@(posedge clk, negedge rst_n)
@@ -81,7 +80,7 @@ module rc_dpdm
         ld = 0;
         sel_hs = 0;
         en = 0;
-        clr = 0;
+        clr = (abort)?1:0;
 
         case(cs)
 		    WAIT: begin
@@ -117,19 +116,24 @@ module rc_dpdm
                 ns = (seen_K)?KJKJKJK:WAIT;
             end
             KJKJKJK: begin
-                ns = (seen_K)?RC:WAIT;
+                if(seen_K)
+                  if(receive_hshake)
+                    ns = RC_HS;
+                  else//receive_data must be asserted
+                    ns = RC_DATA;
                 got_sync = (seen_K)?1:0;
                 start_rc_nrzi = (seen_K)?1:0;
             end
-            RC: begin
+
+            RC_HS: begin
                 if(count < total_bits) begin
                   if(seen_K) begin
-                    ns = RC;
+                    ns = RC_HS;
                     s_out = 0;
                     en = 1;
                   end
                   else if(seen_J) begin
-                    ns = RC;
+                    ns = RC_HS;
                     s_out = 1;
                     en = 1;
                   end
@@ -148,6 +152,33 @@ module rc_dpdm
                   EOP_error = (seen_X)?0:1;
                 end
             end
+            
+            RC_DATA:begin
+                if(count < total_bits) begin
+                  if(seen_K) begin
+                    ns = RC_DATA;
+                    en = 1;
+                    s_out = 0;
+                  end
+                  else if(seen_J) begin
+                    ns = RC_DATA;
+                    en = 1;
+                    s_out = 1;
+                  end
+                  else begin //seen_X 
+                    ns = EOP1;
+                    clr = 1;
+                    end_rc_nrzi = 1;
+                  end                  
+                end
+                else begin
+                  ns = ERROR;
+                  end_rc_nrzi = 1;
+                  EOP_error = 1;
+                  clr = 1;
+                end
+            end
+
             EOP1: begin
                 ns = (seen_X)?EOP2:ERROR;
                 EOP_error = (seen_X)?0:1;
@@ -157,7 +188,7 @@ module rc_dpdm
                 EOP_error = (seen_J)?0:1;
             end
             ERROR: begin
-                ns = (rc_EOPerr)?WAIT:ERROR;
+                ns = (abort)?WAIT:ERROR;
                 EOP_error = 1;                
             end
         endcase
