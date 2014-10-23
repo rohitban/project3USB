@@ -1,0 +1,2 @@
+
+vcs -sverilog -q -R bitUnstuffer_to_rc_crc.sv bs_decoder.sv pid_checker.sv lib.sv rc_nrzi.sv rc_crc.sv rc_crc16.sv bitUnstuffer.sv
