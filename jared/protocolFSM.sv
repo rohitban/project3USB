@@ -17,8 +17,6 @@
 /* constant Values */
 `define IN_TOK_VAL 19'b1001_0110_10100000_001
 `define OUT_TOK_VAL 19'b1000_0111_10100000_001
-`define ACK 8'b0010_1101 
-`define NAK 8'b0101_1010
 
 /* pkt_status values */
 `define RECEIVED 1'b1
@@ -30,7 +28,7 @@ module protocolFSM
 	(input  logic clk, rst_L,
 
 	 /* inputs from read/write FSM*/
-	 input  logic [1:0]  packet_type,
+	 input  logic [1:0]  msg_type,
 	 input  logic [63:0] protocol_din,
 	 /* outputs to read/write FSM */
 	 output logic        protocol_free,
@@ -65,12 +63,16 @@ module protocolFSM
 	 input  logic 			 EOP_error,
 
 	 /* outputs to rc_DPDM */
-	 output logic 			 rc_EOPerr,
+	 output logic 			 rc_EOPerror,
 	 
 	 /* outputs to rc_DPDM and rc_crc */
 	 output logic 			 receive_data,
-	 output logic 			 receive_hshake
-	 );
+	 output logic 			 receive_hshake,
+	 
+	 output logic 			 abort,
+	 input  logic 			 rc_dpdm_wait, rc_nrzi_wait, 
+	 input  logic 			 bitUnstuff_wait, bs_decoder_wait,
+	 input  logic 			 rc_crc_wait);
 
 	 logic [63:0] data_in_tmp;
 	 logic [63:0] device_data_tmp;
@@ -79,6 +81,7 @@ module protocolFSM
 	 logic pkt_error;
 	 logic incr_attempt, incr_count;
 	 logic clr_count, clr_attempt;
+	 logic all_at_wait;
 
 	enum logic [3:0] {WAIT, 
 	 						 SENDING_TOK,
@@ -93,13 +96,16 @@ module protocolFSM
 		else
 			cs <= ns;
 	
+	assign all_at_wait = (rc_dpdm_wait & rc_nrzi_wait & 
+								 bitUnstuff_wait & bs_decoder_wait & rc_crc_wait);
+
 
 	logic ld_dataWrite, clr_dataWrite;
 
 	counter 	#(4)   attmpt(.count(attempt), .clr(clr_attempt), .en(incr_attempt), 
 								  .clk, .rst_n(rst_L));
 
-	counter  #(9)   count(.count, .clr(clr_count), .en(incr_count), 
+	counter  #(9)   cnt(.count, .clr(clr_count), .en(incr_count), 
 								 .clk, .rst_n(rst_L));
 
 	register #(64)    din(.Q(data_in_tmp), .D(protocol_din), 
@@ -107,7 +113,8 @@ module protocolFSM
 								 .rst_n(rst_L), .clk);
  
 	 always_comb begin
-	 	 /* register */
+		abort = 0;
+		/* register */
 		 ld_dataWrite = 0;
 		 clr_dataWrite = 0;
 
@@ -122,7 +129,7 @@ module protocolFSM
 		 rc_PIDerror = 0;
 		 rc_EOPerror = 0;
 		 /* handshake signal regarding packet */
-		 rc_pkt = 0;
+		 pkt_rec = 0;
 
 		 /* outputs to read/write FSM */
 	 	 protocol_free = 0;
@@ -136,19 +143,19 @@ module protocolFSM
 		 case(cs)
 		 WAIT : 
 		 begin
-		 		if(packet_type == `IN_TOK) 
+		 		if(msg_type == `IN_TOK) 
 					begin
 			 		ns = SENDING_TOK;
 					pkt_type = `TOKEN;
 					token = `IN_TOK_VAL;
 					end
-				else if(packet_type == `OUT_TOK) 
+				else if(msg_type == `OUT_TOK) 
 			  	begin
 					ns = SENDING_TOK;
 					pkt_type = `TOKEN;
 					token = `OUT_TOK_VAL;
 					end
-			 	else if(packet_type == `OUT_DATA) 
+			 	else if(msg_type == `OUT_DATA) 
 			 	 	begin
 			   	ns = SENDING_DATA;
 					ld_dataWrite = 1;
@@ -158,7 +165,7 @@ module protocolFSM
 					data = data_in_tmp;
 					pkt_type = `DATA;
 				 	end
-			 	else if(packet_type == `IN_DATA) 
+			 	else if(msg_type == `IN_DATA) 
 			 	 	begin
 			   	ns = DATA_LISTEN;
 					receive_data = 1;
@@ -193,7 +200,7 @@ module protocolFSM
 				ns = SENDING_NAK;
 				incr_attempt = 1;
 				pkt_type = `HSHAKE;
-				hshake = `NAK;
+				hshake = `NAK_PID;
 				end
 			else if(count <= 9'd255 & ~got_sync)
 				begin
@@ -213,10 +220,11 @@ module protocolFSM
 				begin
 				if(EOP_error | PID_error | CRC_error)
 					begin
+					abort = 1;
 					ns = SENDING_NAK;
 					incr_attempt = 1;
 					pkt_type = `HSHAKE;
-					hshake = `NAK;
+					hshake = `NAK_PID;
 					rc_PIDerror = (PID_error) ? 1 : 0;
 					rc_CRCerror = (CRC_error) ? 1 : 0;
 					rc_EOPerror = (EOP_error) ? 1 : 0;
@@ -231,14 +239,14 @@ module protocolFSM
 				begin
 				ns = SENDING_ACK;
 				pkt_type = `HSHAKE;
-				hshake = `ACK;
+				hshake = `ACK_PID;
 				protocol_dout = device_data;
 				pkt_rec = 1;
 				end
 		end
 		SENDING_NAK :
 		begin
-			if(pkt_sent)
+			if(pkt_sent & all_at_wait) 
 				begin
 				if(attempt > 8)
 					begin
@@ -255,6 +263,7 @@ module protocolFSM
 				end
 			else /* ~pkt_sent */
 				begin
+				abort = 1;
 				ns = SENDING_NAK;
 				end
 		end
@@ -315,6 +324,7 @@ module protocolFSM
 				begin
 					if(PID_error | CRC_error | EOP_error)
 						begin
+						abort = 1;
 						ns = CHECK_ATTEMPTS;
 						incr_attempt = 1;
 						rc_EOPerror = (EOP_error) ? 1 : 0;
@@ -359,11 +369,19 @@ module protocolFSM
 				protocol_free = 1;
 				clr_dataWrite = 1;
 				end
-			else 
+			else /* attempt <= 4'd8 */
 				begin
-				ns = SENDING_DATA;
-				pkt_type = `DATA;
-				data = data_in_tmp;
+				if(all_at_wait)
+					begin
+					ns = SENDING_DATA;
+					pkt_type = `DATA;
+					data = data_in_tmp;
+					end
+				else	
+					begin
+					abort = 1;
+					ns = CHECK_ATTEMPTS;
+					end
 				end
 		end
 	 endcase

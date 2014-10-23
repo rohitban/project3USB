@@ -1,6 +1,6 @@
-`define ACK_PID 4'b0010
-`define NAK_PID 4'b1010
-`define DATA_PID 4'b0011
+`define ACK_pid 4'b0100
+`define NAK_pid 4'b0101
+`define DATA_pid 4'b0011
 
 module pid_checker
 	(input  logic  clk, rst_n,
@@ -38,9 +38,9 @@ module pid_checker
 	endgenerate
 
 	assign inv_eq = (cpid == pid);
-	assign is_pid = ((pid == `NAK_PID) || 
-						  (pid == `ACK_PID) ||
-						  (pid == `DATA_PID));
+	assign is_pid = ((~pid == `NAK_pid) || 
+						  (~pid == `ACK_pid) ||
+						  (~pid == `DATA_pid));
 
 	counter 	#(4)  cnt(.count, .clr, .en(incr), .clk, .rst_n);
 

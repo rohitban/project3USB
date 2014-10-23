@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<opml version="1.0">
+	<head>
+		<title>VCS dump file for DVE debugging</title>
+		<vcsVersion>F-2011.12-SP1</vcsVersion>
+		<dateCreated>Thu Oct 23 04:23:51 2014</dateCreated>
+	</head>
+	<body>
+		<!-- VCS compile options -->
+		<vcsCompileOptions text="/afs/ece.cmu.edu/support/synopsys/synopsys/share/image/usr/local/synopsys/vcs-mx_vF-2011.12-SP1/suse32/bin/vcs1 -Mcc=gcc -Mcplusplus=g++ -Masflags=--32 -Mcfl= -pipe -m32 -O -I/afs/ece.cmu.edu/support/synopsys/synopsys/share/image/usr/local/synopsys/vcs-mx_vF-2011.12-SP1/include  -Mldflags= -melf_i386 -m32  -Mout=simv -Mamsrun= -Mvcsaceobjs= -Mobjects= /afs/ece.cmu.edu/support/synopsys/synopsys/share/image/usr/local/synopsys/vcs-mx_vF-2011.12-SP1/suse32/lib/libvirsim.so /afs/ece.cmu.edu/support/synopsys/synopsys/share/image/usr/local/synopsys/vcs-mx_vF-2011.12-SP1/suse32/lib/librterrorinf.so /afs/ece.cmu.edu/support/synopsys/synopsys/share/image/usr/local/synopsys/vcs-mx_vF-2011.12-SP1/suse32/lib/libsnpsmalloc.so  -Msaverestoreobj=/afs/ece.cmu.edu/support/synopsys/synopsys/share/image/usr/local/synopsys/vcs-mx_vF-2011.12-SP1/suse32/lib/vcs_save_restore_new.o -Mcrt0= -Mcrtn= -Mcsrc= -Msyslibs=/afs/ece.cmu.edu/support/synopsys/synopsys/share/image/usr/local/synopsys/vcs-mx_vF-2011.12-SP1/suse32/lib/ctype-stubs_32.a -ldl -lm  -Xcbug=0x1 -assert enable_diag +cli+4 +vcsd +itf+/afs/ece.cmu.edu/support/synopsys/synopsys/share/image/usr/local/synopsys/vcs-mx_vF-2011.12-SP1/suse32/lib/vcsd.tab +vpi -debug=3 +memcbk -sverilog +vpi -gen_obj top.sv usbBusAnalyzer.svp TA_tb_simple.svp usbHost.sv thumb.sv.e bs_encoder.sv crc5_sd.sv crc_new.sv dpdm.sv nrzi.sv lib.sv protocolFSM.sv bs_decoder.sv bitstuffer.sv bitUnstuffer.sv pid_checker.sv decode_nrzi.sv rc_crc16.sv rc_crc.sv rc_dpdm.sv rc_nrzi.sv rwFSM.sv crc16.sv "/>
+		<!-- File list for the whole design -->
+		<fileList>
+			<file fid="0" path="/afs/ece.cmu.edu/usr/jaewonch/Private/class/18-341/p3/jared/lib.sv" />
+			<file fid="1" path="/afs/ece.cmu.edu/usr/jaewonch/Private/class/18-341/p3/jared/top.sv" />
+			<file fid="2" path="/afs/ece.cmu.edu/usr/jaewonch/Private/class/18-341/p3/jared/rwFSM.sv" />
+			<file fid="3" path="/afs/ece.cmu.edu/usr/jaewonch/Private/class/18-341/p3/jared/nrzi.sv" />
+			<file fid="4" path="/afs/ece.cmu.edu/usr/jaewonch/Private/class/18-341/p3/jared/dpdm.sv" />
+			<file fid="5" path="/afs/ece.cmu.edu/usr/jaewonch/Private/class/18-341/p3/jared/TA_tb_simple.svp" />
+			<file fid="6" path="/afs/ece.cmu.edu/usr/jaewonch/Private/class/18-341/p3/jared/crc16.sv" />
+			<file fid="9" path="/afs/ece.cmu.edu/usr/jaewonch/Private/class/18-341/p3/jared/rc_crc.sv" />
+			<file fid="7" path="/afs/ece.cmu.edu/usr/jaewonch/Private/class/18-341/p3/jared/pid_checker.sv" />
+			<file fid="8" path="/afs/ece.cmu.edu/usr/jaewonch/Private/class/18-341/p3/jared/rc_crc16.sv" />
+			<file fid="10" path="/afs/ece.cmu.edu/usr/jaewonch/Private/class/18-341/p3/jared/usbBusAnalyzer.svp" />
+			<file fid="11" path="/afs/ece.cmu.edu/usr/jaewonch/Private/class/18-341/p3/jared/bitstuffer.sv" />
+			<file fid="12" path="/afs/ece.cmu.edu/usr/jaewonch/Private/class/18-341/p3/jared/decode_nrzi.sv" />
+			<file fid="13" path="/afs/ece.cmu.edu/usr/jaewonch/Private/class/18-341/p3/jared/usbHost.sv" />
+			<file fid="14" path="/afs/ece.cmu.edu/usr/jaewonch/Private/class/18-341/p3/jared/bs_encoder.sv" />
+			<file fid="15" path="/afs/ece.cmu.edu/usr/jaewonch/Private/class/18-341/p3/jared/crc_new.sv" />
+			<file fid="16" path="/afs/ece.cmu.edu/usr/jaewonch/Private/class/18-341/p3/jared/bs_decoder.sv" />
+			<file fid="17" path="/afs/ece.cmu.edu/usr/jaewonch/Private/class/18-341/p3/jared/bitUnstuffer.sv" />
+			<file fid="18" path="/afs/ece.cmu.edu/usr/jaewonch/Private/class/18-341/p3/jared/thumb.sv.e" />
+			<file fid="19" path="/afs/ece.cmu.edu/usr/jaewonch/Private/class/18-341/p3/jared/rc_nrzi.sv" />
+			<file fid="20" path="/afs/ece.cmu.edu/usr/jaewonch/Private/class/18-341/p3/jared/crc5_sd.sv" />
+			<file fid="21" path="/afs/ece.cmu.edu/usr/jaewonch/Private/class/18-341/p3/jared/protocolFSM.sv" />
+			<file fid="22" path="/afs/ece.cmu.edu/usr/jaewonch/Private/class/18-341/p3/jared/rc_dpdm.sv" />
+		</fileList>
+		<!-- Include file list for the whole design -->
+		<includeFileList>
+		</includeFileList>
+		<!-- Encrypted codes list for the whole design -->
+		<encryptedCodesList>
+			<enptCode fid="5" lineno="1:74" />
+			<enptCode fid="10" lineno="1:166" />
+		</encryptedCodesList>
+		<!-- Inactive codes list for the whole design -->
+		<inactiveCodesList>
+		</inactiveCodesList>
+		<!-- Compile options UUM based -->
+		<langKeywords>
+			<svFiles fid="0-22" />
+		</langKeywords>
+		<!--  Case insensitive file list -->
+		<caseInsensitiveFiles fid="" />
+		<!-- Macro definition list for the whole design --> 
+		<macroDefinitionList>
+			<macro name="DATA" module="bsMux" sourceID="0" lineno="135" defID="14" defLine="6" value="1"  vip="false"/>
+			<macro name="HSHAKE" module="bsMux" sourceID="0" lineno="136" defID="14" defLine="8" value="2"  vip="false"/>
+			<macro name="NONE_MSG" module="unnamed$$_0" sourceID="2" lineno="69" defID="2" defLine="1" value="3"  vip="false"/>
+			<macro name="OUT_TOK" module="unnamed$$_2" sourceID="2" lineno="80" defID="21" defLine="13" value="4"  vip="false"/>
+			<macro name="OUT_TOK" module="unnamed$$_3" sourceID="2" lineno="89" defID="21" defLine="13" value="4"  vip="false"/>
+			<macro name="OUT_DATA" module="unnamed$$_5" sourceID="2" lineno="101" defID="21" defLine="14" value="5"  vip="false"/>
+			<macro name="IN_TOK" module="unnamed$$_9" sourceID="2" lineno="121" defID="21" defLine="12" value="6"  vip="false"/>
+			<macro name="IN_DATA" module="unnamed$$_12" sourceID="2" lineno="135" defID="21" defLine="15" value="7"  vip="false"/>
+			<macro name="OUT_DATA" module="unnamed$$_19" sourceID="2" lineno="175" defID="21" defLine="14" value="5"  vip="false"/>
+			<macro name="OUT_TOK" module="unnamed$$_23" sourceID="2" lineno="194" defID="21" defLine="13" value="4"  vip="false"/>
+			<macro name="OUT_DATA" module="unnamed$$_26" sourceID="2" lineno="207" defID="21" defLine="14" value="5"  vip="false"/>
+			<macro name="X" module="unnamed$$_3" sourceID="4" lineno="33" defID="4" defLine="5" value="8"  vip="false"/>
+			<macro name="J" module="unnamed$$_4" sourceID="4" lineno="38" defID="4" defLine="3" value="2"  vip="false"/>
+			<macro name="K" module="unnamed$$_4" sourceID="4" lineno="40" defID="4" defLine="4" value="9"  vip="false"/>
+			<macro name="X" module="unnamed$$_5" sourceID="4" lineno="46" defID="4" defLine="5" value="8"  vip="false"/>
+			<macro name="J" module="unnamed$$_6" sourceID="4" lineno="51" defID="4" defLine="3" value="2"  vip="false"/>
+			<macro name="PROCESSING" module="unnamed$$_0" sourceID="9" lineno="98" defID="21" defLine="23" value="10"  vip="false"/>
+			<macro name="NAK_PID_VAL" module="unnamed$$_4" sourceID="9" lineno="128" defID="9" defLine="6" value="11"  vip="false"/>
+			<macro name="ACK_PID_VAL" module="unnamed$$_4" sourceID="9" lineno="128" defID="9" defLine="7" value="12"  vip="false"/>
+			<macro name="RECEIVED" module="unnamed$$_5" sourceID="9" lineno="131" defID="21" defLine="22" value="13"  vip="false"/>
+			<macro name="DATA_PID_VAL" module="unnamed$$_4" sourceID="9" lineno="133" defID="9" defLine="8" value="14"  vip="false"/>
+			<macro name="RECEIVED" module="unnamed$$_10" sourceID="9" lineno="158" defID="21" defLine="22" value="13"  vip="false"/>
+			<macro name="RECEIVED" module="unnamed$$_16" sourceID="9" lineno="185" defID="21" defLine="22" value="13"  vip="false"/>
+			<macro name="NAK_pid" module="pid_checker" sourceID="7" lineno="41" defID="7" defLine="2" value="15"  vip="false"/>
+			<macro name="ACK_pid" module="pid_checker" sourceID="7" lineno="42" defID="7" defLine="1" value="16"  vip="false"/>
+			<macro name="DATA_pid" module="pid_checker" sourceID="7" lineno="43" defID="7" defLine="3" value="17"  vip="false"/>
+			<macro name="DATA_SIZE" module="bs_encoder" sourceID="14" lineno="48" defID="14" defLine="2" value="18"  vip="false"/>
+			<macro name="SYNC_IN" module="bs_encoder" sourceID="14" lineno="50" defID="14" defLine="10" value="19"  vip="false"/>
+			<macro name="TOKEN_SIZE" module="bs_encoder" sourceID="14" lineno="53" defID="14" defLine="3" value="20"  vip="false"/>
+			<macro name="SYNC_IN" module="bs_encoder" sourceID="14" lineno="55" defID="14" defLine="10" value="19"  vip="false"/>
+			<macro name="HSHAKE_SIZE" module="bs_encoder" sourceID="14" lineno="58" defID="14" defLine="4" value="21"  vip="false"/>
+			<macro name="SYNC_IN" module="bs_encoder" sourceID="14" lineno="60" defID="14" defLine="10" value="19"  vip="false"/>
+			<macro name="HSHAKE" module="unnamed$$_1" sourceID="14" lineno="140" defID="14" defLine="8" value="2"  vip="false"/>
+			<macro name="TOKEN" module="unnamed$$_1" sourceID="14" lineno="146" defID="14" defLine="7" value="9"  vip="false"/>
+			<macro name="DATA" module="unnamed$$_1" sourceID="14" lineno="152" defID="14" defLine="6" value="1"  vip="false"/>
+			<macro name="HSHAKE" module="unnamed$$_6" sourceID="14" lineno="167" defID="14" defLine="8" value="2"  vip="false"/>
+			<macro name="HSHAKE" module="unnamed$$_7" sourceID="14" lineno="170" defID="14" defLine="8" value="2"  vip="false"/>
+			<macro name="HSHAKE_SIZE" module="unnamed$$_7" sourceID="14" lineno="171" defID="14" defLine="4" value="21"  vip="false"/>
+			<macro name="HSHAKE_SIZE" module="unnamed$$_7" sourceID="14" lineno="176" defID="14" defLine="4" value="21"  vip="false"/>
+			<macro name="TOKEN" module="unnamed$$_13" sourceID="14" lineno="196" defID="14" defLine="7" value="9"  vip="false"/>
+			<macro name="TOKEN" module="unnamed$$_14" sourceID="14" lineno="199" defID="14" defLine="7" value="9"  vip="false"/>
+			<macro name="TOKEN_SIZE" module="unnamed$$_14" sourceID="14" lineno="200" defID="14" defLine="3" value="20"  vip="false"/>
+			<macro name="TOKEN_SIZE" module="unnamed$$_14" sourceID="14" lineno="205" defID="14" defLine="3" value="20"  vip="false"/>
+			<macro name="DATA" module="unnamed$$_20" sourceID="14" lineno="225" defID="14" defLine="6" value="1"  vip="false"/>
+			<macro name="DATA" module="unnamed$$_21" sourceID="14" lineno="228" defID="14" defLine="6" value="1"  vip="false"/>
+			<macro name="DATA_SIZE" module="unnamed$$_21" sourceID="14" lineno="229" defID="14" defLine="2" value="18"  vip="false"/>
+			<macro name="DATA_SIZE" module="unnamed$$_21" sourceID="14" lineno="234" defID="14" defLine="2" value="18"  vip="false"/>
+			<macro name="TOKEN" module="unnamed$$_1" sourceID="15" lineno="156" defID="14" defLine="7" value="9"  vip="false"/>
+			<macro name="DATA" module="unnamed$$_1" sourceID="15" lineno="157" defID="14" defLine="6" value="1"  vip="false"/>
+			<macro name="HSHAKE" module="unnamed$$_1" sourceID="15" lineno="158" defID="14" defLine="8" value="2"  vip="false"/>
+			<macro name="DELAY_T" module="unnamed$$_2" sourceID="15" lineno="165" defID="15" defLine="11" value="22"  vip="false"/>
+			<macro name="DELAY_T" module="unnamed$$_10" sourceID="15" lineno="205" defID="15" defLine="11" value="22"  vip="false"/>
+			<macro name="DELAY_T" module="unnamed$$_18" sourceID="15" lineno="249" defID="15" defLine="11" value="22"  vip="false"/>
+			<macro name="NONE" module="unnamed$$_0" sourceID="21" lineno="141" defID="21" defLine="6" value="8"  vip="false"/>
+			<macro name="IN_TOK" module="unnamed$$_1" sourceID="21" lineno="146" defID="21" defLine="12" value="6"  vip="false"/>
+			<macro name="TOKEN" module="unnamed$$_2" sourceID="21" lineno="149" defID="14" defLine="7" value="9"  vip="false"/>
+			<macro name="IN_TOK_VAL" module="unnamed$$_2" sourceID="21" lineno="150" defID="21" defLine="18" value="23"  vip="false"/>
+			<macro name="OUT_TOK" module="unnamed$$_1" sourceID="21" lineno="152" defID="21" defLine="13" value="4"  vip="false"/>
+			<macro name="TOKEN" module="unnamed$$_3" sourceID="21" lineno="155" defID="14" defLine="7" value="9"  vip="false"/>
+			<macro name="OUT_TOK_VAL" module="unnamed$$_3" sourceID="21" lineno="156" defID="21" defLine="19" value="24"  vip="false"/>
+			<macro name="OUT_DATA" module="unnamed$$_1" sourceID="21" lineno="158" defID="21" defLine="14" value="5"  vip="false"/>
+			<macro name="DATA" module="unnamed$$_4" sourceID="21" lineno="166" defID="14" defLine="6" value="1"  vip="false"/>
+			<macro name="IN_DATA" module="unnamed$$_1" sourceID="21" lineno="168" defID="21" defLine="15" value="7"  vip="false"/>
+			<macro name="HSHAKE" module="unnamed$$_10" sourceID="21" lineno="202" defID="14" defLine="8" value="2"  vip="false"/>
+			<macro name="NAK_PID" module="unnamed$$_10" sourceID="21" lineno="203" defID="21" defLine="2" value="11"  vip="false"/>
+			<macro name="PROCESSING" module="unnamed$$_13" sourceID="21" lineno="219" defID="21" defLine="23" value="10"  vip="false"/>
+			<macro name="HSHAKE" module="unnamed$$_15" sourceID="21" lineno="226" defID="14" defLine="8" value="2"  vip="false"/>
+			<macro name="NAK_PID" module="unnamed$$_15" sourceID="21" lineno="227" defID="21" defLine="2" value="11"  vip="false"/>
+			<macro name="HSHAKE" module="unnamed$$_17" sourceID="21" lineno="241" defID="14" defLine="8" value="2"  vip="false"/>
+			<macro name="ACK_PID" module="unnamed$$_17" sourceID="21" lineno="242" defID="21" defLine="3" value="12"  vip="false"/>
+			<macro name="PROCESSING" module="unnamed$$_33" sourceID="21" lineno="323" defID="21" defLine="23" value="10"  vip="false"/>
+			<macro name="RECEIVED" module="unnamed$$_33" sourceID="21" lineno="340" defID="21" defLine="22" value="13"  vip="false"/>
+			<macro name="NAK_PID" module="unnamed$$_37" sourceID="21" lineno="342" defID="21" defLine="2" value="11"  vip="false"/>
+			<macro name="ACK_PID" module="unnamed$$_37" sourceID="21" lineno="348" defID="21" defLine="3" value="12"  vip="false"/>
+			<macro name="DATA" module="unnamed$$_44" sourceID="21" lineno="377" defID="14" defLine="6" value="1"  vip="false"/>
+			<macro name="J" module="rc_dpdm" sourceID="22" lineno="40" defID="4" defLine="3" value="2"  vip="false"/>
+			<macro name="K" module="rc_dpdm" sourceID="22" lineno="41" defID="4" defLine="4" value="9"  vip="false"/>
+			<macro name="X" module="rc_dpdm" sourceID="22" lineno="42" defID="4" defLine="5" value="8"  vip="false"/>
+			<macro name="DATA_BITS" module="rc_dpdm" sourceID="22" lineno="54" defID="22" defLine="1" value="25"  vip="false"/>
+			<macro name="HSHAKE_BITS" module="rc_dpdm" sourceID="22" lineno="54" defID="22" defLine="2" value="26"  vip="false"/>
+		</macroDefinitionList>
+		<!-- Macro value list for the whole design --> 
+		<macroValueList>
+			<mv i="13" n="1&apos;b1" />
+			<mv i="7" n="3&apos;b100" />
+			<mv i="25" n="7&apos;d101" />
+			<mv i="8" n="2&apos;b00" />
+			<mv i="16" n="4&apos;b0100" />
+			<mv i="19" n="8&apos;b0000_0001" />
+			<mv i="3" n="3&apos;b000" />
+			<mv i="9" n="2&apos;b01" />
+			<mv i="15" n="4&apos;b0101" />
+			<mv i="23" n="19&apos;b1001_0110_10100000_001" />
+			<mv i="24" n="19&apos;b1000_0111_10100000_001" />
+			<mv i="6" n="3&apos;b001" />
+			<mv i="26" n="7&apos;d8" />
+			<mv i="2" n="2&apos;b10" />
+			<mv i="4" n="3&apos;b010" />
+			<mv i="1" n="2&apos;b11" />
+			<mv i="20" n="6&apos;d27" />
+			<mv i="12" n="8&apos;b01001011" />
+			<mv i="5" n="3&apos;b011" />
+			<mv i="18" n="7&apos;d80" />
+			<mv i="21" n="5&apos;d16 " />
+			<mv i="11" n="8&apos;b01011010" />
+			<mv i="14" n="8&apos;b11000011" />
+			<mv i="22" n="6&apos;d15  " />
+			<mv i="10" n="1&apos;b0" />
+			<mv i="17" n="4&apos;b0011" />
+		</macroValueList>
+	</body>
+</opml>

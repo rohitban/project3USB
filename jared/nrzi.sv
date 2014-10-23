@@ -49,7 +49,7 @@ module nrzi
 
    assign d = ~(s_in^s_out);
 
-   gen_dff dff(.clk,.rst_n,.d,.q(s_out),.rd(1'b1),
+   gen_dff dff(.clk,.rst_n,.d,.q(s_out),.rd(1'b1), .clr(1'b0),
                .sync_set);
    /**************************/
 

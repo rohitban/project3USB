@@ -40,7 +40,7 @@ CRT0=
 # C run time startup
 CRTN=
 # Machine specific libraries
-SYSLIBS=/afs/ece.cmu.edu/support/synopsys/synopsys/share/image/usr/local/synopsys/vcs-mx_vF-2011.12-SP1/suse32/lib/ctype-stubs_32.a -ldl  -lc -lm -lpthread -ldl
+SYSLIBS=/afs/ece.cmu.edu/support/synopsys/synopsys/share/image/usr/local/synopsys/vcs-mx_vF-2011.12-SP1/suse32/lib/ctype-stubs_32.a -ldl -lm  -lc -lpthread -ldl
 
 # Default defines
 SHELL=/bin/sh
@@ -82,8 +82,8 @@ clobber : clean
 	rm -f $(PRODUCT) $(PRODUCT_TIMESTAMP) 
 
 $(PRODUCT_TIMESTAMP) : $(PRODUCT)
-	@-if [ -x $(PRODUCT) ]; then chmod -x $(PRODUCT); fi
-	@$(LD) $(CRT0) -o $(PRODUCT) $(LDFLAGS) $(PCLDFLAGS) $(PICAFLAGS) -Wl,-whole-archive  $(VHDL_OBJS)  -Wl,-no-whole-archive  $(VLOG_OBJS)  $(SYSC_OBJS)  $(LIBS)   $(CMODLIB) $(RUNTIME)     $(LINK_TB)   $(VCS_SAVE_RESTORE_OBJ) $(SYSLIBS) $(CRTN)
+	-if [ -x $(PRODUCT) ]; then chmod -x $(PRODUCT); fi
+	$(LD) $(CRT0) -o $(PRODUCT) $(LDFLAGS) $(PCLDFLAGS) $(PICAFLAGS) -Wl,-whole-archive  $(VHDL_OBJS)  -Wl,-no-whole-archive  $(VLOG_OBJS)  $(SYSC_OBJS)  $(LIBS)   $(CMODLIB) $(RUNTIME)     $(LINK_TB)   $(VCS_SAVE_RESTORE_OBJ) $(SYSLIBS) $(CRTN)
 	@rm -f $(CG_OBJS) $(VCS_INCR_OBJS)
 	@touch $(PRODUCT_TIMESTAMP)
 

@@ -62,7 +62,7 @@ module crc(
 								 .crc16_out, .crc16_rec);
 
 
-	fifo					q(.clk, .rst_n,
+	fifo					q(.clk, .rst_n, .count(),
 									.we, .re,
 									.bit_in, .bit_out(s_out),
 									.full, .empty);
@@ -281,48 +281,5 @@ module crc_master_fsm
 
 endmodule: crc_master_fsm
 
-
-module fifo
-  (input  logic        clk, rst_n,
-   input  logic        we, re,
-   input  logic        bit_in,
-   output logic        full, empty,
-   output logic        bit_out);
-	
-  logic [5:0] count;
-  bit [31:0] Q;
-  logic [4:0]  putPtr, getPtr; //pointers wrap
-
-  assign empty = (count == 0),
-         full  = (count == 6'd32),
-         bit_out = Q[getPtr];
-
-  //always_ff@(posedge clk, negedge rst_b)
-  always_ff@(posedge clk, negedge rst_n)
-  begin
-    if (~rst_n) begin
-      count <= 0;
-      getPtr <= 0;
-      putPtr <= 0;
-    end
-    else begin
-      if(we & re & (!full) & (!empty)) begin
-        Q[putPtr] <= bit_in;
-        putPtr <= putPtr + 1;
-        getPtr <= getPtr + 1;
-      end
-      else if(we & (!full)) begin
-        Q[putPtr] <= bit_in;
-        putPtr <= putPtr + 1;
-        count <= count + 1;
-      end
-      else if(re & (!empty)) begin
-        getPtr <= getPtr + 1;
-        count <= count - 1;
-      end
-    end
-  end
-
-endmodule : fifo
 
 

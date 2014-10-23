@@ -6,8 +6,11 @@
 	2. If PID is valid, it Unstuffs the data and sends them to crc module
 */
 module bitUnstuffer
-	(input  logic  clk, rst_n,
-	 
+	(input  logic  clk, rst_n, abort,
+	
+	 /* outputs to protocolFSM */
+	 output logic  bitUnstuff_wait,
+
 	 /* inputs from rc_nrzi */
 	 input  logic  s_in,
 	 input  logic  start_unstuffer, 
@@ -22,10 +25,11 @@ module bitUnstuffer
 	logic incr_ones, incr_pid, clr_ones, clr_pid;
 	logic [4:0] ones_count, pid_count;
 	logic we, re, full, empty;
+	logic [5:0] count;
 
 
 	/* FIFO */
-	fifo      q(.clk, .rst_n, 
+	fifo      q(.clk, .rst_n, .count ,
 							.we, .re, 
 							.bit_in(s_in), .bit_out(s_out),
 							.full, .empty);
@@ -45,7 +49,10 @@ endmodule : bitUnstuffer
 
 
 module bitUnstuffer_fsm
-	(input  logic  clk, rst_n,
+	(input  logic  clk, rst_n, abort,
+	 /* outputs to protocolFSM */
+	 output logic  bitUnstuff_wait,
+	 
 	 /* inputs from rc_nrzi */
 	 input  logic  s_in, 
 	 input  logic  start_unstuffer,
@@ -58,6 +65,7 @@ module bitUnstuffer_fsm
 
 	 /* FIFO */
 	 input  logic  empty,
+	 input  logic [5:0] count,
 	 output logic  re, we,
 
 	 /* outputs to counters */
@@ -70,16 +78,20 @@ module bitUnstuffer_fsm
 	 always_ff@(posedge clk, negedge rst_n)
 	 	if(~rst_n)
 			cs <= WAIT;
+		else if(abort)
+			cs <= WAIT;
 		else
 			cs <= ns;
 
 		always_comb begin
+			bitUnstuff_wait = 0;	
 			start_decode = 0;
 			end_decode = 0;
 			/* FIFO */
 			re = 0; we = 0;
 			/* Counter */
-			clr_pid = 0; clr_ones = 0;
+			clr_pid = (abort) ? 1 : 0; 
+			clr_ones = (abort) ? 1 : 0;
 			incr_pid = 0; incr_ones = 0;
 			case(cs)
 			WAIT: 
@@ -87,6 +99,7 @@ module bitUnstuffer_fsm
 				ns = (start_unstuffer) ? READY : WAIT;
 				we = (start_unstuffer) ? 1 : 0;
 				incr_pid = (start_unstuffer) ? 1 : 0;
+				bitUnstuff_wait = (start_unstuffer) ? 1 : 0;
 			end
 			READY:
 			begin
@@ -123,13 +136,13 @@ module bitUnstuffer_fsm
 			end
 			DONE:
 			begin
-				if(empty) 
+				if(count == 1) 
 					begin
 					ns = WAIT;
 					clr_ones = 1;
 					clr_pid = 1;
 					end_decode = 1;
-					re = 0;
+					re = 1;
 					end
 				else
 					begin

@@ -1,4 +1,4 @@
-`define NONE 3'b000
+`define NONE_MSG 3'b000
 `define IN_TOK 3'b001
 `define OUT_TOK 3'b010
 `define OUT_DATA 3'b011
@@ -26,7 +26,7 @@ module rwFSM
 	 input  logic 			timeout,
 	 input  logic [63:0] rw_din,
 	 /* outputs to ProtocolFSM */
-	 output logic [1:0]  packet_type,
+	 output logic [1:0]  msg_type,
 	 output logic [63:0] rw_dout
 	 );
 	
@@ -66,7 +66,7 @@ module rwFSM
 		rwFSM_done = 0;
 		read_success = 0;
 		write_success = 0;
-		packet_type = `NONE;
+		msg_type = `NONE_MSG;
 		
 		case(cs)
 		WAIT : 
@@ -77,7 +77,7 @@ module rwFSM
 				ns = R_TOK_OUT;
 				ld_mempage = 1;
 				//RWmemPage_tmp = RWmemPage;       //store memPage
-				packet_type = `OUT_TOK;		    
+				msg_type = `OUT_TOK;		    
 				end
 			else if(protocol_free & start_write) 
 				begin
@@ -86,7 +86,7 @@ module rwFSM
 				ld_w_data = 1;
 				//data_write_tmp = RW_data_write;  //store data_write
 				//RWmemPage_tmp = RWmemPage;       //store memPage
-				packet_type = `OUT_TOK;				
+				msg_type = `OUT_TOK;				
 				end
 			else
 				ns = WAIT;
@@ -98,7 +98,7 @@ module rwFSM
 			if(protocol_free)   
 				begin //TOKEN OUT packet has been sent
 				ns = R_MEMPAGE;
-				packet_type = `OUT_DATA; 
+				msg_type = `OUT_DATA; 
 				rw_dout = {48'h000000000000, RWmemPage_tmp};
 				end
 			else //still sending TOKEN OUT packet
@@ -118,7 +118,7 @@ module rwFSM
 			else if(protocol_free) 
 				begin //DATA has been sent successfully
 				ns = R_TOK_IN;
-			  packet_type = `IN_TOK;   
+			  msg_type = `IN_TOK;   
 				end
 			else 
 				begin
@@ -132,7 +132,7 @@ module rwFSM
 				begin
 				//TOKEN IN HAS BEEN SENT
 				ns = R_DATA;
-				packet_type = `IN_DATA; 
+				msg_type = `IN_DATA; 
 				end
 			else 
 				begin
@@ -172,7 +172,7 @@ module rwFSM
 				begin //TOKEN OUT packet has been sent
 				//SNED DATA OUT
 				ns = W_MEMPAGE;
-				packet_type = `OUT_DATA; 
+				msg_type = `OUT_DATA; 
 			  rw_dout = {48'h000000000000, RWmemPage_tmp}; 
 				end
 			else 
@@ -191,7 +191,7 @@ module rwFSM
 			else if(protocol_free) 
 				begin //DATA has been sent successfully
 				ns = W_TOK_OUT1;
-			  packet_type = `OUT_TOK;   
+			  msg_type = `OUT_TOK;   
 				end
 			else 
 				begin
@@ -204,7 +204,7 @@ module rwFSM
 			if(protocol_free)      
 				begin
 				ns = W_DATA;
-				packet_type = `OUT_DATA;
+				msg_type = `OUT_DATA;
 				rw_dout = RW_data_write;  
 				end
 			else 

@@ -8,7 +8,7 @@
 `define DATA_PID_VAL 8'b11000011
 
 module rc_crc
-	(input  logic  clk, rst_n,
+	(input  logic  clk, rst_n, abort,
 	 
 	 /* inputs from bit Unstuffer */
 	 input  logic  s_in,
@@ -23,7 +23,9 @@ module rc_crc
 	 output logic  pkt_status,
 	 output logic  CRC_error,
 	 output logic  [7:0]  rc_hshake,
-	 output logic  [63:0] rc_data
+	 output logic  [63:0] rc_data,
+	 output logic  rc_crc_wait
+	 
 	 );
 	
 	logic ld_pid, ld_d, shft_pid, shft_d, clr;
@@ -57,13 +59,13 @@ endmodule : rc_crc
 
 
 module rc_crc_fsm
-	(input  logic  clk, rst_n,
+	(input  logic  clk, rst_n, abort,
 	 input  logic  start_rc_crc, end_rc_crc,
 	 /* inputs/outputs to protocolFSM */
 	 input  logic  pkt_rec, rc_CRCerror,
 	 output logic  pkt_status,
 	 output logic  CRC_error,
-	 
+	 output logic  rc_crc_wait,	 
 	 /* inputs/outputs to counter */
 	 input  logic  [6:0]  count,
 	 output logic         clr, incr,
@@ -76,6 +78,7 @@ module rc_crc_fsm
 	 /* inputs/outputs to crc16 */
 	 output logic  crc16_start, crc16_rec,
 	 input  logic  crc16_done, crc_valid
+
 	 );
 
 	enum logic [2:0] {WAIT, GET_PID, HSHAKE_DONE, DATA_WAIT, 
@@ -84,15 +87,19 @@ module rc_crc_fsm
 	always_ff@(posedge clk, negedge rst_n)
 		if(~rst_n)
 			cs <= WAIT;
+		else if(abort)
+			cs <= WAIT;
 		else
 			cs <= ns;
 	
 	always_comb begin
+		rc_crc_wait = 0;
 		/* protocolFSM */
 		pkt_status = `PROCESSING;
 		CRC_error = 0;
 		/* counter */
-		clr = 0; incr = 0;
+		clr = (abort) ? 1 : 0; 
+		incr = 0;
 		/* registers */
 		ld_pid = 0; ld_d = 0; ld_crc16 = 0;
 		shft_pid = 0; shft_d = 0; shft_crc16 = 0;
@@ -105,6 +112,7 @@ module rc_crc_fsm
 			incr = (start_rc_crc) ? 1 : 0;
 			ld_pid = (start_rc_crc) ? 1 : 0;
 			shft_pid = (start_rc_crc) ? 1 : 0;
+			rc_crc_wait = (start_rc_crc) ? 1 : 0;
 		end
 		GET_PID: 
 		begin
@@ -133,7 +141,7 @@ module rc_crc_fsm
 				else 
 					begin
 					ns = GET_PID;
-					$display("THERE IS A BUG IN GET_PID!!!!!");
+					$display("PID VALUE IS WRONG!!! PID_CHECKED SHOULD BE 1, PID_VALID SHOULD BE 0!!");
 					end
 				end
 		end

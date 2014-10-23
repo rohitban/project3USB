@@ -41,8 +41,8 @@ module rc_nrzi_test;
 
 	initial begin
 	$monitor($time, , 
-				"bitunstuff_out = %b, unstuff_cs(%s), unstuff_ns(%s), crc_cs(%s), crc_ns(%s), bs_decode_cs(%s), bs_decode_ns(%s), PIDchecked(%b) PIDvalid(%b) rc_shake=%b, pkt_status =%b ",
-				 s_out, unstuff.fsm.cs.name, unstuff.fsm.ns.name, crc.fsm.cs.name, crc.fsm.ns.name,bsdecode.fsm.cs.name, bsdecode.fsm.ns.name, bsdecode.PID_checked, bsdecode.PID_valid,rc_hshake, pkt_status );
+				"bitunstuff_out = %b, unstuff_cs(%s), unstuff_ns(%s), crc_cs(%s), crc_ns(%s), bs_decode_cs(%s), bs_decode_ns(%s), PIDchecked(%b) PIDvalid(%b) rc_shake=%b, pkt_status =%b \n \ ",
+				 s_out_unstuff, unstuff.fsm.cs.name, unstuff.fsm.ns.name, crc.fsm.cs.name, crc.fsm.ns.name,bsdecode.fsm.cs.name, bsdecode.fsm.ns.name, bsdecode.PID_checked, bsdecode.PID_valid,rc_hshake, pkt_status );
 	
 	end_unstuffer <= 0;
    data = "11000011111101110111110110110101011110110111110101011101011111101010100111101101111000101";

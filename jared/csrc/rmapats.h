@@ -1442,18 +1442,10 @@ extern void CallMhdlCoercedPort(void*, UP);
 extern "C" {
 #endif
 void  hsF_0_0_0_(UB  * I655, scalar  val);
-void  hsC_0_1_0_(UB  * I655, scalar  val);
-void  hsF_0_2_0_(UB  * I655, scalar  val);
-void  hsC_0_3_0_(UB  * I655, scalar  val);
-void  hsF_0_4_0_(UB  * I655, scalar  val);
-void  hsF_0_5_0_(UB  * I655, scalar  val);
-void  hsF_0_6_0_(UB  * I655, scalar  val);
-void  hsF_0_6_5_(UB  * I655, UB  val);
-void  hsF_0_7_0_(UB  * I655, scalar  val);
-void  hsF_0_7_5_(UB  * I655, UB  val);
-void  hsC_0_8_0_(UB  * I655, scalar  val);
-void  hsF_0_9_0_(UB  * I655, scalar  val);
-void  hsF_0_10_0_(UB  * I655, scalar  val);
+void  hsF_0_0_1_(UB  * I655, scalar  val, U  I764, scalar  * I763);
+void  hsF_0_0_2_(UB  * I655);
+void  hsF_0_0_8_(UB  * I655, scalar  val);
+void  hsF_0_1_0_(UB  * I655, scalar  val);
 void  schedNewEvent(struct dummyq_struct * I748, EBLK  * I749, U  I556);
 U   bsfFun(U  I760);
 #ifdef __cplusplus

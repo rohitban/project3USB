@@ -1,5 +1,5 @@
 psSimBaseName                      	simv
-pDaiDir                            	/afs/ece.cmu.edu/usr/jaewonch/Private/class/18-341/p3/draft/simv.daidir
+pDaiDir                            	/afs/ece.cmu.edu/usr/jaewonch/Private/class/18-341/p3/jared/simv.daidir
 destPath                           	csrc/
 hsMainFileCount                    	0
 hsMainFileName                     	dummy
@@ -161,7 +161,7 @@ fHsimNewEvcdForce                  	0
 fHsimNewEvcdTest                   	0
 fHsimDumpElabData                  	1
 fHsimNoDeposit                     	0
-fHsimDumpOffsetData                	0
+fHsimDumpOffsetData                	1
 fNoOfsOpt                          	0
 fHsimDynamicElab                   	1
 fHsimDynamicElabDiag               	0
@@ -419,7 +419,7 @@ fHsimMdbNewDebugOpt                	0
 fHsimMdbNewDebugOptExitOnError     	1
 fHsimNewDebugOptMemDiag            	0
 hsGlobalVerboseLevel               	0
-fHsimEnableSeqUdpWrite             	0
+fHsimEnableSeqUdpWrite             	1
 fEnableNewFinalStrHash             	0
 fEnableNewAssert                   	0
 fRunDbgDmma                        	0

@@ -2,7 +2,7 @@
  * crc16_fsm - This module takes the data and computes 
  * the remainder 
  */
-module crc16_fsm
+module rc_crc16_fsm
     (output logic [15:0] sync_set, rd,
      output logic        clr, comp_ld, comp_shift,
      output logic        clr_cnt,en, 
@@ -54,7 +54,7 @@ module crc16_fsm
        endcase
     end
 
-endmodule: crc16_fsm
+endmodule: rc_crc16_fsm
 
 module rc_crc16
     (output logic        crc16_out,
@@ -102,11 +102,11 @@ module rc_crc16
    generate
     for(i = 0; i < 16; i = i+1) 
 
-      inv_gen_dff #(i) gen_ff_inst(.clk,.rst_n,.sync_set(sync_set[i]), .clr(1'b0),
+      mult_dff #(i) gen_ff_inst(.clk,.rst_n,.sync_set(sync_set[i]), .clr(1'b0),
                                .d(dff_in[i]),.q(dff_out[i]),.rd(rd[i]));
 
    endgenerate
 
-   crc16_fsm fsm_inst(.*);
+   rc_crc16_fsm fsm_inst(.*);
 
 endmodule: rc_crc16

@@ -83,7 +83,6 @@ module BSfsm(
 	input  logic [1:0] pkt_type,
 	/* outputs to ProtocolFSM */
 	output logic       free_inbound,
-	output logic       pkt_sent,
 
 
 /* bitStuff */
@@ -134,8 +133,6 @@ module BSfsm(
         endr = 0;
 		free_inbound = 0;
 		ld_h = 0; ld_t = 0; ld_d = 0;
-		//pkt_received = 0;
-		pkt_sent = 0;
 		case(cs)
 			
 			/* WAIT state */

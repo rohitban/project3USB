@@ -1,5 +1,6 @@
 
-module inv_gen_dff
+
+module mult_dff
     #(parameter FFID = 0)
     (input  logic d, clk, rst_n, sync_set,rd, clr,
      output logic q);
@@ -15,7 +16,7 @@ module inv_gen_dff
           else if(rd)
             q <= d;
 
-endmodule: inv_gen_dff
+endmodule: mult_dff
 
 
 
@@ -145,9 +146,9 @@ module fifo
    input  logic        we, re,
    input  logic        bit_in,
    output logic        full, empty,
-   output logic        bit_out);
+   output logic        bit_out,
+	output logic [5:0]  count);
 	
-  logic [5:0] count;
   bit [31:0] Q;
   logic [4:0]  putPtr, getPtr; //pointers wrap
 

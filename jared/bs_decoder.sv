@@ -1,5 +1,3 @@
-`define DATA_SIZE 7'd80
-`define HSHAKE_SIZE 5'd16
 
 `define NONE 2'b00
 `define DATA 2'b11
@@ -9,7 +7,7 @@
 
 
 module bs_decoder(
-		input  logic 	clk, rst_n,
+		input  logic 	clk, rst_n, abort,
 
 		/* inputs from bitUnstuffer */
 		input  logic  start_decode, 
@@ -23,6 +21,7 @@ module bs_decoder(
 
 		/* outputs to protocolFSM */
 		output logic  PID_error,
+		output logic  bs_decoder_wait,
 		/* inputs from protocolFSM */
 		input  logic  rc_PIDerror
 	);
@@ -40,7 +39,7 @@ endmodule : bs_decoder
 
 
 module decoderFSM
-	(input  logic  clk, rst_n,
+	(input  logic  clk, rst_n, abort,
 	 input  logic  s_in, 
 	 /* inputs from bitUnstuffer */
 	 input  logic  start_decode,
@@ -55,7 +54,7 @@ module decoderFSM
 	 input  logic  rc_PIDerror,
 	 /*outputs to protocolFSM */
 	 output logic  PID_error,
-
+	 output logic  bs_decoder_wait,
 	 /* inputs from PID_checker */
 	 input  logic  PID_checked,
 	 input  logic  PID_valid,
@@ -69,20 +68,25 @@ module decoderFSM
 	always_ff@(posedge clk, negedge rst_n)
 		if(~rst_n)
 			cs <= WAIT;
+		else if(abort)
+			cs <= WAIT;
 		else
 			cs <= ns;
 	
 	always_comb begin
+	bs_decoder_wait = 0;
 	PID_error = 0;
 	end_PID = 0;
 	start_rc_crc = 0;
 	end_rc_crc = 0;
+	
 	case(cs)
 	WAIT: 
 	begin
 		ns = (start_decode) ? LOAD : WAIT;
 		start_rc_crc = (start_decode) ? 1 : 0;
 		s_out = (start_decode) ? s_in : 1'bx;
+		bs_decoder_wait = (start_decode) ? 1 : 0;
 	end
 	LOAD: 
 	begin
