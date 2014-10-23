@@ -39,7 +39,7 @@ module bitUnstuffer
 										.clr(clr_pid), .count(pid_count));
 	
 	/* FSM */
-	bitUnstuffer_fsm  unstuff(.*);
+	bitUnstuffer_fsm  fsm(.*);
 
 endmodule : bitUnstuffer
 
@@ -100,15 +100,15 @@ module bitUnstuffer_fsm
 					begin
 					start_decode = 1;
 					ns = (end_unstuffer) ? DONE : UNSTUFF;
-					we = (end_unstuffer) ? 0 : 1;
 					re = 1;
+					we = (end_unstuffer) ? 0 : 1;
 					incr_ones = (end_unstuffer) ? 0 : (s_in == 1'b1) ? 1 : 0;
 					end
 			end
 			UNSTUFF:
 			begin
 				ns = (end_unstuffer) ? DONE : UNSTUFF;
-				if(ones_count <= 5'd6)
+				if(ones_count < 5'd6)
 					begin
 					incr_ones = (s_in == 1) ? 1 : 0;
 					clr_ones = (s_in == 0) ?  1 : 0;
