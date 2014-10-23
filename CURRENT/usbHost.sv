@@ -20,7 +20,7 @@ module usbHost
 
   // usbHost starts here!!
 
-	logic [1:0]  msg_type;
+	logic [2:0]  msg_type;
 	logic [15:0] RWmemPage;
 	logic [63:0] RW_data_write, RW_data_read, rw_din, rw_dout;
 	logic start_write, start_read, read_success, write_success;

@@ -24,8 +24,6 @@ module bs_encoder(
 		input  logic [7:0]  hshake, /* Handshake type */
 
 		/* outputs to ProtocolFSM */
-		//output logic        pkt_sent, 
-		output logic 			  pkt_sent,
 		output logic        free_inbound, /* ready to receive */
 			
 		/* inputs from dpdm */
@@ -42,7 +40,6 @@ module bs_encoder(
 		logic 			clr, ld_d, ld_t, ld_h;
 		logic				d_shft, t_shft, h_shft;
 
-		assign pkt_sent = sent_pkt;
 
 		/* data piso */
 		piso_register  #(`DATA_SIZE,0)  dpiso(.clk, .rst_n, .clr,.ld(ld_d), 

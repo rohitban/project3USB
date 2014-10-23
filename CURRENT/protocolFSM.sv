@@ -37,7 +37,6 @@ module protocolFSM
 
 	 /* inputs from bit stream encoder */
 	 input  logic 			free_inbound,
-	 input  logic 			pkt_sent,
 	 /* outputs to bit stream encoder */
 	 output logic [1:0]  pkt_type,
 	 output logic [18:0] token, 
@@ -57,6 +56,9 @@ module protocolFSM
 	 output logic 			pkt_rec,  /* if an uncorrupted packet has been received */
 	 output logic 			rc_CRCerror, /* received crc error */
 	 output logic 			rc_PIDerror,  /* received PID error */
+
+	 /* inputs from DPDM */
+	 input  logic         sent_pkt,
 
 	 /* inputs from rc_DPDM */
 	 input  logic 			 got_sync,
@@ -182,7 +184,7 @@ module protocolFSM
 		 /* TOKEN TRANSACTION */
 		 SENDING_TOK : 
 		 begin
-			  if(pkt_sent) 
+			  if(sent_pkt) 
 					begin
 					ns = WAIT;
 					protocol_free = 1;
@@ -246,7 +248,7 @@ module protocolFSM
 		end
 		SENDING_NAK :
 		begin
-			if(pkt_sent & all_at_wait) 
+			if(sent_pkt & all_at_wait) 
 				begin
 				if(attempt > 8)
 					begin
@@ -261,7 +263,7 @@ module protocolFSM
 					receive_data = 1;
 					end
 				end
-			else /* ~pkt_sent */
+			else /* ~sent_pkt */
 				begin
 				abort = 1;
 				ns = SENDING_NAK;
@@ -269,12 +271,12 @@ module protocolFSM
 		end
 		SENDING_ACK :
 		begin
-			if(pkt_sent)
+			if(sent_pkt)
 				begin
 				ns = WAIT;
 				protocol_free = 1;
 				end
-			else /* ~pkt_sent */
+			else /* ~sent_pkt */
 				begin
 				ns = SENDING_ACK;
 				pkt_rec = 1;
@@ -291,11 +293,11 @@ module protocolFSM
 						timeout = 1;
 						protocol_free = 1;
 						end
-				 else if(attempt <= 4'd8 && ~pkt_sent)
+				 else if(attempt <= 4'd8 && ~sent_pkt)
 				 		begin
 						ns = SENDING_DATA;
 						end
-				 else if(attempt <= 4'd8 && pkt_sent)
+				 else if(attempt <= 4'd8 && sent_pkt)
 				 		begin
 						ns = HSHAKE_LISTEN;
 						receive_hshake = 1;
