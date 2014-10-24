@@ -1,5 +1,11 @@
 0 
-35
+43
++cli+4
++itf+/afs/ece.cmu.edu/support/synopsys/synopsys/share/image/usr/local/synopsys/vcs-mx_vF-2011.12-SP1/suse32/lib/vcsd.tab
++memcbk
++vcsd
++vpi
++vpi
 -Mamsrun=
 -Masflags=--32
 -Mcc=gcc
@@ -12,8 +18,10 @@
 -Mobjects= /afs/ece.cmu.edu/support/synopsys/synopsys/share/image/usr/local/synopsys/vcs-mx_vF-2011.12-SP1/suse32/lib/libvirsim.so /afs/ece.cmu.edu/support/synopsys/synopsys/share/image/usr/local/synopsys/vcs-mx_vF-2011.12-SP1/suse32/lib/librterrorinf.so /afs/ece.cmu.edu/support/synopsys/synopsys/share/image/usr/local/synopsys/vcs-mx_vF-2011.12-SP1/suse32/lib/libsnpsmalloc.so
 -Mout=simv
 -Msaverestoreobj=/afs/ece.cmu.edu/support/synopsys/synopsys/share/image/usr/local/synopsys/vcs-mx_vF-2011.12-SP1/suse32/lib/vcs_save_restore_new.o
--Msyslibs=/afs/ece.cmu.edu/support/synopsys/synopsys/share/image/usr/local/synopsys/vcs-mx_vF-2011.12-SP1/suse32/lib/ctype-stubs_32.a -ldl
+-Msyslibs=/afs/ece.cmu.edu/support/synopsys/synopsys/share/image/usr/local/synopsys/vcs-mx_vF-2011.12-SP1/suse32/lib/ctype-stubs_32.a -ldl -lm
 -Mvcsaceobjs=
+-Xcbug=0x1
+-debug=3
 -gen_obj
 -q
 -sverilog
@@ -36,7 +44,7 @@ rc_crc.sv
 rc_crc16.sv
 rc_dpdm.sv
 45
-sysc_uni_pwd=/afs/ece.cmu.edu/usr/jaewonch/Private/class/18-341/p3/jared
+sysc_uni_pwd=/afs/ece.cmu.edu/usr/jaewonch/Private/class/18-341/p3/CURRENT
 XILINX_DSP=/afs/ece/support/xilinx/xilinx.release/14.2/ISE_DS/ISE
 XILINX=/afs/ece/support/xilinx/xilinx.release/14.2/ISE_DS/ISE
 VMR_MODE_FLAG=32
@@ -52,9 +60,9 @@ UNAME=/bin/uname
 TOOL_HOME=/afs/ece.cmu.edu/support/synopsys/synopsys/share/image/usr/local/synopsys/vcs-mx_vF-2011.12-SP1/suse32
 SYN_DIR=/usr/local/synopsys/synopsys-2007.03-SP5
 SYNOPSYS=/usr/local/synopsys
-SSH_TTY=/dev/pts/30
-SSH_CONNECTION=128.237.178.35 59131 128.2.131.13 22
-SSH_CLIENT=128.237.178.35 59131 22
+SSH_TTY=/dev/pts/43
+SSH_CONNECTION=128.237.232.216 62067 128.2.131.13 22
+SSH_CLIENT=128.237.232.216 62067 22
 SSH_ASKPASS=/usr/libexec/openssh/gnome-ssh-askpass
 SELINUX_USE_CURRENT_RANGE=
 SELINUX_ROLE_REQUESTED=
@@ -67,11 +75,11 @@ QTDIR=/usr/lib64/qt-3.3
 OVA_UUM=0
 MODULESHOME=/usr/share/Modules
 MODULEPATH=/usr/share/Modules/modulefiles:/etc/modulefiles
-MALLOC_PERTURB_=6
+MALLOC_PERTURB_=235
 MALLOC_CHECK_=1
 LOADEDMODULES=
 LESSOPEN=|/usr/bin/lesspipe.sh %s
-KRB5CCNAME=FILE:/var/tmp/krb5cc_jaewonch_CZ4m5X
+KRB5CCNAME=FILE:/var/tmp/krb5cc_jaewonch_65uElK
 KDEDIRS=/usr
 HOSTNAME=ece003.ece.cmu.edu
 HISTCONTROL=ignoredups
@@ -83,24 +91,25 @@ BASH_FUNC_module()=() {  eval `/usr/bin/modulecmd bash $*`
 }
 AKLOG=/usr/bin/aklog
 0
-17
-1414094169 dpdm.sv
+18
+1414104670 dpdm.sv
 1414094143 nrzi.sv
-1414094099 bitstuffer.sv
+1414106097 bitstuffer.sv
 1414050415 crc16.sv
 1414032243 crc5_sd.sv
-1414093347 crc_new.sv
-1414081021 bs_encoder.sv
-1414092245 protocolFSM.sv
+1414129438 crc_new.sv
+1414109783 bs_encoder.sv
+1414108645 protocolFSM.sv
 1414089553 rc_dpdm.sv
 1414089680 decode_nrzi.sv
-1414090805 bitUnstuffer.sv
+1414109472 bitUnstuffer.sv
 1414050366 rc_crc16.sv
 1414089713 rc_crc.sv
-1414043821 lib.sv
+1414131145 lib.sv
 1414090921 pid_checker.sv
-1414089758 bs_decoder.sv
-1414095141 protocol_test.sv
+1414109701 bs_decoder.sv
+1414130506 protocol_test.sv
+1338174308 /afs/ece.cmu.edu/support/synopsys/synopsys/share/image/usr/local/synopsys/vcs-mx_vF-2011.12-SP1/suse32/lib/vcsd.tab
 4
 0 
 1338179553 /afs/ece.cmu.edu/support/synopsys/synopsys/share/image/usr/local/synopsys/vcs-mx_vF-2011.12-SP1/suse32/lib/libvirsim.so

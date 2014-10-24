@@ -2,16 +2,16 @@ CC=vcs
 
 FLAGS=-sverilog -debug -assert filter -assert enable_diag
 
-default: student
+default: simple
 
 #student: top.sv usbBusAnalyzer.svp tb.sv usbHost.sv thumb.sv.e 
 #	$(CC) $(FLAGS) top.sv usbBusAnalyzer.svp tb.sv usbHost.sv thumb.sv.e
-student: top.sv usbBusAnalyzer.svp tb.sv usbHost.sv thumb.sv.e bs_encoder.sv crc5_sd.sv crc_new.sv dpdm.sv nrzi.sv lib.sv protocolFSM.sv bs_decoder.sv bitstuffer.sv bitUnstuffer.sv pid_checker.sv decode_nrzi.sv rc_crc16.sv rc_crc.sv rc_dpdm.sv rwFSM.sv crc16.sv 
-	$(CC) $(FLAGS) top.sv usbBusAnalyzer.svp tb.sv usbHost.sv thumb.sv.e bs_encoder.sv crc5_sd.sv crc_new.sv dpdm.sv nrzi.sv lib.sv protocolFSM.sv bs_decoder.sv bitstuffer.sv bitUnstuffer.sv pid_checker.sv decode_nrzi.sv rc_crc16.sv rc_crc.sv rc_dpdm.sv rwFSM.sv crc16.sv 
+#student: top.sv usbBusAnalyzer.svp tb.sv usbHost.sv thumb.sv.e bs_encoder.sv crc5_sd.sv crc_new.sv dpdm.sv nrzi.sv lib.sv protocolFSM.sv bs_decoder.sv bitstuffer.sv bitUnstuffer.sv pid_checker.sv decode_nrzi.sv rc_crc16.sv rc_crc.sv rc_dpdm.sv rwFSM.sv crc16.sv 
+#	$(CC) $(FLAGS) top.sv usbBusAnalyzer.svp tb.sv usbHost.sv thumb.sv.e bs_encoder.sv crc5_sd.sv crc_new.sv dpdm.sv nrzi.sv lib.sv protocolFSM.sv bs_decoder.sv bitstuffer.sv bitUnstuffer.sv pid_checker.sv decode_nrzi.sv rc_crc16.sv rc_crc.sv rc_dpdm.sv rwFSM.sv crc16.sv 
 
 
-#simple: top.sv usbBusAnalyzer.svp TA_tb_simple.svp usbHost.sv thumb.sv.e bs_encoder.sv crc5_sd.sv crc_new.sv dpdm.sv nrzi.sv lib.sv protocolFSM.sv bs_decoder.sv bitstuffer.sv bitUnstuffer.sv pid_checker.sv decode_nrzi.sv rc_crc16.sv rc_crc.sv rc_dpdm.sv rwFSM.sv crc16.sv 
-#	$(CC) $(FLAGS) top.sv usbBusAnalyzer.svp TA_tb_simple.svp usbHost.sv thumb.sv.e bs_encoder.sv crc5_sd.sv crc_new.sv dpdm.sv nrzi.sv lib.sv protocolFSM.sv bs_decoder.sv bitstuffer.sv bitUnstuffer.sv pid_checker.sv decode_nrzi.sv rc_crc16.sv rc_crc.sv rc_dpdm.sv rwFSM.sv crc16.sv 
+simple: top.sv usbBusAnalyzer.svp TA_tb_simple.svp usbHost.sv thumb.sv.e bs_encoder.sv crc5_sd.sv crc_new.sv dpdm.sv nrzi.sv lib.sv protocolFSM.sv bs_decoder.sv bitstuffer.sv bitUnstuffer.sv pid_checker.sv decode_nrzi.sv rc_crc16.sv rc_crc.sv rc_dpdm.sv rwFSM.sv crc16.sv 
+	$(CC) $(FLAGS) top.sv usbBusAnalyzer.svp TA_tb_simple.svp usbHost.sv thumb.sv.e bs_encoder.sv crc5_sd.sv crc_new.sv dpdm.sv nrzi.sv lib.sv protocolFSM.sv bs_decoder.sv bitstuffer.sv bitUnstuffer.sv pid_checker.sv decode_nrzi.sv rc_crc16.sv rc_crc.sv rc_dpdm.sv rwFSM.sv crc16.sv 
 
 #full: top.sv usbBusAnalyzer.svp TA_tb_full.svp usbHost.sv thumb.sv.e
 #	$(CC) $(FLAGS) top.sv usbBusAnalyzer.svp TA_tb_full.svp usbHost.sv thumb.sv.e

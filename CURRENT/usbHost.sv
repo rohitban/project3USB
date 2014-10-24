@@ -39,8 +39,8 @@ module usbHost
 	logic receive_data, receive_hshake;
 	logic abort, got_sync;
 	logic [1:0] pkt_type;
-	logic [63:0] protocol_din, rc_data;
-	logic protocol_dout, free_inbound, pkt_sent;
+	logic [63:0] protocol_dout, protocol_din, rc_data;
+	logic free_inbound, pkt_sent;
 	logic [18:0] token;
 	logic [7:0] hshake, rc_hshake;
 	logic [71:0] data;
@@ -220,8 +220,8 @@ module usbHost
    input  bit [63:0] data_write, // array of bytes to write
    output bit        success);
 
-	start_write <= 0;
-	@(posedge clk);
+//	start_write <= 0;
+//	@(posedge clk);
 	RWmemPage <= memPage_write;
 	RWdata_write <= data_write;
 	start_write <= 1;

@@ -26,7 +26,7 @@ module rwFSM
 	 input  logic 			timeout,
 	 input  logic [63:0] rw_din,
 	 /* outputs to ProtocolFSM */
-	 output logic [1:0]  msg_type,
+	 output logic [2:0]  msg_type,
 	 output logic [63:0] rw_dout
 	 );
 	

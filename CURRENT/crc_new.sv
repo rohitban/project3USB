@@ -49,6 +49,7 @@ module crc(
     /*Delay counter*/
 		logic incr, clr;
 		logic [5:0] delay_count;
+		logic [5:0] qcount;
 
 	crc5			tcrc(.clk, .rst_n, 
 								 .s_in,
@@ -62,7 +63,7 @@ module crc(
 								 .crc16_out, .crc16_rec);
 
 
-	fifo					q(.clk, .rst_n, .count(),
+	fifo					q(.clk, .rst_n, .count(qcount),
 									.we, .re,
 									.bit_in, .bit_out(s_out),
 									.full, .empty);
@@ -91,6 +92,7 @@ module crc_master_fsm
     output logic re, we,
     //Queue status
 	  input logic empty,
+	  logic [5:0] qcount,
 
     //MUX control
     output logic sel_16,
@@ -238,7 +240,7 @@ module crc_master_fsm
               crc16_rec = (crc16_done)? 1'b1 : 1'b0;
             end
             DATA3: begin
-							 sel_16 =1;
+					sel_16 =1;
                crc_ns = (empty)?WAIT : DATA3;
                endb = (empty)? 1'b1 : 1'b0;
                re = (~empty & ~pause)? 1'b1 : 1'b0;

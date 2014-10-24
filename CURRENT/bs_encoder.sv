@@ -3,11 +3,14 @@
 `define TOKEN_SIZE 6'd27
 `define HSHAKE_SIZE 5'd16 
 
-`define DATA 2'b11
+/* outputs to bit stream encoder */
+`define NONE 2'b00
 `define TOKEN 2'b01
+`define DATA 2'b11
 `define HSHAKE 2'b10
 
-`define SYNC_IN 8'b0000_0001
+
+`define SYNC_IN 8'b00000001
 
 module bs_encoder(
 		input  logic        clk, rst_n,
@@ -24,6 +27,8 @@ module bs_encoder(
 		input  logic [7:0]  hshake, /* Handshake type */
 
 		/* outputs to ProtocolFSM */
+		//output logic        pkt_sent, 
+		output logic 			  pkt_sent,
 		output logic        free_inbound, /* ready to receive */
 			
 		/* inputs from dpdm */
@@ -39,22 +44,24 @@ module bs_encoder(
 		logic [6:0] count;
 		logic 			clr, ld_d, ld_t, ld_h;
 		logic				d_shft, t_shft, h_shft;
-
+		logic [79:0]  data_out;
+		logic [26:0]  token_out;
+		logic [15:0]  hshake_out;
 
 		/* data piso */
 		piso_register  #(`DATA_SIZE,0)  dpiso(.clk, .rst_n, .clr,.ld(ld_d), 
                                               .left(d_shft),.s_out(d_out), 
-                                              .D({`SYNC_IN,data}), .Q());
+                                              .D({`SYNC_IN, data}), .Q(data_out));
 
 		/* token piso */
 		piso_register  #(`TOKEN_SIZE,0)  tpiso(.clk, .rst_n, .clr,.ld(ld_t),
                                                .left(t_shft),.s_out(t_out), 
-                                               .D({`SYNC_IN,token}), .Q());
+                                               .D({`SYNC_IN,token}), .Q(token_out));
 
 		/* handshake piso */
 		piso_register  #(`HSHAKE_SIZE,0)   hpiso(.clk, .rst_n, .clr,.ld(ld_h), 
                                                  .left(h_shft),.s_out(h_out), 
-                                                 .D({`SYNC_IN,hshake}), .Q());
+                                                 .D({`SYNC_IN,hshake}), .Q(hshake_out));
 
 		/* counts the number of bits of data/token/handshake */
 		counter  #(7)  bcount(.clk, .rst_n, .clr,.en(incr), .count);
@@ -134,6 +141,9 @@ module BSfsm(
 			
 			/* WAIT state */
 			WAIT : begin
+				ld_d = 1;
+				ld_h = 1;
+				ld_t = 1;
 				if(pkt_type == `HSHAKE) begin
 					ns = HS0;
 					ld_h = 1;
@@ -160,6 +170,7 @@ module BSfsm(
 
 			/* HANDSHAKE states */
 			HS0 : begin
+				ld_h = 1;
 				ns = HS1;
 				pkt_in = `HSHAKE;
 			end
@@ -189,6 +200,7 @@ module BSfsm(
 
 			/* TOKEN states */
 			TOK0 : begin
+				ld_t = 1;
 				ns = TOK1;
 				pkt_in = `TOKEN;
 			end
@@ -218,6 +230,7 @@ module BSfsm(
 
 			/* DATA states */
 			DATA0 : begin
+				ld_d = 1;
 				ns = DATA1;
 				pkt_in = `DATA;
 			end

@@ -3,7 +3,6 @@
 `define DATA 2'b11
 `define HSHAKE 2'b10
 
-`define SYNC_IN 8'b0000_0001
 
 
 module bs_decoder(

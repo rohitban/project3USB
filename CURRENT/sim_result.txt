@@ -39,11 +39,13 @@ ld -r -m elf_i386 -o pre_vcsobj_1_3.o --whole-archive pre_vcsobj_1_3.a --no-whol
   token (xxxxxxxxxxxxxxxxxxx) 
   data (xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx) 
   ----------------- 
+  pkt_sent(0) 
+  --------------- 
   bsEncode_cs(WAIT)  bsEncode_ns(WAIT) 
-  crc_cs()  crc_ns()  pkt_in(00)  endr(0) 
-  bitStuff_cs()  bitStuff_ns()  start_b(0)  endb(0) 
-  nrzi_cs()  nrzi_ns()  start_nrzi(0)  end_nrzi(0) 
-  dpdm_cs()  dpdm_ns()  start_dpdm(0)  eop(0) 
+  crc_cs(WAIT)  crc_ns(WAIT)  pkt_in(00)  endr(0) 
+  bitStuff_cs(WAIT)  bitStuff_ns(WAIT)  start_b(0)  endb(0) 
+  nrzi_cs(WAIT)  nrzi_ns(WAIT)  start_nrzi(0)  end_nrzi(0) 
+  dpdm_cs(WAIT)  dpdm_ns(WAIT)  start_dpdm(0)  eop(0) 
   ============================================================================ 
   ============================================================================ 
   
@@ -82,11 +84,13 @@ ld -r -m elf_i386 -o pre_vcsobj_1_3.o --whole-archive pre_vcsobj_1_3.a --no-whol
   token (xxxxxxxxxxxxxxxxxxx) 
   data (xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx) 
   ----------------- 
+  pkt_sent(0) 
+  --------------- 
   bsEncode_cs(WAIT)  bsEncode_ns(WAIT) 
-  crc_cs()  crc_ns()  pkt_in(00)  endr(0) 
-  bitStuff_cs()  bitStuff_ns()  start_b(0)  endb(0) 
-  nrzi_cs()  nrzi_ns()  start_nrzi(0)  end_nrzi(0) 
-  dpdm_cs()  dpdm_ns()  start_dpdm(0)  eop(0) 
+  crc_cs(WAIT)  crc_ns(WAIT)  pkt_in(00)  endr(0) 
+  bitStuff_cs(WAIT)  bitStuff_ns(WAIT)  start_b(0)  endb(0) 
+  nrzi_cs(WAIT)  nrzi_ns(WAIT)  start_nrzi(0)  end_nrzi(0) 
+  dpdm_cs(WAIT)  dpdm_ns(WAIT)  start_dpdm(0)  eop(0) 
   ============================================================================ 
   ============================================================================ 
   
@@ -125,11 +129,13 @@ ld -r -m elf_i386 -o pre_vcsobj_1_3.o --whole-archive pre_vcsobj_1_3.a --no-whol
   token (xxxxxxxxxxxxxxxxxxx) 
   data (xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx) 
   ----------------- 
+  pkt_sent(0) 
+  --------------- 
   bsEncode_cs(WAIT)  bsEncode_ns(WAIT) 
-  crc_cs()  crc_ns()  pkt_in(00)  endr(0) 
-  bitStuff_cs()  bitStuff_ns()  start_b(0)  endb(0) 
-  nrzi_cs()  nrzi_ns()  start_nrzi(0)  end_nrzi(0) 
-  dpdm_cs()  dpdm_ns()  start_dpdm(0)  eop(0) 
+  crc_cs(WAIT)  crc_ns(WAIT)  pkt_in(00)  endr(0) 
+  bitStuff_cs(WAIT)  bitStuff_ns(WAIT)  start_b(0)  endb(0) 
+  nrzi_cs(WAIT)  nrzi_ns(WAIT)  start_nrzi(0)  end_nrzi(0) 
+  dpdm_cs(WAIT)  dpdm_ns(WAIT)  start_dpdm(0)  eop(0) 
   ============================================================================ 
   ============================================================================ 
   
@@ -168,11 +174,13 @@ ld -r -m elf_i386 -o pre_vcsobj_1_3.o --whole-archive pre_vcsobj_1_3.a --no-whol
   token (xxxxxxxxxxxxxxxxxxx) 
   data (xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx) 
   ----------------- 
+  pkt_sent(0) 
+  --------------- 
   bsEncode_cs(WAIT)  bsEncode_ns(WAIT) 
-  crc_cs()  crc_ns()  pkt_in(00)  endr(0) 
-  bitStuff_cs()  bitStuff_ns()  start_b(0)  endb(0) 
-  nrzi_cs()  nrzi_ns()  start_nrzi(0)  end_nrzi(0) 
-  dpdm_cs()  dpdm_ns()  start_dpdm(0)  eop(0) 
+  crc_cs(WAIT)  crc_ns(WAIT)  pkt_in(00)  endr(0) 
+  bitStuff_cs(WAIT)  bitStuff_ns(WAIT)  start_b(0)  endb(0) 
+  nrzi_cs(WAIT)  nrzi_ns(WAIT)  start_nrzi(0)  end_nrzi(0) 
+  dpdm_cs(WAIT)  dpdm_ns(WAIT)  start_dpdm(0)  eop(0) 
   ============================================================================ 
   ============================================================================ 
   
@@ -211,11 +219,13 @@ ld -r -m elf_i386 -o pre_vcsobj_1_3.o --whole-archive pre_vcsobj_1_3.a --no-whol
   token (xxxxxxxxxxxxxxxxxxx) 
   data (xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx) 
   ----------------- 
+  pkt_sent(0) 
+  --------------- 
   bsEncode_cs(WAIT)  bsEncode_ns(WAIT) 
-  crc_cs()  crc_ns()  pkt_in(00)  endr(0) 
-  bitStuff_cs()  bitStuff_ns()  start_b(0)  endb(0) 
-  nrzi_cs()  nrzi_ns()  start_nrzi(0)  end_nrzi(0) 
-  dpdm_cs()  dpdm_ns()  start_dpdm(0)  eop(0) 
+  crc_cs(WAIT)  crc_ns(WAIT)  pkt_in(00)  endr(0) 
+  bitStuff_cs(WAIT)  bitStuff_ns(WAIT)  start_b(0)  endb(0) 
+  nrzi_cs(WAIT)  nrzi_ns(WAIT)  start_nrzi(0)  end_nrzi(0) 
+  dpdm_cs(WAIT)  dpdm_ns(WAIT)  start_dpdm(0)  eop(0) 
   ============================================================================ 
   ============================================================================ 
   
@@ -255,11 +265,13 @@ SYNC has been FOUND!
   token (xxxxxxxxxxxxxxxxxxx) 
   data (xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx) 
   ----------------- 
+  pkt_sent(0) 
+  --------------- 
   bsEncode_cs(WAIT)  bsEncode_ns(WAIT) 
-  crc_cs()  crc_ns()  pkt_in(00)  endr(0) 
-  bitStuff_cs()  bitStuff_ns()  start_b(0)  endb(0) 
-  nrzi_cs()  nrzi_ns()  start_nrzi(0)  end_nrzi(0) 
-  dpdm_cs()  dpdm_ns()  start_dpdm(0)  eop(0) 
+  crc_cs(WAIT)  crc_ns(WAIT)  pkt_in(00)  endr(0) 
+  bitStuff_cs(WAIT)  bitStuff_ns(WAIT)  start_b(0)  endb(0) 
+  nrzi_cs(WAIT)  nrzi_ns(WAIT)  start_nrzi(0)  end_nrzi(0) 
+  dpdm_cs(WAIT)  dpdm_ns(WAIT)  start_dpdm(0)  eop(0) 
   ============================================================================ 
   ============================================================================ 
   
@@ -298,11 +310,13 @@ SYNC has been FOUND!
   token (xxxxxxxxxxxxxxxxxxx) 
   data (xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx) 
   ----------------- 
+  pkt_sent(0) 
+  --------------- 
   bsEncode_cs(WAIT)  bsEncode_ns(WAIT) 
-  crc_cs()  crc_ns()  pkt_in(00)  endr(0) 
-  bitStuff_cs()  bitStuff_ns()  start_b(0)  endb(0) 
-  nrzi_cs()  nrzi_ns()  start_nrzi(0)  end_nrzi(0) 
-  dpdm_cs()  dpdm_ns()  start_dpdm(0)  eop(0) 
+  crc_cs(WAIT)  crc_ns(WAIT)  pkt_in(00)  endr(0) 
+  bitStuff_cs(WAIT)  bitStuff_ns(WAIT)  start_b(0)  endb(0) 
+  nrzi_cs(WAIT)  nrzi_ns(WAIT)  start_nrzi(0)  end_nrzi(0) 
+  dpdm_cs(WAIT)  dpdm_ns(WAIT)  start_dpdm(0)  eop(0) 
   ============================================================================ 
   ============================================================================ 
   
@@ -341,11 +355,13 @@ SYNC has been FOUND!
   token (xxxxxxxxxxxxxxxxxxx) 
   data (xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx) 
   ----------------- 
+  pkt_sent(0) 
+  --------------- 
   bsEncode_cs(WAIT)  bsEncode_ns(WAIT) 
-  crc_cs()  crc_ns()  pkt_in(00)  endr(0) 
-  bitStuff_cs()  bitStuff_ns()  start_b(0)  endb(0) 
-  nrzi_cs()  nrzi_ns()  start_nrzi(0)  end_nrzi(0) 
-  dpdm_cs()  dpdm_ns()  start_dpdm(0)  eop(0) 
+  crc_cs(WAIT)  crc_ns(WAIT)  pkt_in(00)  endr(0) 
+  bitStuff_cs(WAIT)  bitStuff_ns(WAIT)  start_b(0)  endb(0) 
+  nrzi_cs(WAIT)  nrzi_ns(WAIT)  start_nrzi(0)  end_nrzi(0) 
+  dpdm_cs(WAIT)  dpdm_ns(WAIT)  start_dpdm(0)  eop(0) 
   ============================================================================ 
   ============================================================================ 
   
@@ -384,11 +400,13 @@ SYNC has been FOUND!
   token (xxxxxxxxxxxxxxxxxxx) 
   data (xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx) 
   ----------------- 
+  pkt_sent(0) 
+  --------------- 
   bsEncode_cs(WAIT)  bsEncode_ns(WAIT) 
-  crc_cs()  crc_ns()  pkt_in(00)  endr(0) 
-  bitStuff_cs()  bitStuff_ns()  start_b(0)  endb(0) 
-  nrzi_cs()  nrzi_ns()  start_nrzi(0)  end_nrzi(0) 
-  dpdm_cs()  dpdm_ns()  start_dpdm(0)  eop(0) 
+  crc_cs(WAIT)  crc_ns(WAIT)  pkt_in(00)  endr(0) 
+  bitStuff_cs(WAIT)  bitStuff_ns(WAIT)  start_b(0)  endb(0) 
+  nrzi_cs(WAIT)  nrzi_ns(WAIT)  start_nrzi(0)  end_nrzi(0) 
+  dpdm_cs(WAIT)  dpdm_ns(WAIT)  start_dpdm(0)  eop(0) 
   ============================================================================ 
   ============================================================================ 
   
@@ -427,11 +445,13 @@ SYNC has been FOUND!
   token (xxxxxxxxxxxxxxxxxxx) 
   data (xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx) 
   ----------------- 
+  pkt_sent(0) 
+  --------------- 
   bsEncode_cs(WAIT)  bsEncode_ns(WAIT) 
-  crc_cs()  crc_ns()  pkt_in(00)  endr(0) 
-  bitStuff_cs()  bitStuff_ns()  start_b(0)  endb(0) 
-  nrzi_cs()  nrzi_ns()  start_nrzi(0)  end_nrzi(0) 
-  dpdm_cs()  dpdm_ns()  start_dpdm(0)  eop(0) 
+  crc_cs(WAIT)  crc_ns(WAIT)  pkt_in(00)  endr(0) 
+  bitStuff_cs(WAIT)  bitStuff_ns(WAIT)  start_b(0)  endb(0) 
+  nrzi_cs(WAIT)  nrzi_ns(WAIT)  start_nrzi(0)  end_nrzi(0) 
+  dpdm_cs(WAIT)  dpdm_ns(WAIT)  start_dpdm(0)  eop(0) 
   ============================================================================ 
   ============================================================================ 
   
@@ -470,11 +490,13 @@ SYNC has been FOUND!
   token (xxxxxxxxxxxxxxxxxxx) 
   data (xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx) 
   ----------------- 
+  pkt_sent(0) 
+  --------------- 
   bsEncode_cs(WAIT)  bsEncode_ns(WAIT) 
-  crc_cs()  crc_ns()  pkt_in(00)  endr(0) 
-  bitStuff_cs()  bitStuff_ns()  start_b(0)  endb(0) 
-  nrzi_cs()  nrzi_ns()  start_nrzi(0)  end_nrzi(0) 
-  dpdm_cs()  dpdm_ns()  start_dpdm(0)  eop(0) 
+  crc_cs(WAIT)  crc_ns(WAIT)  pkt_in(00)  endr(0) 
+  bitStuff_cs(WAIT)  bitStuff_ns(WAIT)  start_b(0)  endb(0) 
+  nrzi_cs(WAIT)  nrzi_ns(WAIT)  start_nrzi(0)  end_nrzi(0) 
+  dpdm_cs(WAIT)  dpdm_ns(WAIT)  start_dpdm(0)  eop(0) 
   ============================================================================ 
   ============================================================================ 
   
@@ -513,11 +535,13 @@ SYNC has been FOUND!
   token (xxxxxxxxxxxxxxxxxxx) 
   data (xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx) 
   ----------------- 
+  pkt_sent(0) 
+  --------------- 
   bsEncode_cs(WAIT)  bsEncode_ns(WAIT) 
-  crc_cs()  crc_ns()  pkt_in(00)  endr(0) 
-  bitStuff_cs()  bitStuff_ns()  start_b(0)  endb(0) 
-  nrzi_cs()  nrzi_ns()  start_nrzi(0)  end_nrzi(0) 
-  dpdm_cs()  dpdm_ns()  start_dpdm(0)  eop(0) 
+  crc_cs(WAIT)  crc_ns(WAIT)  pkt_in(00)  endr(0) 
+  bitStuff_cs(WAIT)  bitStuff_ns(WAIT)  start_b(0)  endb(0) 
+  nrzi_cs(WAIT)  nrzi_ns(WAIT)  start_nrzi(0)  end_nrzi(0) 
+  dpdm_cs(WAIT)  dpdm_ns(WAIT)  start_dpdm(0)  eop(0) 
   ============================================================================ 
   ============================================================================ 
   
@@ -556,11 +580,13 @@ SYNC has been FOUND!
   token (xxxxxxxxxxxxxxxxxxx) 
   data (xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx) 
   ----------------- 
+  pkt_sent(0) 
+  --------------- 
   bsEncode_cs(WAIT)  bsEncode_ns(WAIT) 
-  crc_cs()  crc_ns()  pkt_in(00)  endr(0) 
-  bitStuff_cs()  bitStuff_ns()  start_b(0)  endb(0) 
-  nrzi_cs()  nrzi_ns()  start_nrzi(0)  end_nrzi(0) 
-  dpdm_cs()  dpdm_ns()  start_dpdm(0)  eop(0) 
+  crc_cs(WAIT)  crc_ns(WAIT)  pkt_in(00)  endr(0) 
+  bitStuff_cs(WAIT)  bitStuff_ns(WAIT)  start_b(0)  endb(0) 
+  nrzi_cs(WAIT)  nrzi_ns(WAIT)  start_nrzi(0)  end_nrzi(0) 
+  dpdm_cs(WAIT)  dpdm_ns(WAIT)  start_dpdm(0)  eop(0) 
   ============================================================================ 
   ============================================================================ 
   
@@ -599,11 +625,13 @@ SYNC has been FOUND!
   token (xxxxxxxxxxxxxxxxxxx) 
   data (xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx) 
   ----------------- 
+  pkt_sent(0) 
+  --------------- 
   bsEncode_cs(WAIT)  bsEncode_ns(WAIT) 
-  crc_cs()  crc_ns()  pkt_in(00)  endr(0) 
-  bitStuff_cs()  bitStuff_ns()  start_b(0)  endb(0) 
-  nrzi_cs()  nrzi_ns()  start_nrzi(0)  end_nrzi(0) 
-  dpdm_cs()  dpdm_ns()  start_dpdm(0)  eop(0) 
+  crc_cs(WAIT)  crc_ns(WAIT)  pkt_in(00)  endr(0) 
+  bitStuff_cs(WAIT)  bitStuff_ns(WAIT)  start_b(0)  endb(0) 
+  nrzi_cs(WAIT)  nrzi_ns(WAIT)  start_nrzi(0)  end_nrzi(0) 
+  dpdm_cs(WAIT)  dpdm_ns(WAIT)  start_dpdm(0)  eop(0) 
   ============================================================================ 
   ============================================================================ 
   
@@ -642,11 +670,13 @@ SYNC has been FOUND!
   token (xxxxxxxxxxxxxxxxxxx) 
   data (xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx) 
   ----------------- 
+  pkt_sent(0) 
+  --------------- 
   bsEncode_cs(WAIT)  bsEncode_ns(WAIT) 
-  crc_cs()  crc_ns()  pkt_in(00)  endr(0) 
-  bitStuff_cs()  bitStuff_ns()  start_b(0)  endb(0) 
-  nrzi_cs()  nrzi_ns()  start_nrzi(0)  end_nrzi(0) 
-  dpdm_cs()  dpdm_ns()  start_dpdm(0)  eop(0) 
+  crc_cs(WAIT)  crc_ns(WAIT)  pkt_in(00)  endr(0) 
+  bitStuff_cs(WAIT)  bitStuff_ns(WAIT)  start_b(0)  endb(0) 
+  nrzi_cs(WAIT)  nrzi_ns(WAIT)  start_nrzi(0)  end_nrzi(0) 
+  dpdm_cs(WAIT)  dpdm_ns(WAIT)  start_dpdm(0)  eop(0) 
   ============================================================================ 
   ============================================================================ 
   
@@ -685,11 +715,13 @@ SYNC has been FOUND!
   token (xxxxxxxxxxxxxxxxxxx) 
   data (xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx) 
   ----------------- 
+  pkt_sent(0) 
+  --------------- 
   bsEncode_cs(WAIT)  bsEncode_ns(WAIT) 
-  crc_cs()  crc_ns()  pkt_in(00)  endr(0) 
-  bitStuff_cs()  bitStuff_ns()  start_b(0)  endb(0) 
-  nrzi_cs()  nrzi_ns()  start_nrzi(0)  end_nrzi(0) 
-  dpdm_cs()  dpdm_ns()  start_dpdm(0)  eop(0) 
+  crc_cs(WAIT)  crc_ns(WAIT)  pkt_in(00)  endr(0) 
+  bitStuff_cs(WAIT)  bitStuff_ns(WAIT)  start_b(0)  endb(0) 
+  nrzi_cs(WAIT)  nrzi_ns(WAIT)  start_nrzi(0)  end_nrzi(0) 
+  dpdm_cs(WAIT)  dpdm_ns(WAIT)  start_dpdm(0)  eop(0) 
   ============================================================================ 
   ============================================================================ 
   
@@ -728,11 +760,13 @@ SYNC has been FOUND!
   token (xxxxxxxxxxxxxxxxxxx) 
   data (xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx) 
   ----------------- 
+  pkt_sent(0) 
+  --------------- 
   bsEncode_cs(WAIT)  bsEncode_ns(WAIT) 
-  crc_cs()  crc_ns()  pkt_in(00)  endr(0) 
-  bitStuff_cs()  bitStuff_ns()  start_b(0)  endb(0) 
-  nrzi_cs()  nrzi_ns()  start_nrzi(0)  end_nrzi(0) 
-  dpdm_cs()  dpdm_ns()  start_dpdm(0)  eop(0) 
+  crc_cs(WAIT)  crc_ns(WAIT)  pkt_in(00)  endr(0) 
+  bitStuff_cs(WAIT)  bitStuff_ns(WAIT)  start_b(0)  endb(0) 
+  nrzi_cs(WAIT)  nrzi_ns(WAIT)  start_nrzi(0)  end_nrzi(0) 
+  dpdm_cs(WAIT)  dpdm_ns(WAIT)  start_dpdm(0)  eop(0) 
   ============================================================================ 
   ============================================================================ 
   
@@ -771,11 +805,13 @@ SYNC has been FOUND!
   token (xxxxxxxxxxxxxxxxxxx) 
   data (xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx) 
   ----------------- 
+  pkt_sent(0) 
+  --------------- 
   bsEncode_cs(WAIT)  bsEncode_ns(WAIT) 
-  crc_cs()  crc_ns()  pkt_in(00)  endr(0) 
-  bitStuff_cs()  bitStuff_ns()  start_b(0)  endb(0) 
-  nrzi_cs()  nrzi_ns()  start_nrzi(0)  end_nrzi(0) 
-  dpdm_cs()  dpdm_ns()  start_dpdm(0)  eop(0) 
+  crc_cs(WAIT)  crc_ns(WAIT)  pkt_in(00)  endr(0) 
+  bitStuff_cs(WAIT)  bitStuff_ns(WAIT)  start_b(0)  endb(0) 
+  nrzi_cs(WAIT)  nrzi_ns(WAIT)  start_nrzi(0)  end_nrzi(0) 
+  dpdm_cs(WAIT)  dpdm_ns(WAIT)  start_dpdm(0)  eop(0) 
   ============================================================================ 
   ============================================================================ 
   
@@ -814,11 +850,13 @@ SYNC has been FOUND!
   token (xxxxxxxxxxxxxxxxxxx) 
   data (xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx) 
   ----------------- 
+  pkt_sent(0) 
+  --------------- 
   bsEncode_cs(WAIT)  bsEncode_ns(WAIT) 
-  crc_cs()  crc_ns()  pkt_in(00)  endr(0) 
-  bitStuff_cs()  bitStuff_ns()  start_b(0)  endb(0) 
-  nrzi_cs()  nrzi_ns()  start_nrzi(0)  end_nrzi(0) 
-  dpdm_cs()  dpdm_ns()  start_dpdm(0)  eop(0) 
+  crc_cs(WAIT)  crc_ns(WAIT)  pkt_in(00)  endr(0) 
+  bitStuff_cs(WAIT)  bitStuff_ns(WAIT)  start_b(0)  endb(0) 
+  nrzi_cs(WAIT)  nrzi_ns(WAIT)  start_nrzi(0)  end_nrzi(0) 
+  dpdm_cs(WAIT)  dpdm_ns(WAIT)  start_dpdm(0)  eop(0) 
   ============================================================================ 
   ============================================================================ 
   
@@ -857,11 +895,13 @@ SYNC has been FOUND!
   token (xxxxxxxxxxxxxxxxxxx) 
   data (xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx) 
   ----------------- 
+  pkt_sent(0) 
+  --------------- 
   bsEncode_cs(WAIT)  bsEncode_ns(WAIT) 
-  crc_cs()  crc_ns()  pkt_in(00)  endr(0) 
-  bitStuff_cs()  bitStuff_ns()  start_b(0)  endb(0) 
-  nrzi_cs()  nrzi_ns()  start_nrzi(0)  end_nrzi(0) 
-  dpdm_cs()  dpdm_ns()  start_dpdm(0)  eop(0) 
+  crc_cs(WAIT)  crc_ns(WAIT)  pkt_in(00)  endr(0) 
+  bitStuff_cs(WAIT)  bitStuff_ns(WAIT)  start_b(0)  endb(0) 
+  nrzi_cs(WAIT)  nrzi_ns(WAIT)  start_nrzi(0)  end_nrzi(0) 
+  dpdm_cs(WAIT)  dpdm_ns(WAIT)  start_dpdm(0)  eop(0) 
   ============================================================================ 
   ============================================================================ 
   
@@ -900,11 +940,13 @@ SYNC has been FOUND!
   token (xxxxxxxxxxxxxxxxxxx) 
   data (xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx) 
   ----------------- 
+  pkt_sent(0) 
+  --------------- 
   bsEncode_cs(WAIT)  bsEncode_ns(WAIT) 
-  crc_cs()  crc_ns()  pkt_in(00)  endr(0) 
-  bitStuff_cs()  bitStuff_ns()  start_b(0)  endb(0) 
-  nrzi_cs()  nrzi_ns()  start_nrzi(0)  end_nrzi(0) 
-  dpdm_cs()  dpdm_ns()  start_dpdm(0)  eop(0) 
+  crc_cs(WAIT)  crc_ns(WAIT)  pkt_in(00)  endr(0) 
+  bitStuff_cs(WAIT)  bitStuff_ns(WAIT)  start_b(0)  endb(0) 
+  nrzi_cs(WAIT)  nrzi_ns(WAIT)  start_nrzi(0)  end_nrzi(0) 
+  dpdm_cs(WAIT)  dpdm_ns(WAIT)  start_dpdm(0)  eop(0) 
   ============================================================================ 
   ============================================================================ 
   
@@ -943,11 +985,13 @@ SYNC has been FOUND!
   token (xxxxxxxxxxxxxxxxxxx) 
   data (xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx) 
   ----------------- 
+  pkt_sent(0) 
+  --------------- 
   bsEncode_cs(WAIT)  bsEncode_ns(WAIT) 
-  crc_cs()  crc_ns()  pkt_in(00)  endr(0) 
-  bitStuff_cs()  bitStuff_ns()  start_b(0)  endb(0) 
-  nrzi_cs()  nrzi_ns()  start_nrzi(0)  end_nrzi(0) 
-  dpdm_cs()  dpdm_ns()  start_dpdm(0)  eop(0) 
+  crc_cs(WAIT)  crc_ns(WAIT)  pkt_in(00)  endr(0) 
+  bitStuff_cs(WAIT)  bitStuff_ns(WAIT)  start_b(0)  endb(0) 
+  nrzi_cs(WAIT)  nrzi_ns(WAIT)  start_nrzi(0)  end_nrzi(0) 
+  dpdm_cs(WAIT)  dpdm_ns(WAIT)  start_dpdm(0)  eop(0) 
   ============================================================================ 
   ============================================================================ 
   
@@ -986,11 +1030,13 @@ SYNC has been FOUND!
   token (xxxxxxxxxxxxxxxxxxx) 
   data (xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx) 
   ----------------- 
+  pkt_sent(0) 
+  --------------- 
   bsEncode_cs(WAIT)  bsEncode_ns(WAIT) 
-  crc_cs()  crc_ns()  pkt_in(00)  endr(0) 
-  bitStuff_cs()  bitStuff_ns()  start_b(0)  endb(0) 
-  nrzi_cs()  nrzi_ns()  start_nrzi(0)  end_nrzi(0) 
-  dpdm_cs()  dpdm_ns()  start_dpdm(0)  eop(0) 
+  crc_cs(WAIT)  crc_ns(WAIT)  pkt_in(00)  endr(0) 
+  bitStuff_cs(WAIT)  bitStuff_ns(WAIT)  start_b(0)  endb(0) 
+  nrzi_cs(WAIT)  nrzi_ns(WAIT)  start_nrzi(0)  end_nrzi(0) 
+  dpdm_cs(WAIT)  dpdm_ns(WAIT)  start_dpdm(0)  eop(0) 
   ============================================================================ 
   ============================================================================ 
   
@@ -1029,11 +1075,13 @@ SYNC has been FOUND!
   token (xxxxxxxxxxxxxxxxxxx) 
   data (xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx) 
   ----------------- 
+  pkt_sent(0) 
+  --------------- 
   bsEncode_cs(WAIT)  bsEncode_ns(WAIT) 
-  crc_cs()  crc_ns()  pkt_in(00)  endr(0) 
-  bitStuff_cs()  bitStuff_ns()  start_b(0)  endb(0) 
-  nrzi_cs()  nrzi_ns()  start_nrzi(0)  end_nrzi(0) 
-  dpdm_cs()  dpdm_ns()  start_dpdm(0)  eop(0) 
+  crc_cs(WAIT)  crc_ns(WAIT)  pkt_in(00)  endr(0) 
+  bitStuff_cs(WAIT)  bitStuff_ns(WAIT)  start_b(0)  endb(0) 
+  nrzi_cs(WAIT)  nrzi_ns(WAIT)  start_nrzi(0)  end_nrzi(0) 
+  dpdm_cs(WAIT)  dpdm_ns(WAIT)  start_dpdm(0)  eop(0) 
   ============================================================================ 
   ============================================================================ 
   
@@ -1072,11 +1120,13 @@ SYNC has been FOUND!
   token (xxxxxxxxxxxxxxxxxxx) 
   data (xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx) 
   ----------------- 
+  pkt_sent(0) 
+  --------------- 
   bsEncode_cs(WAIT)  bsEncode_ns(WAIT) 
-  crc_cs()  crc_ns()  pkt_in(00)  endr(0) 
-  bitStuff_cs()  bitStuff_ns()  start_b(0)  endb(0) 
-  nrzi_cs()  nrzi_ns()  start_nrzi(0)  end_nrzi(0) 
-  dpdm_cs()  dpdm_ns()  start_dpdm(0)  eop(0) 
+  crc_cs(WAIT)  crc_ns(WAIT)  pkt_in(00)  endr(0) 
+  bitStuff_cs(WAIT)  bitStuff_ns(WAIT)  start_b(0)  endb(0) 
+  nrzi_cs(WAIT)  nrzi_ns(WAIT)  start_nrzi(0)  end_nrzi(0) 
+  dpdm_cs(WAIT)  dpdm_ns(WAIT)  start_dpdm(0)  eop(0) 
   ============================================================================ 
   ============================================================================ 
   
@@ -1115,11 +1165,13 @@ SYNC has been FOUND!
   token (xxxxxxxxxxxxxxxxxxx) 
   data (xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx) 
   ----------------- 
+  pkt_sent(0) 
+  --------------- 
   bsEncode_cs(WAIT)  bsEncode_ns(WAIT) 
-  crc_cs()  crc_ns()  pkt_in(00)  endr(0) 
-  bitStuff_cs()  bitStuff_ns()  start_b(0)  endb(0) 
-  nrzi_cs()  nrzi_ns()  start_nrzi(0)  end_nrzi(0) 
-  dpdm_cs()  dpdm_ns()  start_dpdm(0)  eop(0) 
+  crc_cs(WAIT)  crc_ns(WAIT)  pkt_in(00)  endr(0) 
+  bitStuff_cs(WAIT)  bitStuff_ns(WAIT)  start_b(0)  endb(0) 
+  nrzi_cs(WAIT)  nrzi_ns(WAIT)  start_nrzi(0)  end_nrzi(0) 
+  dpdm_cs(WAIT)  dpdm_ns(WAIT)  start_dpdm(0)  eop(0) 
   ============================================================================ 
   ============================================================================ 
   
@@ -1158,11 +1210,13 @@ SYNC has been FOUND!
   token (xxxxxxxxxxxxxxxxxxx) 
   data (xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx) 
   ----------------- 
+  pkt_sent(0) 
+  --------------- 
   bsEncode_cs(WAIT)  bsEncode_ns(WAIT) 
-  crc_cs()  crc_ns()  pkt_in(00)  endr(0) 
-  bitStuff_cs()  bitStuff_ns()  start_b(0)  endb(0) 
-  nrzi_cs()  nrzi_ns()  start_nrzi(0)  end_nrzi(0) 
-  dpdm_cs()  dpdm_ns()  start_dpdm(0)  eop(0) 
+  crc_cs(WAIT)  crc_ns(WAIT)  pkt_in(00)  endr(0) 
+  bitStuff_cs(WAIT)  bitStuff_ns(WAIT)  start_b(0)  endb(0) 
+  nrzi_cs(WAIT)  nrzi_ns(WAIT)  start_nrzi(0)  end_nrzi(0) 
+  dpdm_cs(WAIT)  dpdm_ns(WAIT)  start_dpdm(0)  eop(0) 
   ============================================================================ 
   ============================================================================ 
   
@@ -1201,11 +1255,13 @@ SYNC has been FOUND!
   token (xxxxxxxxxxxxxxxxxxx) 
   data (xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx) 
   ----------------- 
+  pkt_sent(0) 
+  --------------- 
   bsEncode_cs(WAIT)  bsEncode_ns(WAIT) 
-  crc_cs()  crc_ns()  pkt_in(00)  endr(0) 
-  bitStuff_cs()  bitStuff_ns()  start_b(0)  endb(0) 
-  nrzi_cs()  nrzi_ns()  start_nrzi(0)  end_nrzi(0) 
-  dpdm_cs()  dpdm_ns()  start_dpdm(0)  eop(0) 
+  crc_cs(WAIT)  crc_ns(WAIT)  pkt_in(00)  endr(0) 
+  bitStuff_cs(WAIT)  bitStuff_ns(WAIT)  start_b(0)  endb(0) 
+  nrzi_cs(WAIT)  nrzi_ns(WAIT)  start_nrzi(0)  end_nrzi(0) 
+  dpdm_cs(WAIT)  dpdm_ns(WAIT)  start_dpdm(0)  eop(0) 
   ============================================================================ 
   ============================================================================ 
   
@@ -1244,11 +1300,13 @@ SYNC has been FOUND!
   token (xxxxxxxxxxxxxxxxxxx) 
   data (xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx) 
   ----------------- 
+  pkt_sent(0) 
+  --------------- 
   bsEncode_cs(WAIT)  bsEncode_ns(WAIT) 
-  crc_cs()  crc_ns()  pkt_in(00)  endr(0) 
-  bitStuff_cs()  bitStuff_ns()  start_b(0)  endb(0) 
-  nrzi_cs()  nrzi_ns()  start_nrzi(0)  end_nrzi(0) 
-  dpdm_cs()  dpdm_ns()  start_dpdm(0)  eop(0) 
+  crc_cs(WAIT)  crc_ns(WAIT)  pkt_in(00)  endr(0) 
+  bitStuff_cs(WAIT)  bitStuff_ns(WAIT)  start_b(0)  endb(0) 
+  nrzi_cs(WAIT)  nrzi_ns(WAIT)  start_nrzi(0)  end_nrzi(0) 
+  dpdm_cs(WAIT)  dpdm_ns(WAIT)  start_dpdm(0)  eop(0) 
   ============================================================================ 
   ============================================================================ 
   
@@ -1287,11 +1345,13 @@ SYNC has been FOUND!
   token (xxxxxxxxxxxxxxxxxxx) 
   data (xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx) 
   ----------------- 
+  pkt_sent(0) 
+  --------------- 
   bsEncode_cs(WAIT)  bsEncode_ns(WAIT) 
-  crc_cs()  crc_ns()  pkt_in(00)  endr(0) 
-  bitStuff_cs()  bitStuff_ns()  start_b(0)  endb(0) 
-  nrzi_cs()  nrzi_ns()  start_nrzi(0)  end_nrzi(0) 
-  dpdm_cs()  dpdm_ns()  start_dpdm(0)  eop(0) 
+  crc_cs(WAIT)  crc_ns(WAIT)  pkt_in(00)  endr(0) 
+  bitStuff_cs(WAIT)  bitStuff_ns(WAIT)  start_b(0)  endb(0) 
+  nrzi_cs(WAIT)  nrzi_ns(WAIT)  start_nrzi(0)  end_nrzi(0) 
+  dpdm_cs(WAIT)  dpdm_ns(WAIT)  start_dpdm(0)  eop(0) 
   ============================================================================ 
   ============================================================================ 
   
@@ -1330,11 +1390,13 @@ SYNC has been FOUND!
   token (xxxxxxxxxxxxxxxxxxx) 
   data (xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx) 
   ----------------- 
+  pkt_sent(0) 
+  --------------- 
   bsEncode_cs(WAIT)  bsEncode_ns(WAIT) 
-  crc_cs()  crc_ns()  pkt_in(00)  endr(0) 
-  bitStuff_cs()  bitStuff_ns()  start_b(0)  endb(0) 
-  nrzi_cs()  nrzi_ns()  start_nrzi(0)  end_nrzi(0) 
-  dpdm_cs()  dpdm_ns()  start_dpdm(0)  eop(0) 
+  crc_cs(WAIT)  crc_ns(WAIT)  pkt_in(00)  endr(0) 
+  bitStuff_cs(WAIT)  bitStuff_ns(WAIT)  start_b(0)  endb(0) 
+  nrzi_cs(WAIT)  nrzi_ns(WAIT)  start_nrzi(0)  end_nrzi(0) 
+  dpdm_cs(WAIT)  dpdm_ns(WAIT)  start_dpdm(0)  eop(0) 
   ============================================================================ 
   ============================================================================ 
   
@@ -1373,11 +1435,13 @@ SYNC has been FOUND!
   token (xxxxxxxxxxxxxxxxxxx) 
   data (xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx) 
   ----------------- 
+  pkt_sent(0) 
+  --------------- 
   bsEncode_cs(WAIT)  bsEncode_ns(WAIT) 
-  crc_cs()  crc_ns()  pkt_in(00)  endr(0) 
-  bitStuff_cs()  bitStuff_ns()  start_b(0)  endb(0) 
-  nrzi_cs()  nrzi_ns()  start_nrzi(0)  end_nrzi(0) 
-  dpdm_cs()  dpdm_ns()  start_dpdm(0)  eop(0) 
+  crc_cs(WAIT)  crc_ns(WAIT)  pkt_in(00)  endr(0) 
+  bitStuff_cs(WAIT)  bitStuff_ns(WAIT)  start_b(0)  endb(0) 
+  nrzi_cs(WAIT)  nrzi_ns(WAIT)  start_nrzi(0)  end_nrzi(0) 
+  dpdm_cs(WAIT)  dpdm_ns(WAIT)  start_dpdm(0)  eop(0) 
   ============================================================================ 
   ============================================================================ 
   
@@ -1416,11 +1480,13 @@ SYNC has been FOUND!
   token (xxxxxxxxxxxxxxxxxxx) 
   data (xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx) 
   ----------------- 
+  pkt_sent(0) 
+  --------------- 
   bsEncode_cs(WAIT)  bsEncode_ns(WAIT) 
-  crc_cs()  crc_ns()  pkt_in(00)  endr(0) 
-  bitStuff_cs()  bitStuff_ns()  start_b(0)  endb(0) 
-  nrzi_cs()  nrzi_ns()  start_nrzi(0)  end_nrzi(0) 
-  dpdm_cs()  dpdm_ns()  start_dpdm(0)  eop(0) 
+  crc_cs(WAIT)  crc_ns(WAIT)  pkt_in(00)  endr(0) 
+  bitStuff_cs(WAIT)  bitStuff_ns(WAIT)  start_b(0)  endb(0) 
+  nrzi_cs(WAIT)  nrzi_ns(WAIT)  start_nrzi(0)  end_nrzi(0) 
+  dpdm_cs(WAIT)  dpdm_ns(WAIT)  start_dpdm(0)  eop(0) 
   ============================================================================ 
   ============================================================================ 
   
@@ -1459,11 +1525,13 @@ SYNC has been FOUND!
   token (xxxxxxxxxxxxxxxxxxx) 
   data (xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx) 
   ----------------- 
+  pkt_sent(0) 
+  --------------- 
   bsEncode_cs(WAIT)  bsEncode_ns(WAIT) 
-  crc_cs()  crc_ns()  pkt_in(00)  endr(0) 
-  bitStuff_cs()  bitStuff_ns()  start_b(0)  endb(0) 
-  nrzi_cs()  nrzi_ns()  start_nrzi(0)  end_nrzi(0) 
-  dpdm_cs()  dpdm_ns()  start_dpdm(0)  eop(0) 
+  crc_cs(WAIT)  crc_ns(WAIT)  pkt_in(00)  endr(0) 
+  bitStuff_cs(WAIT)  bitStuff_ns(WAIT)  start_b(0)  endb(0) 
+  nrzi_cs(WAIT)  nrzi_ns(WAIT)  start_nrzi(0)  end_nrzi(0) 
+  dpdm_cs(WAIT)  dpdm_ns(WAIT)  start_dpdm(0)  eop(0) 
   ============================================================================ 
   ============================================================================ 
   
@@ -1502,11 +1570,13 @@ SYNC has been FOUND!
   token (xxxxxxxxxxxxxxxxxxx) 
   data (xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx) 
   ----------------- 
+  pkt_sent(0) 
+  --------------- 
   bsEncode_cs(WAIT)  bsEncode_ns(WAIT) 
-  crc_cs()  crc_ns()  pkt_in(00)  endr(0) 
-  bitStuff_cs()  bitStuff_ns()  start_b(0)  endb(0) 
-  nrzi_cs()  nrzi_ns()  start_nrzi(0)  end_nrzi(0) 
-  dpdm_cs()  dpdm_ns()  start_dpdm(0)  eop(0) 
+  crc_cs(WAIT)  crc_ns(WAIT)  pkt_in(00)  endr(0) 
+  bitStuff_cs(WAIT)  bitStuff_ns(WAIT)  start_b(0)  endb(0) 
+  nrzi_cs(WAIT)  nrzi_ns(WAIT)  start_nrzi(0)  end_nrzi(0) 
+  dpdm_cs(WAIT)  dpdm_ns(WAIT)  start_dpdm(0)  eop(0) 
   ============================================================================ 
   ============================================================================ 
   
@@ -1545,11 +1615,13 @@ SYNC has been FOUND!
   token (xxxxxxxxxxxxxxxxxxx) 
   data (xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx) 
   ----------------- 
+  pkt_sent(0) 
+  --------------- 
   bsEncode_cs(WAIT)  bsEncode_ns(WAIT) 
-  crc_cs()  crc_ns()  pkt_in(00)  endr(0) 
-  bitStuff_cs()  bitStuff_ns()  start_b(0)  endb(0) 
-  nrzi_cs()  nrzi_ns()  start_nrzi(0)  end_nrzi(0) 
-  dpdm_cs()  dpdm_ns()  start_dpdm(0)  eop(0) 
+  crc_cs(WAIT)  crc_ns(WAIT)  pkt_in(00)  endr(0) 
+  bitStuff_cs(WAIT)  bitStuff_ns(WAIT)  start_b(0)  endb(0) 
+  nrzi_cs(WAIT)  nrzi_ns(WAIT)  start_nrzi(0)  end_nrzi(0) 
+  dpdm_cs(WAIT)  dpdm_ns(WAIT)  start_dpdm(0)  eop(0) 
   ============================================================================ 
   ============================================================================ 
   
@@ -1588,11 +1660,13 @@ SYNC has been FOUND!
   token (xxxxxxxxxxxxxxxxxxx) 
   data (xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx) 
   ----------------- 
+  pkt_sent(0) 
+  --------------- 
   bsEncode_cs(WAIT)  bsEncode_ns(WAIT) 
-  crc_cs()  crc_ns()  pkt_in(00)  endr(0) 
-  bitStuff_cs()  bitStuff_ns()  start_b(0)  endb(0) 
-  nrzi_cs()  nrzi_ns()  start_nrzi(0)  end_nrzi(0) 
-  dpdm_cs()  dpdm_ns()  start_dpdm(0)  eop(0) 
+  crc_cs(WAIT)  crc_ns(WAIT)  pkt_in(00)  endr(0) 
+  bitStuff_cs(WAIT)  bitStuff_ns(WAIT)  start_b(0)  endb(0) 
+  nrzi_cs(WAIT)  nrzi_ns(WAIT)  start_nrzi(0)  end_nrzi(0) 
+  dpdm_cs(WAIT)  dpdm_ns(WAIT)  start_dpdm(0)  eop(0) 
   ============================================================================ 
   ============================================================================ 
   
@@ -1631,11 +1705,13 @@ SYNC has been FOUND!
   token (xxxxxxxxxxxxxxxxxxx) 
   data (xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx) 
   ----------------- 
+  pkt_sent(0) 
+  --------------- 
   bsEncode_cs(WAIT)  bsEncode_ns(WAIT) 
-  crc_cs()  crc_ns()  pkt_in(00)  endr(0) 
-  bitStuff_cs()  bitStuff_ns()  start_b(0)  endb(0) 
-  nrzi_cs()  nrzi_ns()  start_nrzi(0)  end_nrzi(0) 
-  dpdm_cs()  dpdm_ns()  start_dpdm(0)  eop(0) 
+  crc_cs(WAIT)  crc_ns(WAIT)  pkt_in(00)  endr(0) 
+  bitStuff_cs(WAIT)  bitStuff_ns(WAIT)  start_b(0)  endb(0) 
+  nrzi_cs(WAIT)  nrzi_ns(WAIT)  start_nrzi(0)  end_nrzi(0) 
+  dpdm_cs(WAIT)  dpdm_ns(WAIT)  start_dpdm(0)  eop(0) 
   ============================================================================ 
   ============================================================================ 
   
@@ -1674,11 +1750,13 @@ SYNC has been FOUND!
   token (xxxxxxxxxxxxxxxxxxx) 
   data (xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx) 
   ----------------- 
+  pkt_sent(0) 
+  --------------- 
   bsEncode_cs(WAIT)  bsEncode_ns(WAIT) 
-  crc_cs()  crc_ns()  pkt_in(00)  endr(0) 
-  bitStuff_cs()  bitStuff_ns()  start_b(0)  endb(0) 
-  nrzi_cs()  nrzi_ns()  start_nrzi(0)  end_nrzi(0) 
-  dpdm_cs()  dpdm_ns()  start_dpdm(0)  eop(0) 
+  crc_cs(WAIT)  crc_ns(WAIT)  pkt_in(00)  endr(0) 
+  bitStuff_cs(WAIT)  bitStuff_ns(WAIT)  start_b(0)  endb(0) 
+  nrzi_cs(WAIT)  nrzi_ns(WAIT)  start_nrzi(0)  end_nrzi(0) 
+  dpdm_cs(WAIT)  dpdm_ns(WAIT)  start_dpdm(0)  eop(0) 
   ============================================================================ 
   ============================================================================ 
   
@@ -1717,11 +1795,13 @@ SYNC has been FOUND!
   token (xxxxxxxxxxxxxxxxxxx) 
   data (xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx) 
   ----------------- 
+  pkt_sent(0) 
+  --------------- 
   bsEncode_cs(WAIT)  bsEncode_ns(WAIT) 
-  crc_cs()  crc_ns()  pkt_in(00)  endr(0) 
-  bitStuff_cs()  bitStuff_ns()  start_b(0)  endb(0) 
-  nrzi_cs()  nrzi_ns()  start_nrzi(0)  end_nrzi(0) 
-  dpdm_cs()  dpdm_ns()  start_dpdm(0)  eop(0) 
+  crc_cs(WAIT)  crc_ns(WAIT)  pkt_in(00)  endr(0) 
+  bitStuff_cs(WAIT)  bitStuff_ns(WAIT)  start_b(0)  endb(0) 
+  nrzi_cs(WAIT)  nrzi_ns(WAIT)  start_nrzi(0)  end_nrzi(0) 
+  dpdm_cs(WAIT)  dpdm_ns(WAIT)  start_dpdm(0)  eop(0) 
   ============================================================================ 
   ============================================================================ 
   
@@ -1760,11 +1840,13 @@ SYNC has been FOUND!
   token (xxxxxxxxxxxxxxxxxxx) 
   data (xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx) 
   ----------------- 
+  pkt_sent(0) 
+  --------------- 
   bsEncode_cs(WAIT)  bsEncode_ns(WAIT) 
-  crc_cs()  crc_ns()  pkt_in(00)  endr(0) 
-  bitStuff_cs()  bitStuff_ns()  start_b(0)  endb(0) 
-  nrzi_cs()  nrzi_ns()  start_nrzi(0)  end_nrzi(0) 
-  dpdm_cs()  dpdm_ns()  start_dpdm(0)  eop(0) 
+  crc_cs(WAIT)  crc_ns(WAIT)  pkt_in(00)  endr(0) 
+  bitStuff_cs(WAIT)  bitStuff_ns(WAIT)  start_b(0)  endb(0) 
+  nrzi_cs(WAIT)  nrzi_ns(WAIT)  start_nrzi(0)  end_nrzi(0) 
+  dpdm_cs(WAIT)  dpdm_ns(WAIT)  start_dpdm(0)  eop(0) 
   ============================================================================ 
   ============================================================================ 
   
@@ -1803,11 +1885,13 @@ SYNC has been FOUND!
   token (xxxxxxxxxxxxxxxxxxx) 
   data (xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx) 
   ----------------- 
+  pkt_sent(0) 
+  --------------- 
   bsEncode_cs(WAIT)  bsEncode_ns(WAIT) 
-  crc_cs()  crc_ns()  pkt_in(00)  endr(0) 
-  bitStuff_cs()  bitStuff_ns()  start_b(0)  endb(0) 
-  nrzi_cs()  nrzi_ns()  start_nrzi(0)  end_nrzi(0) 
-  dpdm_cs()  dpdm_ns()  start_dpdm(0)  eop(0) 
+  crc_cs(WAIT)  crc_ns(WAIT)  pkt_in(00)  endr(0) 
+  bitStuff_cs(WAIT)  bitStuff_ns(WAIT)  start_b(0)  endb(0) 
+  nrzi_cs(WAIT)  nrzi_ns(WAIT)  start_nrzi(0)  end_nrzi(0) 
+  dpdm_cs(WAIT)  dpdm_ns(WAIT)  start_dpdm(0)  eop(0) 
   ============================================================================ 
   ============================================================================ 
   
@@ -1846,11 +1930,13 @@ SYNC has been FOUND!
   token (xxxxxxxxxxxxxxxxxxx) 
   data (xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx) 
   ----------------- 
+  pkt_sent(0) 
+  --------------- 
   bsEncode_cs(WAIT)  bsEncode_ns(WAIT) 
-  crc_cs()  crc_ns()  pkt_in(00)  endr(0) 
-  bitStuff_cs()  bitStuff_ns()  start_b(0)  endb(0) 
-  nrzi_cs()  nrzi_ns()  start_nrzi(0)  end_nrzi(0) 
-  dpdm_cs()  dpdm_ns()  start_dpdm(0)  eop(0) 
+  crc_cs(WAIT)  crc_ns(WAIT)  pkt_in(00)  endr(0) 
+  bitStuff_cs(WAIT)  bitStuff_ns(WAIT)  start_b(0)  endb(0) 
+  nrzi_cs(WAIT)  nrzi_ns(WAIT)  start_nrzi(0)  end_nrzi(0) 
+  dpdm_cs(WAIT)  dpdm_ns(WAIT)  start_dpdm(0)  eop(0) 
   ============================================================================ 
   ============================================================================ 
   
@@ -1889,11 +1975,13 @@ SYNC has been FOUND!
   token (xxxxxxxxxxxxxxxxxxx) 
   data (xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx) 
   ----------------- 
+  pkt_sent(0) 
+  --------------- 
   bsEncode_cs(WAIT)  bsEncode_ns(WAIT) 
-  crc_cs()  crc_ns()  pkt_in(00)  endr(0) 
-  bitStuff_cs()  bitStuff_ns()  start_b(0)  endb(0) 
-  nrzi_cs()  nrzi_ns()  start_nrzi(0)  end_nrzi(0) 
-  dpdm_cs()  dpdm_ns()  start_dpdm(0)  eop(0) 
+  crc_cs(WAIT)  crc_ns(WAIT)  pkt_in(00)  endr(0) 
+  bitStuff_cs(WAIT)  bitStuff_ns(WAIT)  start_b(0)  endb(0) 
+  nrzi_cs(WAIT)  nrzi_ns(WAIT)  start_nrzi(0)  end_nrzi(0) 
+  dpdm_cs(WAIT)  dpdm_ns(WAIT)  start_dpdm(0)  eop(0) 
   ============================================================================ 
   ============================================================================ 
   
@@ -1932,11 +2020,13 @@ SYNC has been FOUND!
   token (xxxxxxxxxxxxxxxxxxx) 
   data (xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx) 
   ----------------- 
+  pkt_sent(0) 
+  --------------- 
   bsEncode_cs(WAIT)  bsEncode_ns(WAIT) 
-  crc_cs()  crc_ns()  pkt_in(00)  endr(0) 
-  bitStuff_cs()  bitStuff_ns()  start_b(0)  endb(0) 
-  nrzi_cs()  nrzi_ns()  start_nrzi(0)  end_nrzi(0) 
-  dpdm_cs()  dpdm_ns()  start_dpdm(0)  eop(0) 
+  crc_cs(WAIT)  crc_ns(WAIT)  pkt_in(00)  endr(0) 
+  bitStuff_cs(WAIT)  bitStuff_ns(WAIT)  start_b(0)  endb(0) 
+  nrzi_cs(WAIT)  nrzi_ns(WAIT)  start_nrzi(0)  end_nrzi(0) 
+  dpdm_cs(WAIT)  dpdm_ns(WAIT)  start_dpdm(0)  eop(0) 
   ============================================================================ 
   ============================================================================ 
   
@@ -1975,11 +2065,13 @@ SYNC has been FOUND!
   token (xxxxxxxxxxxxxxxxxxx) 
   data (xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx) 
   ----------------- 
+  pkt_sent(0) 
+  --------------- 
   bsEncode_cs(WAIT)  bsEncode_ns(WAIT) 
-  crc_cs()  crc_ns()  pkt_in(00)  endr(0) 
-  bitStuff_cs()  bitStuff_ns()  start_b(0)  endb(0) 
-  nrzi_cs()  nrzi_ns()  start_nrzi(0)  end_nrzi(0) 
-  dpdm_cs()  dpdm_ns()  start_dpdm(0)  eop(0) 
+  crc_cs(WAIT)  crc_ns(WAIT)  pkt_in(00)  endr(0) 
+  bitStuff_cs(WAIT)  bitStuff_ns(WAIT)  start_b(0)  endb(0) 
+  nrzi_cs(WAIT)  nrzi_ns(WAIT)  start_nrzi(0)  end_nrzi(0) 
+  dpdm_cs(WAIT)  dpdm_ns(WAIT)  start_dpdm(0)  eop(0) 
   ============================================================================ 
   ============================================================================ 
   
@@ -2018,11 +2110,13 @@ SYNC has been FOUND!
   token (xxxxxxxxxxxxxxxxxxx) 
   data (xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx) 
   ----------------- 
+  pkt_sent(0) 
+  --------------- 
   bsEncode_cs(WAIT)  bsEncode_ns(WAIT) 
-  crc_cs()  crc_ns()  pkt_in(00)  endr(0) 
-  bitStuff_cs()  bitStuff_ns()  start_b(0)  endb(0) 
-  nrzi_cs()  nrzi_ns()  start_nrzi(0)  end_nrzi(0) 
-  dpdm_cs()  dpdm_ns()  start_dpdm(0)  eop(0) 
+  crc_cs(WAIT)  crc_ns(WAIT)  pkt_in(00)  endr(0) 
+  bitStuff_cs(WAIT)  bitStuff_ns(WAIT)  start_b(0)  endb(0) 
+  nrzi_cs(WAIT)  nrzi_ns(WAIT)  start_nrzi(0)  end_nrzi(0) 
+  dpdm_cs(WAIT)  dpdm_ns(WAIT)  start_dpdm(0)  eop(0) 
   ============================================================================ 
   ============================================================================ 
   
@@ -2061,11 +2155,13 @@ SYNC has been FOUND!
   token (xxxxxxxxxxxxxxxxxxx) 
   data (xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx) 
   ----------------- 
+  pkt_sent(0) 
+  --------------- 
   bsEncode_cs(WAIT)  bsEncode_ns(WAIT) 
-  crc_cs()  crc_ns()  pkt_in(00)  endr(0) 
-  bitStuff_cs()  bitStuff_ns()  start_b(0)  endb(0) 
-  nrzi_cs()  nrzi_ns()  start_nrzi(0)  end_nrzi(0) 
-  dpdm_cs()  dpdm_ns()  start_dpdm(0)  eop(0) 
+  crc_cs(WAIT)  crc_ns(WAIT)  pkt_in(00)  endr(0) 
+  bitStuff_cs(WAIT)  bitStuff_ns(WAIT)  start_b(0)  endb(0) 
+  nrzi_cs(WAIT)  nrzi_ns(WAIT)  start_nrzi(0)  end_nrzi(0) 
+  dpdm_cs(WAIT)  dpdm_ns(WAIT)  start_dpdm(0)  eop(0) 
   ============================================================================ 
   ============================================================================ 
   
@@ -2104,11 +2200,13 @@ SYNC has been FOUND!
   token (xxxxxxxxxxxxxxxxxxx) 
   data (xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx) 
   ----------------- 
+  pkt_sent(0) 
+  --------------- 
   bsEncode_cs(WAIT)  bsEncode_ns(WAIT) 
-  crc_cs()  crc_ns()  pkt_in(00)  endr(0) 
-  bitStuff_cs()  bitStuff_ns()  start_b(0)  endb(0) 
-  nrzi_cs()  nrzi_ns()  start_nrzi(0)  end_nrzi(0) 
-  dpdm_cs()  dpdm_ns()  start_dpdm(0)  eop(0) 
+  crc_cs(WAIT)  crc_ns(WAIT)  pkt_in(00)  endr(0) 
+  bitStuff_cs(WAIT)  bitStuff_ns(WAIT)  start_b(0)  endb(0) 
+  nrzi_cs(WAIT)  nrzi_ns(WAIT)  start_nrzi(0)  end_nrzi(0) 
+  dpdm_cs(WAIT)  dpdm_ns(WAIT)  start_dpdm(0)  eop(0) 
   ============================================================================ 
   ============================================================================ 
   
@@ -2147,11 +2245,13 @@ SYNC has been FOUND!
   token (xxxxxxxxxxxxxxxxxxx) 
   data (xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx) 
   ----------------- 
+  pkt_sent(0) 
+  --------------- 
   bsEncode_cs(WAIT)  bsEncode_ns(WAIT) 
-  crc_cs()  crc_ns()  pkt_in(00)  endr(0) 
-  bitStuff_cs()  bitStuff_ns()  start_b(0)  endb(0) 
-  nrzi_cs()  nrzi_ns()  start_nrzi(0)  end_nrzi(0) 
-  dpdm_cs()  dpdm_ns()  start_dpdm(0)  eop(0) 
+  crc_cs(WAIT)  crc_ns(WAIT)  pkt_in(00)  endr(0) 
+  bitStuff_cs(WAIT)  bitStuff_ns(WAIT)  start_b(0)  endb(0) 
+  nrzi_cs(WAIT)  nrzi_ns(WAIT)  start_nrzi(0)  end_nrzi(0) 
+  dpdm_cs(WAIT)  dpdm_ns(WAIT)  start_dpdm(0)  eop(0) 
   ============================================================================ 
   ============================================================================ 
   
@@ -2190,11 +2290,13 @@ SYNC has been FOUND!
   token (xxxxxxxxxxxxxxxxxxx) 
   data (xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx) 
   ----------------- 
+  pkt_sent(0) 
+  --------------- 
   bsEncode_cs(WAIT)  bsEncode_ns(WAIT) 
-  crc_cs()  crc_ns()  pkt_in(00)  endr(0) 
-  bitStuff_cs()  bitStuff_ns()  start_b(0)  endb(0) 
-  nrzi_cs()  nrzi_ns()  start_nrzi(0)  end_nrzi(0) 
-  dpdm_cs()  dpdm_ns()  start_dpdm(0)  eop(0) 
+  crc_cs(WAIT)  crc_ns(WAIT)  pkt_in(00)  endr(0) 
+  bitStuff_cs(WAIT)  bitStuff_ns(WAIT)  start_b(0)  endb(0) 
+  nrzi_cs(WAIT)  nrzi_ns(WAIT)  start_nrzi(0)  end_nrzi(0) 
+  dpdm_cs(WAIT)  dpdm_ns(WAIT)  start_dpdm(0)  eop(0) 
   ============================================================================ 
   ============================================================================ 
   
@@ -2233,11 +2335,13 @@ SYNC has been FOUND!
   token (xxxxxxxxxxxxxxxxxxx) 
   data (xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx) 
   ----------------- 
+  pkt_sent(0) 
+  --------------- 
   bsEncode_cs(WAIT)  bsEncode_ns(WAIT) 
-  crc_cs()  crc_ns()  pkt_in(00)  endr(0) 
-  bitStuff_cs()  bitStuff_ns()  start_b(0)  endb(0) 
-  nrzi_cs()  nrzi_ns()  start_nrzi(0)  end_nrzi(0) 
-  dpdm_cs()  dpdm_ns()  start_dpdm(0)  eop(0) 
+  crc_cs(WAIT)  crc_ns(WAIT)  pkt_in(00)  endr(0) 
+  bitStuff_cs(WAIT)  bitStuff_ns(WAIT)  start_b(0)  endb(0) 
+  nrzi_cs(WAIT)  nrzi_ns(WAIT)  start_nrzi(0)  end_nrzi(0) 
+  dpdm_cs(WAIT)  dpdm_ns(WAIT)  start_dpdm(0)  eop(0) 
   ============================================================================ 
   ============================================================================ 
   
@@ -2276,11 +2380,13 @@ SYNC has been FOUND!
   token (xxxxxxxxxxxxxxxxxxx) 
   data (xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx) 
   ----------------- 
+  pkt_sent(0) 
+  --------------- 
   bsEncode_cs(WAIT)  bsEncode_ns(WAIT) 
-  crc_cs()  crc_ns()  pkt_in(00)  endr(0) 
-  bitStuff_cs()  bitStuff_ns()  start_b(0)  endb(0) 
-  nrzi_cs()  nrzi_ns()  start_nrzi(0)  end_nrzi(0) 
-  dpdm_cs()  dpdm_ns()  start_dpdm(0)  eop(0) 
+  crc_cs(WAIT)  crc_ns(WAIT)  pkt_in(00)  endr(0) 
+  bitStuff_cs(WAIT)  bitStuff_ns(WAIT)  start_b(0)  endb(0) 
+  nrzi_cs(WAIT)  nrzi_ns(WAIT)  start_nrzi(0)  end_nrzi(0) 
+  dpdm_cs(WAIT)  dpdm_ns(WAIT)  start_dpdm(0)  eop(0) 
   ============================================================================ 
   ============================================================================ 
   
@@ -2319,11 +2425,13 @@ SYNC has been FOUND!
   token (xxxxxxxxxxxxxxxxxxx) 
   data (xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx) 
   ----------------- 
+  pkt_sent(0) 
+  --------------- 
   bsEncode_cs(WAIT)  bsEncode_ns(WAIT) 
-  crc_cs()  crc_ns()  pkt_in(00)  endr(0) 
-  bitStuff_cs()  bitStuff_ns()  start_b(0)  endb(0) 
-  nrzi_cs()  nrzi_ns()  start_nrzi(0)  end_nrzi(0) 
-  dpdm_cs()  dpdm_ns()  start_dpdm(0)  eop(0) 
+  crc_cs(WAIT)  crc_ns(WAIT)  pkt_in(00)  endr(0) 
+  bitStuff_cs(WAIT)  bitStuff_ns(WAIT)  start_b(0)  endb(0) 
+  nrzi_cs(WAIT)  nrzi_ns(WAIT)  start_nrzi(0)  end_nrzi(0) 
+  dpdm_cs(WAIT)  dpdm_ns(WAIT)  start_dpdm(0)  eop(0) 
   ============================================================================ 
   ============================================================================ 
   
@@ -2362,11 +2470,13 @@ SYNC has been FOUND!
   token (xxxxxxxxxxxxxxxxxxx) 
   data (xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx) 
   ----------------- 
+  pkt_sent(0) 
+  --------------- 
   bsEncode_cs(WAIT)  bsEncode_ns(WAIT) 
-  crc_cs()  crc_ns()  pkt_in(00)  endr(0) 
-  bitStuff_cs()  bitStuff_ns()  start_b(0)  endb(0) 
-  nrzi_cs()  nrzi_ns()  start_nrzi(0)  end_nrzi(0) 
-  dpdm_cs()  dpdm_ns()  start_dpdm(0)  eop(0) 
+  crc_cs(WAIT)  crc_ns(WAIT)  pkt_in(00)  endr(0) 
+  bitStuff_cs(WAIT)  bitStuff_ns(WAIT)  start_b(0)  endb(0) 
+  nrzi_cs(WAIT)  nrzi_ns(WAIT)  start_nrzi(0)  end_nrzi(0) 
+  dpdm_cs(WAIT)  dpdm_ns(WAIT)  start_dpdm(0)  eop(0) 
   ============================================================================ 
   ============================================================================ 
   
@@ -2405,11 +2515,13 @@ SYNC has been FOUND!
   token (xxxxxxxxxxxxxxxxxxx) 
   data (xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx) 
   ----------------- 
+  pkt_sent(0) 
+  --------------- 
   bsEncode_cs(WAIT)  bsEncode_ns(WAIT) 
-  crc_cs()  crc_ns()  pkt_in(00)  endr(0) 
-  bitStuff_cs()  bitStuff_ns()  start_b(0)  endb(0) 
-  nrzi_cs()  nrzi_ns()  start_nrzi(0)  end_nrzi(0) 
-  dpdm_cs()  dpdm_ns()  start_dpdm(0)  eop(0) 
+  crc_cs(WAIT)  crc_ns(WAIT)  pkt_in(00)  endr(0) 
+  bitStuff_cs(WAIT)  bitStuff_ns(WAIT)  start_b(0)  endb(0) 
+  nrzi_cs(WAIT)  nrzi_ns(WAIT)  start_nrzi(0)  end_nrzi(0) 
+  dpdm_cs(WAIT)  dpdm_ns(WAIT)  start_dpdm(0)  eop(0) 
   ============================================================================ 
   ============================================================================ 
   
@@ -2448,11 +2560,13 @@ SYNC has been FOUND!
   token (xxxxxxxxxxxxxxxxxxx) 
   data (xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx) 
   ----------------- 
+  pkt_sent(0) 
+  --------------- 
   bsEncode_cs(WAIT)  bsEncode_ns(WAIT) 
-  crc_cs()  crc_ns()  pkt_in(00)  endr(0) 
-  bitStuff_cs()  bitStuff_ns()  start_b(0)  endb(0) 
-  nrzi_cs()  nrzi_ns()  start_nrzi(0)  end_nrzi(0) 
-  dpdm_cs()  dpdm_ns()  start_dpdm(0)  eop(0) 
+  crc_cs(WAIT)  crc_ns(WAIT)  pkt_in(00)  endr(0) 
+  bitStuff_cs(WAIT)  bitStuff_ns(WAIT)  start_b(0)  endb(0) 
+  nrzi_cs(WAIT)  nrzi_ns(WAIT)  start_nrzi(0)  end_nrzi(0) 
+  dpdm_cs(WAIT)  dpdm_ns(WAIT)  start_dpdm(0)  eop(0) 
   ============================================================================ 
   ============================================================================ 
   
@@ -2491,11 +2605,13 @@ SYNC has been FOUND!
   token (xxxxxxxxxxxxxxxxxxx) 
   data (xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx) 
   ----------------- 
+  pkt_sent(0) 
+  --------------- 
   bsEncode_cs(WAIT)  bsEncode_ns(WAIT) 
-  crc_cs()  crc_ns()  pkt_in(00)  endr(0) 
-  bitStuff_cs()  bitStuff_ns()  start_b(0)  endb(0) 
-  nrzi_cs()  nrzi_ns()  start_nrzi(0)  end_nrzi(0) 
-  dpdm_cs()  dpdm_ns()  start_dpdm(0)  eop(0) 
+  crc_cs(WAIT)  crc_ns(WAIT)  pkt_in(00)  endr(0) 
+  bitStuff_cs(WAIT)  bitStuff_ns(WAIT)  start_b(0)  endb(0) 
+  nrzi_cs(WAIT)  nrzi_ns(WAIT)  start_nrzi(0)  end_nrzi(0) 
+  dpdm_cs(WAIT)  dpdm_ns(WAIT)  start_dpdm(0)  eop(0) 
   ============================================================================ 
   ============================================================================ 
   
@@ -2534,11 +2650,13 @@ SYNC has been FOUND!
   token (xxxxxxxxxxxxxxxxxxx) 
   data (xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx) 
   ----------------- 
+  pkt_sent(0) 
+  --------------- 
   bsEncode_cs(WAIT)  bsEncode_ns(WAIT) 
-  crc_cs()  crc_ns()  pkt_in(00)  endr(0) 
-  bitStuff_cs()  bitStuff_ns()  start_b(0)  endb(0) 
-  nrzi_cs()  nrzi_ns()  start_nrzi(0)  end_nrzi(0) 
-  dpdm_cs()  dpdm_ns()  start_dpdm(0)  eop(0) 
+  crc_cs(WAIT)  crc_ns(WAIT)  pkt_in(00)  endr(0) 
+  bitStuff_cs(WAIT)  bitStuff_ns(WAIT)  start_b(0)  endb(0) 
+  nrzi_cs(WAIT)  nrzi_ns(WAIT)  start_nrzi(0)  end_nrzi(0) 
+  dpdm_cs(WAIT)  dpdm_ns(WAIT)  start_dpdm(0)  eop(0) 
   ============================================================================ 
   ============================================================================ 
   
@@ -2577,11 +2695,13 @@ SYNC has been FOUND!
   token (xxxxxxxxxxxxxxxxxxx) 
   data (xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx) 
   ----------------- 
+  pkt_sent(0) 
+  --------------- 
   bsEncode_cs(WAIT)  bsEncode_ns(WAIT) 
-  crc_cs()  crc_ns()  pkt_in(00)  endr(0) 
-  bitStuff_cs()  bitStuff_ns()  start_b(0)  endb(0) 
-  nrzi_cs()  nrzi_ns()  start_nrzi(0)  end_nrzi(0) 
-  dpdm_cs()  dpdm_ns()  start_dpdm(0)  eop(0) 
+  crc_cs(WAIT)  crc_ns(WAIT)  pkt_in(00)  endr(0) 
+  bitStuff_cs(WAIT)  bitStuff_ns(WAIT)  start_b(0)  endb(0) 
+  nrzi_cs(WAIT)  nrzi_ns(WAIT)  start_nrzi(0)  end_nrzi(0) 
+  dpdm_cs(WAIT)  dpdm_ns(WAIT)  start_dpdm(0)  eop(0) 
   ============================================================================ 
   ============================================================================ 
   
@@ -2620,11 +2740,13 @@ SYNC has been FOUND!
   token (xxxxxxxxxxxxxxxxxxx) 
   data (xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx) 
   ----------------- 
+  pkt_sent(0) 
+  --------------- 
   bsEncode_cs(WAIT)  bsEncode_ns(WAIT) 
-  crc_cs()  crc_ns()  pkt_in(00)  endr(0) 
-  bitStuff_cs()  bitStuff_ns()  start_b(0)  endb(0) 
-  nrzi_cs()  nrzi_ns()  start_nrzi(0)  end_nrzi(0) 
-  dpdm_cs()  dpdm_ns()  start_dpdm(0)  eop(0) 
+  crc_cs(WAIT)  crc_ns(WAIT)  pkt_in(00)  endr(0) 
+  bitStuff_cs(WAIT)  bitStuff_ns(WAIT)  start_b(0)  endb(0) 
+  nrzi_cs(WAIT)  nrzi_ns(WAIT)  start_nrzi(0)  end_nrzi(0) 
+  dpdm_cs(WAIT)  dpdm_ns(WAIT)  start_dpdm(0)  eop(0) 
   ============================================================================ 
   ============================================================================ 
   
@@ -2663,11 +2785,13 @@ SYNC has been FOUND!
   token (xxxxxxxxxxxxxxxxxxx) 
   data (xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx) 
   ----------------- 
+  pkt_sent(0) 
+  --------------- 
   bsEncode_cs(WAIT)  bsEncode_ns(WAIT) 
-  crc_cs()  crc_ns()  pkt_in(00)  endr(0) 
-  bitStuff_cs()  bitStuff_ns()  start_b(0)  endb(0) 
-  nrzi_cs()  nrzi_ns()  start_nrzi(0)  end_nrzi(0) 
-  dpdm_cs()  dpdm_ns()  start_dpdm(0)  eop(0) 
+  crc_cs(WAIT)  crc_ns(WAIT)  pkt_in(00)  endr(0) 
+  bitStuff_cs(WAIT)  bitStuff_ns(WAIT)  start_b(0)  endb(0) 
+  nrzi_cs(WAIT)  nrzi_ns(WAIT)  start_nrzi(0)  end_nrzi(0) 
+  dpdm_cs(WAIT)  dpdm_ns(WAIT)  start_dpdm(0)  eop(0) 
   ============================================================================ 
   ============================================================================ 
   
@@ -2706,11 +2830,13 @@ SYNC has been FOUND!
   token (xxxxxxxxxxxxxxxxxxx) 
   data (xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx) 
   ----------------- 
+  pkt_sent(0) 
+  --------------- 
   bsEncode_cs(WAIT)  bsEncode_ns(WAIT) 
-  crc_cs()  crc_ns()  pkt_in(00)  endr(0) 
-  bitStuff_cs()  bitStuff_ns()  start_b(0)  endb(0) 
-  nrzi_cs()  nrzi_ns()  start_nrzi(0)  end_nrzi(0) 
-  dpdm_cs()  dpdm_ns()  start_dpdm(0)  eop(0) 
+  crc_cs(WAIT)  crc_ns(WAIT)  pkt_in(00)  endr(0) 
+  bitStuff_cs(WAIT)  bitStuff_ns(WAIT)  start_b(0)  endb(0) 
+  nrzi_cs(WAIT)  nrzi_ns(WAIT)  start_nrzi(0)  end_nrzi(0) 
+  dpdm_cs(WAIT)  dpdm_ns(WAIT)  start_dpdm(0)  eop(0) 
   ============================================================================ 
   ============================================================================ 
   
@@ -2749,11 +2875,13 @@ SYNC has been FOUND!
   token (xxxxxxxxxxxxxxxxxxx) 
   data (xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx) 
   ----------------- 
+  pkt_sent(0) 
+  --------------- 
   bsEncode_cs(WAIT)  bsEncode_ns(WAIT) 
-  crc_cs()  crc_ns()  pkt_in(00)  endr(0) 
-  bitStuff_cs()  bitStuff_ns()  start_b(0)  endb(0) 
-  nrzi_cs()  nrzi_ns()  start_nrzi(0)  end_nrzi(0) 
-  dpdm_cs()  dpdm_ns()  start_dpdm(0)  eop(0) 
+  crc_cs(WAIT)  crc_ns(WAIT)  pkt_in(00)  endr(0) 
+  bitStuff_cs(WAIT)  bitStuff_ns(WAIT)  start_b(0)  endb(0) 
+  nrzi_cs(WAIT)  nrzi_ns(WAIT)  start_nrzi(0)  end_nrzi(0) 
+  dpdm_cs(WAIT)  dpdm_ns(WAIT)  start_dpdm(0)  eop(0) 
   ============================================================================ 
   ============================================================================ 
   
@@ -2792,11 +2920,13 @@ SYNC has been FOUND!
   token (xxxxxxxxxxxxxxxxxxx) 
   data (xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx) 
   ----------------- 
+  pkt_sent(0) 
+  --------------- 
   bsEncode_cs(WAIT)  bsEncode_ns(WAIT) 
-  crc_cs()  crc_ns()  pkt_in(00)  endr(0) 
-  bitStuff_cs()  bitStuff_ns()  start_b(0)  endb(0) 
-  nrzi_cs()  nrzi_ns()  start_nrzi(0)  end_nrzi(0) 
-  dpdm_cs()  dpdm_ns()  start_dpdm(0)  eop(0) 
+  crc_cs(WAIT)  crc_ns(WAIT)  pkt_in(00)  endr(0) 
+  bitStuff_cs(WAIT)  bitStuff_ns(WAIT)  start_b(0)  endb(0) 
+  nrzi_cs(WAIT)  nrzi_ns(WAIT)  start_nrzi(0)  end_nrzi(0) 
+  dpdm_cs(WAIT)  dpdm_ns(WAIT)  start_dpdm(0)  eop(0) 
   ============================================================================ 
   ============================================================================ 
   
@@ -2835,11 +2965,13 @@ SYNC has been FOUND!
   token (xxxxxxxxxxxxxxxxxxx) 
   data (xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx) 
   ----------------- 
+  pkt_sent(0) 
+  --------------- 
   bsEncode_cs(WAIT)  bsEncode_ns(WAIT) 
-  crc_cs()  crc_ns()  pkt_in(00)  endr(0) 
-  bitStuff_cs()  bitStuff_ns()  start_b(0)  endb(0) 
-  nrzi_cs()  nrzi_ns()  start_nrzi(0)  end_nrzi(0) 
-  dpdm_cs()  dpdm_ns()  start_dpdm(0)  eop(0) 
+  crc_cs(WAIT)  crc_ns(WAIT)  pkt_in(00)  endr(0) 
+  bitStuff_cs(WAIT)  bitStuff_ns(WAIT)  start_b(0)  endb(0) 
+  nrzi_cs(WAIT)  nrzi_ns(WAIT)  start_nrzi(0)  end_nrzi(0) 
+  dpdm_cs(WAIT)  dpdm_ns(WAIT)  start_dpdm(0)  eop(0) 
   ============================================================================ 
   ============================================================================ 
   
@@ -2878,11 +3010,13 @@ SYNC has been FOUND!
   token (xxxxxxxxxxxxxxxxxxx) 
   data (xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx) 
   ----------------- 
+  pkt_sent(0) 
+  --------------- 
   bsEncode_cs(WAIT)  bsEncode_ns(WAIT) 
-  crc_cs()  crc_ns()  pkt_in(00)  endr(0) 
-  bitStuff_cs()  bitStuff_ns()  start_b(0)  endb(0) 
-  nrzi_cs()  nrzi_ns()  start_nrzi(0)  end_nrzi(0) 
-  dpdm_cs()  dpdm_ns()  start_dpdm(0)  eop(0) 
+  crc_cs(WAIT)  crc_ns(WAIT)  pkt_in(00)  endr(0) 
+  bitStuff_cs(WAIT)  bitStuff_ns(WAIT)  start_b(0)  endb(0) 
+  nrzi_cs(WAIT)  nrzi_ns(WAIT)  start_nrzi(0)  end_nrzi(0) 
+  dpdm_cs(WAIT)  dpdm_ns(WAIT)  start_dpdm(0)  eop(0) 
   ============================================================================ 
   ============================================================================ 
   
@@ -2921,11 +3055,13 @@ SYNC has been FOUND!
   token (xxxxxxxxxxxxxxxxxxx) 
   data (xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx) 
   ----------------- 
+  pkt_sent(0) 
+  --------------- 
   bsEncode_cs(WAIT)  bsEncode_ns(WAIT) 
-  crc_cs()  crc_ns()  pkt_in(00)  endr(0) 
-  bitStuff_cs()  bitStuff_ns()  start_b(0)  endb(0) 
-  nrzi_cs()  nrzi_ns()  start_nrzi(0)  end_nrzi(0) 
-  dpdm_cs()  dpdm_ns()  start_dpdm(0)  eop(0) 
+  crc_cs(WAIT)  crc_ns(WAIT)  pkt_in(00)  endr(0) 
+  bitStuff_cs(WAIT)  bitStuff_ns(WAIT)  start_b(0)  endb(0) 
+  nrzi_cs(WAIT)  nrzi_ns(WAIT)  start_nrzi(0)  end_nrzi(0) 
+  dpdm_cs(WAIT)  dpdm_ns(WAIT)  start_dpdm(0)  eop(0) 
   ============================================================================ 
   ============================================================================ 
   
@@ -2964,11 +3100,13 @@ SYNC has been FOUND!
   token (xxxxxxxxxxxxxxxxxxx) 
   data (xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx) 
   ----------------- 
+  pkt_sent(0) 
+  --------------- 
   bsEncode_cs(WAIT)  bsEncode_ns(WAIT) 
-  crc_cs()  crc_ns()  pkt_in(00)  endr(0) 
-  bitStuff_cs()  bitStuff_ns()  start_b(0)  endb(0) 
-  nrzi_cs()  nrzi_ns()  start_nrzi(0)  end_nrzi(0) 
-  dpdm_cs()  dpdm_ns()  start_dpdm(0)  eop(0) 
+  crc_cs(WAIT)  crc_ns(WAIT)  pkt_in(00)  endr(0) 
+  bitStuff_cs(WAIT)  bitStuff_ns(WAIT)  start_b(0)  endb(0) 
+  nrzi_cs(WAIT)  nrzi_ns(WAIT)  start_nrzi(0)  end_nrzi(0) 
+  dpdm_cs(WAIT)  dpdm_ns(WAIT)  start_dpdm(0)  eop(0) 
   ============================================================================ 
   ============================================================================ 
   
@@ -3007,11 +3145,13 @@ SYNC has been FOUND!
   token (xxxxxxxxxxxxxxxxxxx) 
   data (xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx) 
   ----------------- 
+  pkt_sent(0) 
+  --------------- 
   bsEncode_cs(WAIT)  bsEncode_ns(WAIT) 
-  crc_cs()  crc_ns()  pkt_in(00)  endr(0) 
-  bitStuff_cs()  bitStuff_ns()  start_b(0)  endb(0) 
-  nrzi_cs()  nrzi_ns()  start_nrzi(0)  end_nrzi(0) 
-  dpdm_cs()  dpdm_ns()  start_dpdm(0)  eop(0) 
+  crc_cs(WAIT)  crc_ns(WAIT)  pkt_in(00)  endr(0) 
+  bitStuff_cs(WAIT)  bitStuff_ns(WAIT)  start_b(0)  endb(0) 
+  nrzi_cs(WAIT)  nrzi_ns(WAIT)  start_nrzi(0)  end_nrzi(0) 
+  dpdm_cs(WAIT)  dpdm_ns(WAIT)  start_dpdm(0)  eop(0) 
   ============================================================================ 
   ============================================================================ 
   
@@ -3050,11 +3190,13 @@ SYNC has been FOUND!
   token (xxxxxxxxxxxxxxxxxxx) 
   data (xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx) 
   ----------------- 
+  pkt_sent(0) 
+  --------------- 
   bsEncode_cs(WAIT)  bsEncode_ns(WAIT) 
-  crc_cs()  crc_ns()  pkt_in(00)  endr(0) 
-  bitStuff_cs()  bitStuff_ns()  start_b(0)  endb(0) 
-  nrzi_cs()  nrzi_ns()  start_nrzi(0)  end_nrzi(0) 
-  dpdm_cs()  dpdm_ns()  start_dpdm(0)  eop(0) 
+  crc_cs(WAIT)  crc_ns(WAIT)  pkt_in(00)  endr(0) 
+  bitStuff_cs(WAIT)  bitStuff_ns(WAIT)  start_b(0)  endb(0) 
+  nrzi_cs(WAIT)  nrzi_ns(WAIT)  start_nrzi(0)  end_nrzi(0) 
+  dpdm_cs(WAIT)  dpdm_ns(WAIT)  start_dpdm(0)  eop(0) 
   ============================================================================ 
   ============================================================================ 
   
@@ -3093,11 +3235,13 @@ SYNC has been FOUND!
   token (xxxxxxxxxxxxxxxxxxx) 
   data (xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx) 
   ----------------- 
+  pkt_sent(0) 
+  --------------- 
   bsEncode_cs(WAIT)  bsEncode_ns(WAIT) 
-  crc_cs()  crc_ns()  pkt_in(00)  endr(0) 
-  bitStuff_cs()  bitStuff_ns()  start_b(0)  endb(0) 
-  nrzi_cs()  nrzi_ns()  start_nrzi(0)  end_nrzi(0) 
-  dpdm_cs()  dpdm_ns()  start_dpdm(0)  eop(0) 
+  crc_cs(WAIT)  crc_ns(WAIT)  pkt_in(00)  endr(0) 
+  bitStuff_cs(WAIT)  bitStuff_ns(WAIT)  start_b(0)  endb(0) 
+  nrzi_cs(WAIT)  nrzi_ns(WAIT)  start_nrzi(0)  end_nrzi(0) 
+  dpdm_cs(WAIT)  dpdm_ns(WAIT)  start_dpdm(0)  eop(0) 
   ============================================================================ 
   ============================================================================ 
   
@@ -3136,11 +3280,13 @@ SYNC has been FOUND!
   token (xxxxxxxxxxxxxxxxxxx) 
   data (xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx) 
   ----------------- 
+  pkt_sent(0) 
+  --------------- 
   bsEncode_cs(WAIT)  bsEncode_ns(WAIT) 
-  crc_cs()  crc_ns()  pkt_in(00)  endr(0) 
-  bitStuff_cs()  bitStuff_ns()  start_b(0)  endb(0) 
-  nrzi_cs()  nrzi_ns()  start_nrzi(0)  end_nrzi(0) 
-  dpdm_cs()  dpdm_ns()  start_dpdm(0)  eop(0) 
+  crc_cs(WAIT)  crc_ns(WAIT)  pkt_in(00)  endr(0) 
+  bitStuff_cs(WAIT)  bitStuff_ns(WAIT)  start_b(0)  endb(0) 
+  nrzi_cs(WAIT)  nrzi_ns(WAIT)  start_nrzi(0)  end_nrzi(0) 
+  dpdm_cs(WAIT)  dpdm_ns(WAIT)  start_dpdm(0)  eop(0) 
   ============================================================================ 
   ============================================================================ 
   
@@ -3179,11 +3325,13 @@ SYNC has been FOUND!
   token (xxxxxxxxxxxxxxxxxxx) 
   data (xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx) 
   ----------------- 
+  pkt_sent(0) 
+  --------------- 
   bsEncode_cs(WAIT)  bsEncode_ns(WAIT) 
-  crc_cs()  crc_ns()  pkt_in(00)  endr(0) 
-  bitStuff_cs()  bitStuff_ns()  start_b(0)  endb(0) 
-  nrzi_cs()  nrzi_ns()  start_nrzi(0)  end_nrzi(0) 
-  dpdm_cs()  dpdm_ns()  start_dpdm(0)  eop(0) 
+  crc_cs(WAIT)  crc_ns(WAIT)  pkt_in(00)  endr(0) 
+  bitStuff_cs(WAIT)  bitStuff_ns(WAIT)  start_b(0)  endb(0) 
+  nrzi_cs(WAIT)  nrzi_ns(WAIT)  start_nrzi(0)  end_nrzi(0) 
+  dpdm_cs(WAIT)  dpdm_ns(WAIT)  start_dpdm(0)  eop(0) 
   ============================================================================ 
   ============================================================================ 
   
@@ -3222,11 +3370,13 @@ SYNC has been FOUND!
   token (xxxxxxxxxxxxxxxxxxx) 
   data (xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx) 
   ----------------- 
+  pkt_sent(0) 
+  --------------- 
   bsEncode_cs(WAIT)  bsEncode_ns(WAIT) 
-  crc_cs()  crc_ns()  pkt_in(00)  endr(0) 
-  bitStuff_cs()  bitStuff_ns()  start_b(0)  endb(0) 
-  nrzi_cs()  nrzi_ns()  start_nrzi(0)  end_nrzi(0) 
-  dpdm_cs()  dpdm_ns()  start_dpdm(0)  eop(0) 
+  crc_cs(WAIT)  crc_ns(WAIT)  pkt_in(00)  endr(0) 
+  bitStuff_cs(WAIT)  bitStuff_ns(WAIT)  start_b(0)  endb(0) 
+  nrzi_cs(WAIT)  nrzi_ns(WAIT)  start_nrzi(0)  end_nrzi(0) 
+  dpdm_cs(WAIT)  dpdm_ns(WAIT)  start_dpdm(0)  eop(0) 
   ============================================================================ 
   ============================================================================ 
   
@@ -3265,11 +3415,13 @@ SYNC has been FOUND!
   token (xxxxxxxxxxxxxxxxxxx) 
   data (xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx) 
   ----------------- 
+  pkt_sent(0) 
+  --------------- 
   bsEncode_cs(WAIT)  bsEncode_ns(WAIT) 
-  crc_cs()  crc_ns()  pkt_in(00)  endr(0) 
-  bitStuff_cs()  bitStuff_ns()  start_b(0)  endb(0) 
-  nrzi_cs()  nrzi_ns()  start_nrzi(0)  end_nrzi(0) 
-  dpdm_cs()  dpdm_ns()  start_dpdm(0)  eop(0) 
+  crc_cs(WAIT)  crc_ns(WAIT)  pkt_in(00)  endr(0) 
+  bitStuff_cs(WAIT)  bitStuff_ns(WAIT)  start_b(0)  endb(0) 
+  nrzi_cs(WAIT)  nrzi_ns(WAIT)  start_nrzi(0)  end_nrzi(0) 
+  dpdm_cs(WAIT)  dpdm_ns(WAIT)  start_dpdm(0)  eop(0) 
   ============================================================================ 
   ============================================================================ 
   
@@ -3308,11 +3460,13 @@ SYNC has been FOUND!
   token (xxxxxxxxxxxxxxxxxxx) 
   data (xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx) 
   ----------------- 
+  pkt_sent(0) 
+  --------------- 
   bsEncode_cs(WAIT)  bsEncode_ns(WAIT) 
-  crc_cs()  crc_ns()  pkt_in(00)  endr(0) 
-  bitStuff_cs()  bitStuff_ns()  start_b(0)  endb(0) 
-  nrzi_cs()  nrzi_ns()  start_nrzi(0)  end_nrzi(0) 
-  dpdm_cs()  dpdm_ns()  start_dpdm(0)  eop(0) 
+  crc_cs(WAIT)  crc_ns(WAIT)  pkt_in(00)  endr(0) 
+  bitStuff_cs(WAIT)  bitStuff_ns(WAIT)  start_b(0)  endb(0) 
+  nrzi_cs(WAIT)  nrzi_ns(WAIT)  start_nrzi(0)  end_nrzi(0) 
+  dpdm_cs(WAIT)  dpdm_ns(WAIT)  start_dpdm(0)  eop(0) 
   ============================================================================ 
   ============================================================================ 
   
@@ -3351,11 +3505,13 @@ SYNC has been FOUND!
   token (xxxxxxxxxxxxxxxxxxx) 
   data (xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx) 
   ----------------- 
+  pkt_sent(0) 
+  --------------- 
   bsEncode_cs(WAIT)  bsEncode_ns(WAIT) 
-  crc_cs()  crc_ns()  pkt_in(00)  endr(0) 
-  bitStuff_cs()  bitStuff_ns()  start_b(0)  endb(0) 
-  nrzi_cs()  nrzi_ns()  start_nrzi(0)  end_nrzi(0) 
-  dpdm_cs()  dpdm_ns()  start_dpdm(0)  eop(0) 
+  crc_cs(WAIT)  crc_ns(WAIT)  pkt_in(00)  endr(0) 
+  bitStuff_cs(WAIT)  bitStuff_ns(WAIT)  start_b(0)  endb(0) 
+  nrzi_cs(WAIT)  nrzi_ns(WAIT)  start_nrzi(0)  end_nrzi(0) 
+  dpdm_cs(WAIT)  dpdm_ns(WAIT)  start_dpdm(0)  eop(0) 
   ============================================================================ 
   ============================================================================ 
   
@@ -3394,11 +3550,13 @@ SYNC has been FOUND!
   token (xxxxxxxxxxxxxxxxxxx) 
   data (xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx) 
   ----------------- 
+  pkt_sent(0) 
+  --------------- 
   bsEncode_cs(WAIT)  bsEncode_ns(WAIT) 
-  crc_cs()  crc_ns()  pkt_in(00)  endr(0) 
-  bitStuff_cs()  bitStuff_ns()  start_b(0)  endb(0) 
-  nrzi_cs()  nrzi_ns()  start_nrzi(0)  end_nrzi(0) 
-  dpdm_cs()  dpdm_ns()  start_dpdm(0)  eop(0) 
+  crc_cs(WAIT)  crc_ns(WAIT)  pkt_in(00)  endr(0) 
+  bitStuff_cs(WAIT)  bitStuff_ns(WAIT)  start_b(0)  endb(0) 
+  nrzi_cs(WAIT)  nrzi_ns(WAIT)  start_nrzi(0)  end_nrzi(0) 
+  dpdm_cs(WAIT)  dpdm_ns(WAIT)  start_dpdm(0)  eop(0) 
   ============================================================================ 
   ============================================================================ 
   
@@ -3437,11 +3595,13 @@ SYNC has been FOUND!
   token (xxxxxxxxxxxxxxxxxxx) 
   data (xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx) 
   ----------------- 
+  pkt_sent(0) 
+  --------------- 
   bsEncode_cs(WAIT)  bsEncode_ns(WAIT) 
-  crc_cs()  crc_ns()  pkt_in(00)  endr(0) 
-  bitStuff_cs()  bitStuff_ns()  start_b(0)  endb(0) 
-  nrzi_cs()  nrzi_ns()  start_nrzi(0)  end_nrzi(0) 
-  dpdm_cs()  dpdm_ns()  start_dpdm(0)  eop(0) 
+  crc_cs(WAIT)  crc_ns(WAIT)  pkt_in(00)  endr(0) 
+  bitStuff_cs(WAIT)  bitStuff_ns(WAIT)  start_b(0)  endb(0) 
+  nrzi_cs(WAIT)  nrzi_ns(WAIT)  start_nrzi(0)  end_nrzi(0) 
+  dpdm_cs(WAIT)  dpdm_ns(WAIT)  start_dpdm(0)  eop(0) 
   ============================================================================ 
   ============================================================================ 
   
@@ -3480,11 +3640,13 @@ SYNC has been FOUND!
   token (xxxxxxxxxxxxxxxxxxx) 
   data (xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx) 
   ----------------- 
+  pkt_sent(0) 
+  --------------- 
   bsEncode_cs(WAIT)  bsEncode_ns(WAIT) 
-  crc_cs()  crc_ns()  pkt_in(00)  endr(0) 
-  bitStuff_cs()  bitStuff_ns()  start_b(0)  endb(0) 
-  nrzi_cs()  nrzi_ns()  start_nrzi(0)  end_nrzi(0) 
-  dpdm_cs()  dpdm_ns()  start_dpdm(0)  eop(0) 
+  crc_cs(WAIT)  crc_ns(WAIT)  pkt_in(00)  endr(0) 
+  bitStuff_cs(WAIT)  bitStuff_ns(WAIT)  start_b(0)  endb(0) 
+  nrzi_cs(WAIT)  nrzi_ns(WAIT)  start_nrzi(0)  end_nrzi(0) 
+  dpdm_cs(WAIT)  dpdm_ns(WAIT)  start_dpdm(0)  eop(0) 
   ============================================================================ 
   ============================================================================ 
   
@@ -3523,11 +3685,13 @@ SYNC has been FOUND!
   token (xxxxxxxxxxxxxxxxxxx) 
   data (xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx) 
   ----------------- 
+  pkt_sent(0) 
+  --------------- 
   bsEncode_cs(WAIT)  bsEncode_ns(WAIT) 
-  crc_cs()  crc_ns()  pkt_in(00)  endr(0) 
-  bitStuff_cs()  bitStuff_ns()  start_b(0)  endb(0) 
-  nrzi_cs()  nrzi_ns()  start_nrzi(0)  end_nrzi(0) 
-  dpdm_cs()  dpdm_ns()  start_dpdm(0)  eop(0) 
+  crc_cs(WAIT)  crc_ns(WAIT)  pkt_in(00)  endr(0) 
+  bitStuff_cs(WAIT)  bitStuff_ns(WAIT)  start_b(0)  endb(0) 
+  nrzi_cs(WAIT)  nrzi_ns(WAIT)  start_nrzi(0)  end_nrzi(0) 
+  dpdm_cs(WAIT)  dpdm_ns(WAIT)  start_dpdm(0)  eop(0) 
   ============================================================================ 
   ============================================================================ 
   
@@ -3566,11 +3730,13 @@ SYNC has been FOUND!
   token (xxxxxxxxxxxxxxxxxxx) 
   data (xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx) 
   ----------------- 
+  pkt_sent(0) 
+  --------------- 
   bsEncode_cs(WAIT)  bsEncode_ns(WAIT) 
-  crc_cs()  crc_ns()  pkt_in(00)  endr(0) 
-  bitStuff_cs()  bitStuff_ns()  start_b(0)  endb(0) 
-  nrzi_cs()  nrzi_ns()  start_nrzi(0)  end_nrzi(0) 
-  dpdm_cs()  dpdm_ns()  start_dpdm(0)  eop(0) 
+  crc_cs(WAIT)  crc_ns(WAIT)  pkt_in(00)  endr(0) 
+  bitStuff_cs(WAIT)  bitStuff_ns(WAIT)  start_b(0)  endb(0) 
+  nrzi_cs(WAIT)  nrzi_ns(WAIT)  start_nrzi(0)  end_nrzi(0) 
+  dpdm_cs(WAIT)  dpdm_ns(WAIT)  start_dpdm(0)  eop(0) 
   ============================================================================ 
   ============================================================================ 
   
@@ -3609,11 +3775,13 @@ SYNC has been FOUND!
   token (xxxxxxxxxxxxxxxxxxx) 
   data (xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx) 
   ----------------- 
+  pkt_sent(0) 
+  --------------- 
   bsEncode_cs(WAIT)  bsEncode_ns(WAIT) 
-  crc_cs()  crc_ns()  pkt_in(00)  endr(0) 
-  bitStuff_cs()  bitStuff_ns()  start_b(0)  endb(0) 
-  nrzi_cs()  nrzi_ns()  start_nrzi(0)  end_nrzi(0) 
-  dpdm_cs()  dpdm_ns()  start_dpdm(0)  eop(0) 
+  crc_cs(WAIT)  crc_ns(WAIT)  pkt_in(00)  endr(0) 
+  bitStuff_cs(WAIT)  bitStuff_ns(WAIT)  start_b(0)  endb(0) 
+  nrzi_cs(WAIT)  nrzi_ns(WAIT)  start_nrzi(0)  end_nrzi(0) 
+  dpdm_cs(WAIT)  dpdm_ns(WAIT)  start_dpdm(0)  eop(0) 
   ============================================================================ 
   ============================================================================ 
   
@@ -3652,11 +3820,13 @@ SYNC has been FOUND!
   token (xxxxxxxxxxxxxxxxxxx) 
   data (xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx) 
   ----------------- 
+  pkt_sent(0) 
+  --------------- 
   bsEncode_cs(WAIT)  bsEncode_ns(WAIT) 
-  crc_cs()  crc_ns()  pkt_in(00)  endr(0) 
-  bitStuff_cs()  bitStuff_ns()  start_b(0)  endb(0) 
-  nrzi_cs()  nrzi_ns()  start_nrzi(0)  end_nrzi(0) 
-  dpdm_cs()  dpdm_ns()  start_dpdm(0)  eop(0) 
+  crc_cs(WAIT)  crc_ns(WAIT)  pkt_in(00)  endr(0) 
+  bitStuff_cs(WAIT)  bitStuff_ns(WAIT)  start_b(0)  endb(0) 
+  nrzi_cs(WAIT)  nrzi_ns(WAIT)  start_nrzi(0)  end_nrzi(0) 
+  dpdm_cs(WAIT)  dpdm_ns(WAIT)  start_dpdm(0)  eop(0) 
   ============================================================================ 
   ============================================================================ 
   
@@ -3695,11 +3865,13 @@ SYNC has been FOUND!
   token (xxxxxxxxxxxxxxxxxxx) 
   data (xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx) 
   ----------------- 
+  pkt_sent(0) 
+  --------------- 
   bsEncode_cs(WAIT)  bsEncode_ns(WAIT) 
-  crc_cs()  crc_ns()  pkt_in(00)  endr(0) 
-  bitStuff_cs()  bitStuff_ns()  start_b(0)  endb(0) 
-  nrzi_cs()  nrzi_ns()  start_nrzi(0)  end_nrzi(0) 
-  dpdm_cs()  dpdm_ns()  start_dpdm(0)  eop(0) 
+  crc_cs(WAIT)  crc_ns(WAIT)  pkt_in(00)  endr(0) 
+  bitStuff_cs(WAIT)  bitStuff_ns(WAIT)  start_b(0)  endb(0) 
+  nrzi_cs(WAIT)  nrzi_ns(WAIT)  start_nrzi(0)  end_nrzi(0) 
+  dpdm_cs(WAIT)  dpdm_ns(WAIT)  start_dpdm(0)  eop(0) 
   ============================================================================ 
   ============================================================================ 
   
@@ -3738,11 +3910,13 @@ SYNC has been FOUND!
   token (xxxxxxxxxxxxxxxxxxx) 
   data (xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx) 
   ----------------- 
+  pkt_sent(0) 
+  --------------- 
   bsEncode_cs(WAIT)  bsEncode_ns(WAIT) 
-  crc_cs()  crc_ns()  pkt_in(00)  endr(0) 
-  bitStuff_cs()  bitStuff_ns()  start_b(0)  endb(0) 
-  nrzi_cs()  nrzi_ns()  start_nrzi(0)  end_nrzi(0) 
-  dpdm_cs()  dpdm_ns()  start_dpdm(0)  eop(0) 
+  crc_cs(WAIT)  crc_ns(WAIT)  pkt_in(00)  endr(0) 
+  bitStuff_cs(WAIT)  bitStuff_ns(WAIT)  start_b(0)  endb(0) 
+  nrzi_cs(WAIT)  nrzi_ns(WAIT)  start_nrzi(0)  end_nrzi(0) 
+  dpdm_cs(WAIT)  dpdm_ns(WAIT)  start_dpdm(0)  eop(0) 
   ============================================================================ 
   ============================================================================ 
   
@@ -3781,11 +3955,13 @@ SYNC has been FOUND!
   token (xxxxxxxxxxxxxxxxxxx) 
   data (xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx) 
   ----------------- 
+  pkt_sent(0) 
+  --------------- 
   bsEncode_cs(WAIT)  bsEncode_ns(WAIT) 
-  crc_cs()  crc_ns()  pkt_in(00)  endr(0) 
-  bitStuff_cs()  bitStuff_ns()  start_b(0)  endb(0) 
-  nrzi_cs()  nrzi_ns()  start_nrzi(0)  end_nrzi(0) 
-  dpdm_cs()  dpdm_ns()  start_dpdm(0)  eop(0) 
+  crc_cs(WAIT)  crc_ns(WAIT)  pkt_in(00)  endr(0) 
+  bitStuff_cs(WAIT)  bitStuff_ns(WAIT)  start_b(0)  endb(0) 
+  nrzi_cs(WAIT)  nrzi_ns(WAIT)  start_nrzi(0)  end_nrzi(0) 
+  dpdm_cs(WAIT)  dpdm_ns(WAIT)  start_dpdm(0)  eop(0) 
   ============================================================================ 
   ============================================================================ 
   
@@ -3824,11 +4000,13 @@ SYNC has been FOUND!
   token (xxxxxxxxxxxxxxxxxxx) 
   data (xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx) 
   ----------------- 
+  pkt_sent(0) 
+  --------------- 
   bsEncode_cs(WAIT)  bsEncode_ns(WAIT) 
-  crc_cs()  crc_ns()  pkt_in(00)  endr(0) 
-  bitStuff_cs()  bitStuff_ns()  start_b(0)  endb(0) 
-  nrzi_cs()  nrzi_ns()  start_nrzi(0)  end_nrzi(0) 
-  dpdm_cs()  dpdm_ns()  start_dpdm(0)  eop(0) 
+  crc_cs(WAIT)  crc_ns(WAIT)  pkt_in(00)  endr(0) 
+  bitStuff_cs(WAIT)  bitStuff_ns(WAIT)  start_b(0)  endb(0) 
+  nrzi_cs(WAIT)  nrzi_ns(WAIT)  start_nrzi(0)  end_nrzi(0) 
+  dpdm_cs(WAIT)  dpdm_ns(WAIT)  start_dpdm(0)  eop(0) 
   ============================================================================ 
   ============================================================================ 
   
@@ -3867,11 +4045,13 @@ SYNC has been FOUND!
   token (xxxxxxxxxxxxxxxxxxx) 
   data (xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx) 
   ----------------- 
+  pkt_sent(0) 
+  --------------- 
   bsEncode_cs(WAIT)  bsEncode_ns(WAIT) 
-  crc_cs()  crc_ns()  pkt_in(00)  endr(0) 
-  bitStuff_cs()  bitStuff_ns()  start_b(0)  endb(0) 
-  nrzi_cs()  nrzi_ns()  start_nrzi(0)  end_nrzi(0) 
-  dpdm_cs()  dpdm_ns()  start_dpdm(0)  eop(0) 
+  crc_cs(WAIT)  crc_ns(WAIT)  pkt_in(00)  endr(0) 
+  bitStuff_cs(WAIT)  bitStuff_ns(WAIT)  start_b(0)  endb(0) 
+  nrzi_cs(WAIT)  nrzi_ns(WAIT)  start_nrzi(0)  end_nrzi(0) 
+  dpdm_cs(WAIT)  dpdm_ns(WAIT)  start_dpdm(0)  eop(0) 
   ============================================================================ 
   ============================================================================ 
   
@@ -3911,11 +4091,13 @@ After entire hshake has been given currently in (EOP1)
   token (xxxxxxxxxxxxxxxxxxx) 
   data (xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx) 
   ----------------- 
+  pkt_sent(0) 
+  --------------- 
   bsEncode_cs(WAIT)  bsEncode_ns(WAIT) 
-  crc_cs()  crc_ns()  pkt_in(00)  endr(0) 
-  bitStuff_cs()  bitStuff_ns()  start_b(0)  endb(0) 
-  nrzi_cs()  nrzi_ns()  start_nrzi(0)  end_nrzi(0) 
-  dpdm_cs()  dpdm_ns()  start_dpdm(0)  eop(0) 
+  crc_cs(WAIT)  crc_ns(WAIT)  pkt_in(00)  endr(0) 
+  bitStuff_cs(WAIT)  bitStuff_ns(WAIT)  start_b(0)  endb(0) 
+  nrzi_cs(WAIT)  nrzi_ns(WAIT)  start_nrzi(0)  end_nrzi(0) 
+  dpdm_cs(WAIT)  dpdm_ns(WAIT)  start_dpdm(0)  eop(0) 
   ============================================================================ 
   ============================================================================ 
   
@@ -3954,11 +4136,13 @@ After entire hshake has been given currently in (EOP1)
   token (xxxxxxxxxxxxxxxxxxx) 
   data (xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx) 
   ----------------- 
+  pkt_sent(0) 
+  --------------- 
   bsEncode_cs(WAIT)  bsEncode_ns(WAIT) 
-  crc_cs()  crc_ns()  pkt_in(00)  endr(0) 
-  bitStuff_cs()  bitStuff_ns()  start_b(0)  endb(0) 
-  nrzi_cs()  nrzi_ns()  start_nrzi(0)  end_nrzi(0) 
-  dpdm_cs()  dpdm_ns()  start_dpdm(0)  eop(0) 
+  crc_cs(WAIT)  crc_ns(WAIT)  pkt_in(00)  endr(0) 
+  bitStuff_cs(WAIT)  bitStuff_ns(WAIT)  start_b(0)  endb(0) 
+  nrzi_cs(WAIT)  nrzi_ns(WAIT)  start_nrzi(0)  end_nrzi(0) 
+  dpdm_cs(WAIT)  dpdm_ns(WAIT)  start_dpdm(0)  eop(0) 
   ============================================================================ 
   ============================================================================ 
   
@@ -3998,11 +4182,13 @@ At the end of the simulation state is(WAIT)
   token (xxxxxxxxxxxxxxxxxxx) 
   data (xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx) 
   ----------------- 
+  pkt_sent(0) 
+  --------------- 
   bsEncode_cs(WAIT)  bsEncode_ns(WAIT) 
-  crc_cs()  crc_ns()  pkt_in(00)  endr(0) 
-  bitStuff_cs()  bitStuff_ns()  start_b(0)  endb(0) 
-  nrzi_cs()  nrzi_ns()  start_nrzi(0)  end_nrzi(0) 
-  dpdm_cs()  dpdm_ns()  start_dpdm(0)  eop(0) 
+  crc_cs(WAIT)  crc_ns(WAIT)  pkt_in(00)  endr(0) 
+  bitStuff_cs(WAIT)  bitStuff_ns(WAIT)  start_b(0)  endb(0) 
+  nrzi_cs(WAIT)  nrzi_ns(WAIT)  start_nrzi(0)  end_nrzi(0) 
+  dpdm_cs(WAIT)  dpdm_ns(WAIT)  start_dpdm(0)  eop(0) 
   ============================================================================ 
   ============================================================================ 
   
@@ -4041,11 +4227,13 @@ At the end of the simulation state is(WAIT)
   token (xxxxxxxxxxxxxxxxxxx) 
   data (xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx) 
   ----------------- 
+  pkt_sent(0) 
+  --------------- 
   bsEncode_cs(WAIT)  bsEncode_ns(WAIT) 
-  crc_cs()  crc_ns()  pkt_in(00)  endr(0) 
-  bitStuff_cs()  bitStuff_ns()  start_b(0)  endb(0) 
-  nrzi_cs()  nrzi_ns()  start_nrzi(0)  end_nrzi(0) 
-  dpdm_cs()  dpdm_ns()  start_dpdm(0)  eop(0) 
+  crc_cs(WAIT)  crc_ns(WAIT)  pkt_in(00)  endr(0) 
+  bitStuff_cs(WAIT)  bitStuff_ns(WAIT)  start_b(0)  endb(0) 
+  nrzi_cs(WAIT)  nrzi_ns(WAIT)  start_nrzi(0)  end_nrzi(0) 
+  dpdm_cs(WAIT)  dpdm_ns(WAIT)  start_dpdm(0)  eop(0) 
   ============================================================================ 
   ============================================================================ 
   
@@ -4084,11 +4272,13 @@ At the end of the simulation state is(WAIT)
   token (xxxxxxxxxxxxxxxxxxx) 
   data (xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx) 
   ----------------- 
+  pkt_sent(0) 
+  --------------- 
   bsEncode_cs(WAIT)  bsEncode_ns(WAIT) 
-  crc_cs()  crc_ns()  pkt_in(00)  endr(0) 
-  bitStuff_cs()  bitStuff_ns()  start_b(0)  endb(0) 
-  nrzi_cs()  nrzi_ns()  start_nrzi(0)  end_nrzi(0) 
-  dpdm_cs()  dpdm_ns()  start_dpdm(0)  eop(0) 
+  crc_cs(WAIT)  crc_ns(WAIT)  pkt_in(00)  endr(0) 
+  bitStuff_cs(WAIT)  bitStuff_ns(WAIT)  start_b(0)  endb(0) 
+  nrzi_cs(WAIT)  nrzi_ns(WAIT)  start_nrzi(0)  end_nrzi(0) 
+  dpdm_cs(WAIT)  dpdm_ns(WAIT)  start_dpdm(0)  eop(0) 
   ============================================================================ 
   ============================================================================ 
   
@@ -4127,11 +4317,13 @@ At the end of the simulation state is(WAIT)
   token (xxxxxxxxxxxxxxxxxxx) 
   data (xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx) 
   ----------------- 
+  pkt_sent(0) 
+  --------------- 
   bsEncode_cs(WAIT)  bsEncode_ns(WAIT) 
-  crc_cs()  crc_ns()  pkt_in(00)  endr(0) 
-  bitStuff_cs()  bitStuff_ns()  start_b(0)  endb(0) 
-  nrzi_cs()  nrzi_ns()  start_nrzi(0)  end_nrzi(0) 
-  dpdm_cs()  dpdm_ns()  start_dpdm(0)  eop(0) 
+  crc_cs(WAIT)  crc_ns(WAIT)  pkt_in(00)  endr(0) 
+  bitStuff_cs(WAIT)  bitStuff_ns(WAIT)  start_b(0)  endb(0) 
+  nrzi_cs(WAIT)  nrzi_ns(WAIT)  start_nrzi(0)  end_nrzi(0) 
+  dpdm_cs(WAIT)  dpdm_ns(WAIT)  start_dpdm(0)  eop(0) 
   ============================================================================ 
   ============================================================================ 
   
@@ -4170,11 +4362,13 @@ At the end of the simulation state is(WAIT)
   token (xxxxxxxxxxxxxxxxxxx) 
   data (xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx) 
   ----------------- 
+  pkt_sent(0) 
+  --------------- 
   bsEncode_cs(WAIT)  bsEncode_ns(HS0) 
-  crc_cs()  crc_ns()  pkt_in(00)  endr(0) 
-  bitStuff_cs()  bitStuff_ns()  start_b(0)  endb(0) 
-  nrzi_cs()  nrzi_ns()  start_nrzi(0)  end_nrzi(0) 
-  dpdm_cs()  dpdm_ns()  start_dpdm(0)  eop(0) 
+  crc_cs(WAIT)  crc_ns(WAIT)  pkt_in(00)  endr(0) 
+  bitStuff_cs(WAIT)  bitStuff_ns(WAIT)  start_b(0)  endb(0) 
+  nrzi_cs(WAIT)  nrzi_ns(WAIT)  start_nrzi(0)  end_nrzi(0) 
+  dpdm_cs(WAIT)  dpdm_ns(WAIT)  start_dpdm(0)  eop(0) 
   ============================================================================ 
   ============================================================================ 
   
@@ -4213,11 +4407,13 @@ At the end of the simulation state is(WAIT)
   token (xxxxxxxxxxxxxxxxxxx) 
   data (xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx) 
   ----------------- 
+  pkt_sent(0) 
+  --------------- 
   bsEncode_cs(HS0)  bsEncode_ns(HS1) 
-  crc_cs()  crc_ns()  pkt_in(10)  endr(0) 
-  bitStuff_cs()  bitStuff_ns()  start_b(0)  endb(0) 
-  nrzi_cs()  nrzi_ns()  start_nrzi(0)  end_nrzi(0) 
-  dpdm_cs()  dpdm_ns()  start_dpdm(0)  eop(0) 
+  crc_cs(WAIT)  crc_ns(HS0)  pkt_in(10)  endr(0) 
+  bitStuff_cs(WAIT)  bitStuff_ns(WAIT)  start_b(0)  endb(0) 
+  nrzi_cs(WAIT)  nrzi_ns(WAIT)  start_nrzi(0)  end_nrzi(0) 
+  dpdm_cs(WAIT)  dpdm_ns(WAIT)  start_dpdm(0)  eop(0) 
   ============================================================================ 
   ============================================================================ 
   
@@ -4256,13 +4452,375 @@ At the end of the simulation state is(WAIT)
   token (xxxxxxxxxxxxxxxxxxx) 
   data (xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx) 
   ----------------- 
+  pkt_sent(0) 
+  --------------- 
   bsEncode_cs(HS1)  bsEncode_ns(HS1) 
-  crc_cs()  crc_ns()  pkt_in(00)  endr(0) 
-  bitStuff_cs()  bitStuff_ns()  start_b(0)  endb(0) 
-  nrzi_cs()  nrzi_ns()  start_nrzi(0)  end_nrzi(0) 
-  dpdm_cs()  dpdm_ns()  start_dpdm(0)  eop(0) 
+  crc_cs(HS0)  crc_ns(HS0)  pkt_in(00)  endr(0) 
+  bitStuff_cs(WAIT)  bitStuff_ns(WAIT)  start_b(0)  endb(0) 
+  nrzi_cs(WAIT)  nrzi_ns(WAIT)  start_nrzi(0)  end_nrzi(0) 
+  dpdm_cs(WAIT)  dpdm_ns(WAIT)  start_dpdm(0)  eop(0) 
   ============================================================================ 
   ============================================================================ 
   
-$finish called from file "protocol_test.sv", line 303.
-$finish at simulation time                 1128
+                1245 
+  msg_type(000) 100:IN_DATA 011:OUT_DATA 001:IN_TOK 010:OUT_TOK 
+  protocol_cs(SENDING_ACK)  protocol_ns(SENDING_ACK) 
+  ********************************************** 
+  *****************RECEIVING******************** 
+  ********************************************** 
+  receive_data(0), receive_shake(0) 
+  ABORT!!!(0) when PID_error(0) CRC_error(0) EOP_error(0) 
+  rc_PID_error(0) rc_CRC_error(0) rc_EOP_error(0) 
+  ----------------- 
+  rc_dpdm_wait(1), rc_nrzi_wait(1), bitUnstuff_wait(1), bs_deocer_wait(1), rc_crc_wait(1) 
+  ----------------- 
+  CRC_cs(WAIT), CRC_ns(WAIT) startRCcrc(0), endRCcrc(0) 
+  crc_computed = 0000000000000000, crc_received = 1101101111000101 
+  .----------------- 
+  bsdecode_cs(WAIT), bsdecode_ns(WAIT), start_decoder(0), end_decoder(0) 
+  PID_checked(0), PIDvalid(0), pid(0000), cpid(0000) is_pid(0) inv_eq(1) 
+  ----------------- 
+  unstuff_cs(WAIT), unstuff_ns(WAIT), unstuff_start(0), unstuff_end(0)  
+  nrzi_cs(WAIT), nrzi_ns(WAIT), nrzi_start(0), nrzi_end(0) 
+  -------------------- 
+  pkt_status 0 pkt_rec = 1 
+  rc_hshake(11000011) 
+  rc_data(1111011101111101101101010111101101111101010111010111111101010011) 
+  ============================================================================ 
+  ============================================================================ 
+  protocol_cs(SENDING_ACK)  protocol_ns(SENDING_ACK) 
+  ********************************************** 
+  ******************SENDING********************* 
+  ********************************************** 
+  pkt_type = (00) 
+  hshake (01001011) 
+  token (xxxxxxxxxxxxxxxxxxx) 
+  data (xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx) 
+  ----------------- 
+  pkt_sent(0) 
+  --------------- 
+  bsEncode_cs(HS1)  bsEncode_ns(HS1) 
+  crc_cs(HS0)  crc_ns(HS1)  pkt_in(00)  endr(0) 
+  bitStuff_cs(WAIT)  bitStuff_ns(READY)  start_b(1)  endb(0) 
+  nrzi_cs(WAIT)  nrzi_ns(READY)  start_nrzi(1)  end_nrzi(0) 
+  dpdm_cs(WAIT)  dpdm_ns(WAIT)  start_dpdm(0)  eop(0) 
+  ============================================================================ 
+  ============================================================================ 
+  
+                1255 
+  msg_type(000) 100:IN_DATA 011:OUT_DATA 001:IN_TOK 010:OUT_TOK 
+  protocol_cs(SENDING_ACK)  protocol_ns(SENDING_ACK) 
+  ********************************************** 
+  *****************RECEIVING******************** 
+  ********************************************** 
+  receive_data(0), receive_shake(0) 
+  ABORT!!!(0) when PID_error(0) CRC_error(0) EOP_error(0) 
+  rc_PID_error(0) rc_CRC_error(0) rc_EOP_error(0) 
+  ----------------- 
+  rc_dpdm_wait(1), rc_nrzi_wait(1), bitUnstuff_wait(1), bs_deocer_wait(1), rc_crc_wait(1) 
+  ----------------- 
+  CRC_cs(WAIT), CRC_ns(WAIT) startRCcrc(0), endRCcrc(0) 
+  crc_computed = 0000000000000000, crc_received = 1101101111000101 
+  .----------------- 
+  bsdecode_cs(WAIT), bsdecode_ns(WAIT), start_decoder(0), end_decoder(0) 
+  PID_checked(0), PIDvalid(0), pid(0000), cpid(0000) is_pid(0) inv_eq(1) 
+  ----------------- 
+  unstuff_cs(WAIT), unstuff_ns(WAIT), unstuff_start(0), unstuff_end(0)  
+  nrzi_cs(WAIT), nrzi_ns(WAIT), nrzi_start(0), nrzi_end(0) 
+  -------------------- 
+  pkt_status 0 pkt_rec = 1 
+  rc_hshake(11000011) 
+  rc_data(1111011101111101101101010111101101111101010111010111111101010011) 
+  ============================================================================ 
+  ============================================================================ 
+  protocol_cs(SENDING_ACK)  protocol_ns(SENDING_ACK) 
+  ********************************************** 
+  ******************SENDING********************* 
+  ********************************************** 
+  pkt_type = (00) 
+  hshake (01001011) 
+  token (xxxxxxxxxxxxxxxxxxx) 
+  data (xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx) 
+  ----------------- 
+  pkt_sent(0) 
+  --------------- 
+  bsEncode_cs(HS1)  bsEncode_ns(HS_WAIT) 
+  crc_cs(HS1)  crc_ns(HS2)  pkt_in(00)  endr(1) 
+  bitStuff_cs(READY)  bitStuff_ns(READY)  start_b(0)  endb(0) 
+  nrzi_cs(READY)  nrzi_ns(SEND)  start_nrzi(0)  end_nrzi(0) 
+  dpdm_cs(WAIT)  dpdm_ns(OUT)  start_dpdm(1)  eop(0) 
+  ============================================================================ 
+  ============================================================================ 
+  
+                1265 
+  msg_type(000) 100:IN_DATA 011:OUT_DATA 001:IN_TOK 010:OUT_TOK 
+  protocol_cs(SENDING_ACK)  protocol_ns(SENDING_ACK) 
+  ********************************************** 
+  *****************RECEIVING******************** 
+  ********************************************** 
+  receive_data(0), receive_shake(0) 
+  ABORT!!!(0) when PID_error(0) CRC_error(0) EOP_error(0) 
+  rc_PID_error(0) rc_CRC_error(0) rc_EOP_error(0) 
+  ----------------- 
+  rc_dpdm_wait(1), rc_nrzi_wait(1), bitUnstuff_wait(1), bs_deocer_wait(1), rc_crc_wait(1) 
+  ----------------- 
+  CRC_cs(WAIT), CRC_ns(WAIT) startRCcrc(0), endRCcrc(0) 
+  crc_computed = 0000000000000000, crc_received = 1101101111000101 
+  .----------------- 
+  bsdecode_cs(WAIT), bsdecode_ns(WAIT), start_decoder(0), end_decoder(0) 
+  PID_checked(0), PIDvalid(0), pid(0000), cpid(0000) is_pid(0) inv_eq(1) 
+  ----------------- 
+  unstuff_cs(WAIT), unstuff_ns(WAIT), unstuff_start(0), unstuff_end(0)  
+  nrzi_cs(WAIT), nrzi_ns(WAIT), nrzi_start(0), nrzi_end(0) 
+  -------------------- 
+  pkt_status 0 pkt_rec = 1 
+  rc_hshake(11000011) 
+  rc_data(1111011101111101101101010111101101111101010111010111111101010011) 
+  ============================================================================ 
+  ============================================================================ 
+  protocol_cs(SENDING_ACK)  protocol_ns(SENDING_ACK) 
+  ********************************************** 
+  ******************SENDING********************* 
+  ********************************************** 
+  pkt_type = (00) 
+  hshake (01001011) 
+  token (xxxxxxxxxxxxxxxxxxx) 
+  data (xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx) 
+  ----------------- 
+  pkt_sent(0) 
+  --------------- 
+  bsEncode_cs(HS_WAIT)  bsEncode_ns(HS_WAIT) 
+  crc_cs(HS2)  crc_ns(HS2)  pkt_in(00)  endr(1) 
+  bitStuff_cs(READY)  bitStuff_ns(READY)  start_b(0)  endb(0) 
+  nrzi_cs(SEND)  nrzi_ns(SEND)  start_nrzi(0)  end_nrzi(0) 
+  dpdm_cs(OUT)  dpdm_ns(OUT)  start_dpdm(0)  eop(0) 
+  ============================================================================ 
+  ============================================================================ 
+  
+                1415 
+  msg_type(000) 100:IN_DATA 011:OUT_DATA 001:IN_TOK 010:OUT_TOK 
+  protocol_cs(SENDING_ACK)  protocol_ns(SENDING_ACK) 
+  ********************************************** 
+  *****************RECEIVING******************** 
+  ********************************************** 
+  receive_data(0), receive_shake(0) 
+  ABORT!!!(0) when PID_error(0) CRC_error(0) EOP_error(0) 
+  rc_PID_error(0) rc_CRC_error(0) rc_EOP_error(0) 
+  ----------------- 
+  rc_dpdm_wait(1), rc_nrzi_wait(1), bitUnstuff_wait(1), bs_deocer_wait(1), rc_crc_wait(1) 
+  ----------------- 
+  CRC_cs(WAIT), CRC_ns(WAIT) startRCcrc(0), endRCcrc(0) 
+  crc_computed = 0000000000000000, crc_received = 1101101111000101 
+  .----------------- 
+  bsdecode_cs(WAIT), bsdecode_ns(WAIT), start_decoder(0), end_decoder(0) 
+  PID_checked(0), PIDvalid(0), pid(0000), cpid(0000) is_pid(0) inv_eq(1) 
+  ----------------- 
+  unstuff_cs(WAIT), unstuff_ns(WAIT), unstuff_start(0), unstuff_end(0)  
+  nrzi_cs(WAIT), nrzi_ns(WAIT), nrzi_start(0), nrzi_end(0) 
+  -------------------- 
+  pkt_status 0 pkt_rec = 1 
+  rc_hshake(11000011) 
+  rc_data(1111011101111101101101010111101101111101010111010111111101010011) 
+  ============================================================================ 
+  ============================================================================ 
+  protocol_cs(SENDING_ACK)  protocol_ns(SENDING_ACK) 
+  ********************************************** 
+  ******************SENDING********************* 
+  ********************************************** 
+  pkt_type = (00) 
+  hshake (01001011) 
+  token (xxxxxxxxxxxxxxxxxxx) 
+  data (xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx) 
+  ----------------- 
+  pkt_sent(0) 
+  --------------- 
+  bsEncode_cs(HS_WAIT)  bsEncode_ns(HS_WAIT) 
+  crc_cs(HS2)  crc_ns(WAIT)  pkt_in(00)  endr(1) 
+  bitStuff_cs(READY)  bitStuff_ns(WAIT)  start_b(0)  endb(1) 
+  nrzi_cs(SEND)  nrzi_ns(BUF)  start_nrzi(0)  end_nrzi(1) 
+  dpdm_cs(OUT)  dpdm_ns(OUT)  start_dpdm(0)  eop(0) 
+  ============================================================================ 
+  ============================================================================ 
+  
+                1425 
+  msg_type(000) 100:IN_DATA 011:OUT_DATA 001:IN_TOK 010:OUT_TOK 
+  protocol_cs(SENDING_ACK)  protocol_ns(SENDING_ACK) 
+  ********************************************** 
+  *****************RECEIVING******************** 
+  ********************************************** 
+  receive_data(0), receive_shake(0) 
+  ABORT!!!(0) when PID_error(0) CRC_error(0) EOP_error(0) 
+  rc_PID_error(0) rc_CRC_error(0) rc_EOP_error(0) 
+  ----------------- 
+  rc_dpdm_wait(1), rc_nrzi_wait(1), bitUnstuff_wait(1), bs_deocer_wait(1), rc_crc_wait(1) 
+  ----------------- 
+  CRC_cs(WAIT), CRC_ns(WAIT) startRCcrc(0), endRCcrc(0) 
+  crc_computed = 0000000000000000, crc_received = 1101101111000101 
+  .----------------- 
+  bsdecode_cs(WAIT), bsdecode_ns(WAIT), start_decoder(0), end_decoder(0) 
+  PID_checked(0), PIDvalid(0), pid(0000), cpid(0000) is_pid(0) inv_eq(1) 
+  ----------------- 
+  unstuff_cs(WAIT), unstuff_ns(WAIT), unstuff_start(0), unstuff_end(0)  
+  nrzi_cs(WAIT), nrzi_ns(WAIT), nrzi_start(0), nrzi_end(0) 
+  -------------------- 
+  pkt_status 0 pkt_rec = 1 
+  rc_hshake(11000011) 
+  rc_data(1111011101111101101101010111101101111101010111010111111101010011) 
+  ============================================================================ 
+  ============================================================================ 
+  protocol_cs(SENDING_ACK)  protocol_ns(SENDING_ACK) 
+  ********************************************** 
+  ******************SENDING********************* 
+  ********************************************** 
+  pkt_type = (00) 
+  hshake (01001011) 
+  token (xxxxxxxxxxxxxxxxxxx) 
+  data (xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx) 
+  ----------------- 
+  pkt_sent(0) 
+  --------------- 
+  bsEncode_cs(HS_WAIT)  bsEncode_ns(HS_WAIT) 
+  crc_cs(WAIT)  crc_ns(WAIT)  pkt_in(00)  endr(1) 
+  bitStuff_cs(WAIT)  bitStuff_ns(WAIT)  start_b(0)  endb(0) 
+  nrzi_cs(BUF)  nrzi_ns(WAIT)  start_nrzi(0)  end_nrzi(0) 
+  dpdm_cs(OUT)  dpdm_ns(EOP0)  start_dpdm(0)  eop(1) 
+  ============================================================================ 
+  ============================================================================ 
+  
+                1435 
+  msg_type(000) 100:IN_DATA 011:OUT_DATA 001:IN_TOK 010:OUT_TOK 
+  protocol_cs(SENDING_ACK)  protocol_ns(SENDING_ACK) 
+  ********************************************** 
+  *****************RECEIVING******************** 
+  ********************************************** 
+  receive_data(0), receive_shake(0) 
+  ABORT!!!(0) when PID_error(0) CRC_error(0) EOP_error(0) 
+  rc_PID_error(0) rc_CRC_error(0) rc_EOP_error(0) 
+  ----------------- 
+  rc_dpdm_wait(1), rc_nrzi_wait(1), bitUnstuff_wait(1), bs_deocer_wait(1), rc_crc_wait(1) 
+  ----------------- 
+  CRC_cs(WAIT), CRC_ns(WAIT) startRCcrc(0), endRCcrc(0) 
+  crc_computed = 0000000000000000, crc_received = 1101101111000101 
+  .----------------- 
+  bsdecode_cs(WAIT), bsdecode_ns(WAIT), start_decoder(0), end_decoder(0) 
+  PID_checked(0), PIDvalid(0), pid(0000), cpid(0000) is_pid(0) inv_eq(1) 
+  ----------------- 
+  unstuff_cs(WAIT), unstuff_ns(WAIT), unstuff_start(0), unstuff_end(0)  
+  nrzi_cs(WAIT), nrzi_ns(WAIT), nrzi_start(0), nrzi_end(0) 
+  -------------------- 
+  pkt_status 0 pkt_rec = 1 
+  rc_hshake(11000011) 
+  rc_data(1111011101111101101101010111101101111101010111010111111101010011) 
+  ============================================================================ 
+  ============================================================================ 
+  protocol_cs(SENDING_ACK)  protocol_ns(SENDING_ACK) 
+  ********************************************** 
+  ******************SENDING********************* 
+  ********************************************** 
+  pkt_type = (00) 
+  hshake (01001011) 
+  token (xxxxxxxxxxxxxxxxxxx) 
+  data (xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx) 
+  ----------------- 
+  pkt_sent(0) 
+  --------------- 
+  bsEncode_cs(HS_WAIT)  bsEncode_ns(HS_WAIT) 
+  crc_cs(WAIT)  crc_ns(WAIT)  pkt_in(00)  endr(1) 
+  bitStuff_cs(WAIT)  bitStuff_ns(WAIT)  start_b(0)  endb(0) 
+  nrzi_cs(WAIT)  nrzi_ns(WAIT)  start_nrzi(0)  end_nrzi(0) 
+  dpdm_cs(EOP0)  dpdm_ns(EOP1)  start_dpdm(0)  eop(0) 
+  ============================================================================ 
+  ============================================================================ 
+  
+                1445 
+  msg_type(000) 100:IN_DATA 011:OUT_DATA 001:IN_TOK 010:OUT_TOK 
+  protocol_cs(SENDING_ACK)  protocol_ns(WAIT) 
+  ********************************************** 
+  *****************RECEIVING******************** 
+  ********************************************** 
+  receive_data(0), receive_shake(0) 
+  ABORT!!!(0) when PID_error(0) CRC_error(0) EOP_error(0) 
+  rc_PID_error(0) rc_CRC_error(0) rc_EOP_error(0) 
+  ----------------- 
+  rc_dpdm_wait(1), rc_nrzi_wait(1), bitUnstuff_wait(1), bs_deocer_wait(1), rc_crc_wait(1) 
+  ----------------- 
+  CRC_cs(WAIT), CRC_ns(WAIT) startRCcrc(0), endRCcrc(0) 
+  crc_computed = 0000000000000000, crc_received = 1101101111000101 
+  .----------------- 
+  bsdecode_cs(WAIT), bsdecode_ns(WAIT), start_decoder(0), end_decoder(0) 
+  PID_checked(0), PIDvalid(0), pid(0000), cpid(0000) is_pid(0) inv_eq(1) 
+  ----------------- 
+  unstuff_cs(WAIT), unstuff_ns(WAIT), unstuff_start(0), unstuff_end(0)  
+  nrzi_cs(WAIT), nrzi_ns(WAIT), nrzi_start(0), nrzi_end(0) 
+  -------------------- 
+  pkt_status 0 pkt_rec = 0 
+  rc_hshake(11000011) 
+  rc_data(1111011101111101101101010111101101111101010111010111111101010011) 
+  ============================================================================ 
+  ============================================================================ 
+  protocol_cs(SENDING_ACK)  protocol_ns(WAIT) 
+  ********************************************** 
+  ******************SENDING********************* 
+  ********************************************** 
+  pkt_type = (00) 
+  hshake (01001011) 
+  token (xxxxxxxxxxxxxxxxxxx) 
+  data (xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx) 
+  ----------------- 
+  pkt_sent(1) 
+  --------------- 
+  bsEncode_cs(HS_WAIT)  bsEncode_ns(WAIT) 
+  crc_cs(WAIT)  crc_ns(WAIT)  pkt_in(00)  endr(0) 
+  bitStuff_cs(WAIT)  bitStuff_ns(WAIT)  start_b(0)  endb(0) 
+  nrzi_cs(WAIT)  nrzi_ns(WAIT)  start_nrzi(0)  end_nrzi(0) 
+  dpdm_cs(EOP1)  dpdm_ns(WAIT)  start_dpdm(0)  eop(0) 
+  ============================================================================ 
+  ============================================================================ 
+  
+                1455 
+  msg_type(000) 100:IN_DATA 011:OUT_DATA 001:IN_TOK 010:OUT_TOK 
+  protocol_cs(WAIT)  protocol_ns(WAIT) 
+  ********************************************** 
+  *****************RECEIVING******************** 
+  ********************************************** 
+  receive_data(0), receive_shake(0) 
+  ABORT!!!(0) when PID_error(0) CRC_error(0) EOP_error(0) 
+  rc_PID_error(0) rc_CRC_error(0) rc_EOP_error(0) 
+  ----------------- 
+  rc_dpdm_wait(1), rc_nrzi_wait(1), bitUnstuff_wait(1), bs_deocer_wait(1), rc_crc_wait(1) 
+  ----------------- 
+  CRC_cs(WAIT), CRC_ns(WAIT) startRCcrc(0), endRCcrc(0) 
+  crc_computed = 0000000000000000, crc_received = 1101101111000101 
+  .----------------- 
+  bsdecode_cs(WAIT), bsdecode_ns(WAIT), start_decoder(0), end_decoder(0) 
+  PID_checked(0), PIDvalid(0), pid(0000), cpid(0000) is_pid(0) inv_eq(1) 
+  ----------------- 
+  unstuff_cs(WAIT), unstuff_ns(WAIT), unstuff_start(0), unstuff_end(0)  
+  nrzi_cs(WAIT), nrzi_ns(WAIT), nrzi_start(0), nrzi_end(0) 
+  -------------------- 
+  pkt_status 0 pkt_rec = 0 
+  rc_hshake(11000011) 
+  rc_data(1111011101111101101101010111101101111101010111010111111101010011) 
+  ============================================================================ 
+  ============================================================================ 
+  protocol_cs(WAIT)  protocol_ns(WAIT) 
+  ********************************************** 
+  ******************SENDING********************* 
+  ********************************************** 
+  pkt_type = (00) 
+  hshake (01001011) 
+  token (xxxxxxxxxxxxxxxxxxx) 
+  data (xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx) 
+  ----------------- 
+  pkt_sent(0) 
+  --------------- 
+  bsEncode_cs(WAIT)  bsEncode_ns(WAIT) 
+  crc_cs(WAIT)  crc_ns(WAIT)  pkt_in(00)  endr(0) 
+  bitStuff_cs(WAIT)  bitStuff_ns(WAIT)  start_b(0)  endb(0) 
+  nrzi_cs(WAIT)  nrzi_ns(WAIT)  start_nrzi(0)  end_nrzi(0) 
+  dpdm_cs(WAIT)  dpdm_ns(WAIT)  start_dpdm(0)  eop(0) 
+  ============================================================================ 
+  ============================================================================ 
+  
+$finish called from file "protocol_test.sv", line 306.
+$finish at simulation time                 1478
