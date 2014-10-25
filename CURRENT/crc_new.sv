@@ -127,7 +127,7 @@ module crc_master_fsm
     input logic clk, rst_n);
 
    
-    enum logic [3:0] {WAIT,TOK0,TOK1,TOK2,TOK3,DATA0,DATA1,DATA2,DATA3,
+    enum logic [3:0] {WAIT,TOK0,TOK1,TOK2,TOK3,DATA0,DATA1,DATA2,DATA3,DATA4,
 											HS0, HS1, HS2, HS3} crc_cs,crc_ns;
 
     always_ff@(posedge clk, negedge rst_n)
@@ -178,7 +178,8 @@ module crc_master_fsm
                 end
             end
             TOK1: begin
-								re = 1;
+				//re = 1;
+                re = (pause)?0:1;
                 if(endr) begin
                   crc_ns = TOK2;
                   //start_b = 1;
@@ -215,12 +216,10 @@ module crc_master_fsm
                   crc16_start = 1;
                   clr = 1;
                   start_b = 1;
-									sel_16 = 1;
                 end
             end
             DATA1: begin
-								sel_16 = 1;
-								re = 1;
+				re = (pause)?0:1;
                 if(endr) begin
                   crc_ns = DATA2;
                   //start_b = 1;
@@ -232,7 +231,7 @@ module crc_master_fsm
                 end
             end
             DATA2: begin
-							sel_16 = 1;
+			  sel_16 = 1;
               crc_ns = (crc16_done)? DATA3 : DATA2;
               re = (pause)? 1'b0 : 1'b1;
               we = (crc16_ready)? 1'b1 : 1'b0;
@@ -240,8 +239,7 @@ module crc_master_fsm
               crc16_rec = (crc16_done)? 1'b1 : 1'b0;
             end
             DATA3: begin
-					sel_16 =1;
-               crc_ns = (empty)?WAIT : DATA3;
+			  crc_ns = (empty)?WAIT : DATA3;
                endb = (empty)? 1'b1 : 1'b0;
                re = (~empty & ~pause)? 1'b1 : 1'b0;
             end

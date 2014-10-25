@@ -141,7 +141,7 @@ module bsMux
 endmodule: bsMux
 
 
-module fifo
+module fifo//can hold 32 elements
   (input  logic        clk, rst_n,
    input  logic        we, re,
    input  logic        bit_in,
@@ -149,8 +149,8 @@ module fifo
    output logic        bit_out,
 	output logic [5:0]  count);
 	
-  bit [95:0] Q;
-  logic [7:0]  putPtr, getPtr; //pointers wrap
+  bit [31:0] Q;
+  logic [4:0]  putPtr, getPtr; //pointers wrap
 
   assign empty = (count == 0),
          full  = (count == 6'd32),

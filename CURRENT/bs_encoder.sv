@@ -26,9 +26,7 @@ module bs_encoder(
 		input  logic [18:0] token,  /* Token type */
 		input  logic [7:0]  hshake, /* Handshake type */
 
-		/* outputs to ProtocolFSM */
-		//output logic        pkt_sent, 
-		output logic 			  pkt_sent,
+		/* outputs to ProtocolFSM */ 
 		output logic        free_inbound, /* ready to receive */
 			
 		/* inputs from dpdm */
@@ -51,17 +49,20 @@ module bs_encoder(
 		/* data piso */
 		piso_register  #(`DATA_SIZE,0)  dpiso(.clk, .rst_n, .clr,.ld(ld_d), 
                                               .left(d_shft),.s_out(d_out), 
-                                              .D({`SYNC_IN, data}), .Q(data_out));
+                                              .D({`SYNC_IN, data}), 
+                                              .Q(data_out));
 
 		/* token piso */
 		piso_register  #(`TOKEN_SIZE,0)  tpiso(.clk, .rst_n, .clr,.ld(ld_t),
                                                .left(t_shft),.s_out(t_out), 
-                                               .D({`SYNC_IN,token}), .Q(token_out));
+                                               .D({`SYNC_IN,token}), 
+                                               .Q(token_out));
 
 		/* handshake piso */
 		piso_register  #(`HSHAKE_SIZE,0)   hpiso(.clk, .rst_n, .clr,.ld(ld_h), 
                                                  .left(h_shft),.s_out(h_out), 
-                                                 .D({`SYNC_IN,hshake}), .Q(hshake_out));
+                                                 .D({`SYNC_IN,hshake}), 
+                                                 .Q(hshake_out));
 
 		/* counts the number of bits of data/token/handshake */
 		counter  #(7)  bcount(.clk, .rst_n, .clr,.en(incr), .count);
@@ -88,7 +89,7 @@ module BSfsm(
 	/* outputs to ProtocolFSM */
 	output logic       free_inbound,
 
-
+    input logic [79:0] data_out,
 /* bitStuff */
 	/* outputs to bitstuff */
     output logic [1:0] pkt_in,
@@ -141,26 +142,20 @@ module BSfsm(
 			
 			/* WAIT state */
 			WAIT : begin
-				ld_d = 1;
-				ld_h = 1;
-				ld_t = 1;
 				if(pkt_type == `HSHAKE) begin
 					ns = HS0;
 					ld_h = 1;
 					free_inbound = 0;
-				//	pkt_received = 1;
 				end
 				else if(pkt_type == `TOKEN) begin
 					ns = TOK0;
 					ld_t = 1;
 					free_inbound = 0;
-			//		pkt_received = 1;
 				end
 				else if(pkt_type == `DATA) begin
 					ns = DATA0;
 					ld_d = 1;
-					free_inbound = 0;
-			//		pkt_received = 1;
+              		free_inbound = 0;
 				end
 				else begin
 					ns = WAIT;
@@ -170,7 +165,6 @@ module BSfsm(
 
 			/* HANDSHAKE states */
 			HS0 : begin
-				ld_h = 1;
 				ns = HS1;
 				pkt_in = `HSHAKE;
 			end
@@ -200,7 +194,6 @@ module BSfsm(
 
 			/* TOKEN states */
 			TOK0 : begin
-				ld_t = 1;
 				ns = TOK1;
 				pkt_in = `TOKEN;
 			end
@@ -230,9 +223,9 @@ module BSfsm(
 
 			/* DATA states */
 			DATA0 : begin
-				ld_d = 1;
 				ns = DATA1;
 				pkt_in = `DATA;
+                $display("Data REG contains (%b)",data_out);
 			end
 			DATA1 : begin
 				sel = `DATA; /* choose data */
