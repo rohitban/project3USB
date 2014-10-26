@@ -14,21 +14,17 @@ module nrzi_decode_fsm
           cs <= ns;
 
     always_comb begin
-	 	  rc_nrzi_wait = 0;
+	 	rc_nrzi_wait = 0;
         start_unstuffer = 0;
         end_unstuffer = 0;
         clr = (abort)? 1 : 0;
         case(cs)
             WAIT: begin
-                ns = (start_rc_nrzi)?READY:WAIT;
-            	 start_unstuffer = (start_rc_nrzi) ? 1 : 0;
-					 //rc_nrzi_wait = (start_rc_nrzi) ? 0 : 1;
-					 rc_nrzi_wait = 1;
+                ns = (start_rc_nrzi)?DECODE:WAIT;
+            	start_unstuffer = (start_rc_nrzi) ? 1 : 0;
+				rc_nrzi_wait = (start_rc_nrzi) ? 0 : 1;
+				//rc_nrzi_wait = 1;
 				end
-            READY: begin
-                ns = DECODE;
-                //start_unstuffer = 1;
-            end
             DECODE: begin
                 ns = (end_rc_nrzi)?WAIT:DECODE;
                 end_unstuffer = (end_rc_nrzi)?1:0;
