@@ -1,8 +1,0 @@
-
-Error-[SE] Syntax error
-  Following verilog source has syntax error :
-  "protocol_test.sv", 213: token is 'msg_type'
-  	msg_type <= `NONE_MSG;
-                  ^
-
-1 error
