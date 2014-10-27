@@ -91,6 +91,6 @@ module bit_stuff
     /************************************/
 
     //FSM
-    bit_stuff_fsm stuff(.*);
+    bit_stuff_fsm fsm(.*);
 
 endmodule: bit_stuff

@@ -4,17 +4,8 @@ module bs_test;
 	logic clk, rst_n;
 	logic endr;
 	logic [1:0] pkt_in;
-	logic pause, start_b, endb, s_out;
-	logic [32:0] Q;
+	logic [97:0] Q;
 	logic        en, left;
-
-    //Bit stuffer
-    logic stuff_out, start_nrzi;
-    logic done;
-    
-    //NRZI
-    logic nrzi_out, start_dpdm;
-    logic eop;
 
     //BS_ENCODER
     logic [1:0] pkt_type;
@@ -29,30 +20,27 @@ module bs_test;
 
     logic bs_out;
 
-    //DPDM
-    logic [1:0] host_out;
-    logic enable;
-
-    dpdm       pe(.clk,.rst_n,.host_out,.enable,.sent_pkt,
-                  .s_in(nrzi_out),.start_dpdm,.eop);
-
     bs_encoder bs(.clk,.rst_n,.pkt_type,.data,.token,
-                  .hshake,.pkt_received,.free_inbound,
+                  .hshake,.free_inbound,
                   .sent_pkt,.pkt_in,.endr,.s_out(bs_out));
 
-	crc     dut(.clk,.rst_n,.s_in(bs_out),.endr,.pkt_in,.pause,
-    .start_b,.endb,.s_out);
-    
-    bit_stuff device(.clk,.rst_n,.s_in(s_out),
-                     .start_nrzi,.done,.pause,
-                     .s_out(stuff_out),.start(start_b),
-                     .endb);
+    //CRC MASTER
+    logic pause;
+    logic start_b, endb, crc_out;
 
-    nrzi mod(.clk,.rst_n,.s_in(stuff_out),.start_dpdm,
-             .start_nrzi,.eop,.s_out(nrzi_out),.done);
-    
-	sipo_register #(33) s1(.s_in(nrzi_out), .Q, .en,.left,.clk);
+    crc crc(.clk,.rst_n,.s_in(bs_out),.endr,.pkt_in,.pause,
+            .start_b,.endb,.s_out(crc_out));
 
+    //BITSTUFFER
+    logic stuff_out;
+    logic done,start_nrzi;
+
+    bit_stuff stuffer(.clk,.rst_n,.s_in(crc_out),.s_out(stuff_out),
+                      .done,.pause,.start(start_b),.endb,.start_nrzi);
+
+    
+	sipo_register #(98) s1(.s_in(stuff_out),.Q, .en,.left,.clk);
+    
 
 	initial begin
 		clk = 0;
@@ -71,37 +59,35 @@ module bs_test;
         left <= 0;
 		@(posedge clk);
 
-        token <= 19'b10000001_1010000_0010; 
-        pkt_type <= `TOKEN;
+        data <= {8'b1100_0011, 64'h7ffe_0000_0000_0000};
+        pkt_type <= `DATA;
 
         @(posedge clk);
-        token <= 0;
+        data <= 0;
         pkt_type <= 0;
 		@(posedge clk);
-
         $display("Encoder is in state (%s)",bs.fsm.cs.name);
-        wait(start_b);
-        $display("Start_b is (%b)",start_b);
-        @(posedge clk);
+        wait(start_nrzi);
         en <= 1;
         left <= 1;
-
-        wait(dut.crc5_done);
-        $display("Currently in state (%s)",dut.ctrl.crc_cs.name);
-        wait(eop);
+        wait(endr);
+        $display("Received endr");
+        wait(crc.crc16_done);
+        $display("CRC 16 has finished computation current in (%s)",
+        crc.ctrl.crc_cs.name);
+        @(posedge clk);
+        $strobe("CRC has transitioned to state %s",crc.ctrl.crc_cs.name);
+        wait(endb);
+        $display("Received endb");
+        wait(done);
+        $display("Received done");
         en <= 0;
         left <= 0;
-        wait(sent_pkt);
+        sent_pkt <= 1;
         @(posedge clk);
         @(posedge clk);
-        $display("Simulation completed with crc at state (%s)",
-                  dut.ctrl.crc_cs.name);
-        $display("Simulation completed with crc5 at state(%s)",
-                 dut.tcrc.fsm_inst.cs.name);
-        $display("Simulation completed with bitstuffer at state(%s)",
-                 device.stuff.bs_cs.name);
-        $display("Simulation completed with nrzi at state(%s)",
-                  mod.nz_fsm.nrzi_cs.name);
+        $display("Simulation completed with encoder state(%s)",
+        bs.fsm.cs.name);
 		$finish;
 	end
 

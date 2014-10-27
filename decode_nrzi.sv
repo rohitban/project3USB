@@ -1,31 +1,33 @@
 
 module nrzi_decode_fsm
-    (output logic start_unstuff, end_unstuff, clr,
-     input  logic start_rc_nrzi, end_rc_nrzi,clk, rst_n);
+    (output logic start_unstuffer, end_unstuffer, clr, rc_nrzi_wait,
+     input  logic start_rc_nrzi, end_rc_nrzi,clk, rst_n, abort);
 
     enum logic [1:0] {WAIT,READY,DECODE} cs,ns;
 
     always_ff@(posedge clk, negedge rst_n)
         if(~rst_n)
           cs <= WAIT;
+		  else if(abort)
+		  	 cs <= WAIT;
         else
           cs <= ns;
 
     always_comb begin
-        start_unstuff = 0;
-        end_unstuff = 0;
-        clr = 0;
+	 	rc_nrzi_wait = 0;
+        start_unstuffer = 0;
+        end_unstuffer = 0;
+        clr = (abort)? 1 : 0;
         case(cs)
             WAIT: begin
-                ns = (start_rc_nrzi)?READY:WAIT;
-            end
-            READY: begin
-                ns = DECODE;
-                start_unstuff = 1;
-            end
+                ns = (start_rc_nrzi)?DECODE:WAIT;
+            	start_unstuffer = (start_rc_nrzi) ? 1 : 0;
+				rc_nrzi_wait = (start_rc_nrzi) ? 0 : 1;
+				//rc_nrzi_wait = 1;
+				end
             DECODE: begin
                 ns = (end_rc_nrzi)?WAIT:DECODE;
-                end_unstuff = (end_rc_nrzi)?1:0;
+                end_unstuffer = (end_rc_nrzi)?1:0;
                 clr = (end_rc_nrzi)?1:0;
             end
         endcase
@@ -34,9 +36,9 @@ endmodule: nrzi_decode_fsm
 
 
 module decode_nrzi
-    (output logic start_unstuff, end_unstuff, s_out,
+    (output logic start_unstuffer, end_unstuffer, s_out, rc_nrzi_wait,
      input  logic s_in, start_rc_nrzi, end_rc_nrzi,
-     input  logic clk, rst_n);
+     input  logic clk, rst_n, abort);
 
    /************DFF***********/
    

@@ -938,7 +938,7 @@ module BSfsm(
 				else if(count < `DATA_SIZE) begin
 					ns = DATA1;
 					incr = 1;
-					t_shft = 1;
+					d_shft = 1;
 				end
 			end
 			DATA_WAIT : begin
@@ -1042,6 +1042,9 @@ module usbHost
   /***************************************/
 
   /* Tasks needed to be finished to run testbenches */
+	logic [7:0] pid;
+	logic [63:0] payload;
+	logic [63:0] y;
 
   task prelabRequest
   // sends an OUT packet with ADDR=5 and ENDP=4
@@ -1049,8 +1052,11 @@ module usbHost
   (input bit [7:0] data);
 	
 	wait(free_inbound);
-	pkt_type <= `TOKEN;
-	token <= 19'b1000_0111_1010000_0010;
+	pkt_type <= `DATA;
+	pid = 8'b11000011;
+	payload = 64'hcafebabedeadbeef;
+	y = {<<{payload}};
+	data <= {pid,y};
     //token <= 19'b1001_0110_1010000_0010;
 	@(posedge clk);
 

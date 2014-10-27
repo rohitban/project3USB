@@ -1,5 +1,24 @@
 
 
+module mult_dff
+    #(parameter FFID = 0)
+    (input  logic d, clk, rst_n, sync_set,rd, clr,
+     output logic q);
+
+    always_ff@(posedge clk, negedge rst_n)
+        if(~rst_n)
+          q <= 1;
+        else if(clr)
+		  	 q <= 0;
+		  else
+          if(sync_set)
+            q <= 1;
+          else if(rd)
+            q <= d;
+
+endmodule: mult_dff
+
+
 
 module sipo_register
   #(parameter w = 3)
@@ -21,13 +40,15 @@ endmodule: sipo_register
 
 module gen_dff
     #(parameter FFID = 0)
-    (input  logic d, clk, rst_n, sync_set,rd,
+    (input  logic d, clk, rst_n, sync_set,rd, clr,
      output logic q);
 
     always_ff@(posedge clk, negedge rst_n)
         if(~rst_n)
           q <= 0;
-        else
+        else if(clr)
+		  	 q <= 0;
+		  else
           if(sync_set)
             q <= 1;
           else if(rd)
@@ -100,5 +121,67 @@ module mux2to1
 
 endmodule: mux2to1
 
+`define TOKEN 2'b01
+`define DATA 2'b11
+`define HSHAKE 2'b10
+
+module bsMux
+    (output logic Y,
+     input  logic data,token,hshake,
+     input  logic [1:0] sel);
+
+    always_comb 
+        case(sel)
+            `DATA  :Y = data;
+            `HSHAKE:Y = hshake;
+            default:Y = token;
+        endcase
+
+    
+endmodule: bsMux
+
+
+module fifo//can hold 32 elements
+  (input  logic        clk, rst_n,
+   input  logic        we, re,
+   input  logic        bit_in,
+   output logic        full, empty,
+   output logic        bit_out,
+	output logic [5:0]  count);
+	
+  bit [31:0] Q;
+  logic [4:0]  putPtr, getPtr; //pointers wrap
+
+  assign empty = (count == 0),
+         full  = (count == 6'd32),
+         bit_out = Q[getPtr];
+
+  //always_ff@(posedge clk, negedge rst_b)
+  always_ff@(posedge clk, negedge rst_n)
+  begin
+    if (~rst_n) begin
+      count <= 0;
+      getPtr <= 0;
+      putPtr <= 0;
+    end
+    else begin
+      if(we & re & (!full) & (!empty)) begin
+        Q[putPtr] <= bit_in;
+        putPtr <= putPtr + 1;
+        getPtr <= getPtr + 1;
+      end
+      else if(we & (!full)) begin
+        Q[putPtr] <= bit_in;
+        putPtr <= putPtr + 1;
+        count <= count + 1;
+      end
+      else if(re & (!empty)) begin
+        getPtr <= getPtr + 1;
+        count <= count - 1;
+      end
+    end
+  end
+
+endmodule : fifo
 
 

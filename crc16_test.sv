@@ -4,12 +4,12 @@ module tb;
     logic crc16_out,crc16_rec;
     logic crc16_ready,crc16_done,crc16_start,s_in;
     logic clk, rst_n;
-    logic [15:0] Q;
+    logic [15:0] Q, crc16_val;
     logic en,left;
 
-    crc16 crc16_inst(.*);
+    rc_crc16 crc16_inst(.*);
 
-    sipo_register #(16) s1(.clk,.en,.left,.Q,.s_in(crc16_out));
+    sipo_register #(16) s1(.clk,.en,.left(1'b1),.Q,.s_in(crc16_out));
 
     initial begin
         $monitor($stime, " crc16_out=%b,crc16_ready=%b,crc16_done=%b,s_in=%b,Q=%b",
@@ -19,7 +19,52 @@ module tb;
         rst_n <= #1 1;
         forever #5 clk = ~clk;
     end
+	
 
+	string data;
+	string in;
+	int n;
+
+	initial begin
+	$monitor($time, ,
+				"Q(%b), crc16_val = %b", Q, crc16_val);
+	
+	//data = 1100_0011_0000_0000_0000_0000_0000_0000_0000_0000_0000_0000_0000_0000_1101_0101_0000_0000_0000_0011_0010_0011
+	//data = "00000000000000000000000000000000000000000000000011010101000000000000001100100011"; //correct data
+	//data = "11111110111010111101101011101101111010111010101111101111101011001101101111000101";
+	data = "1100001111111111111111111111111111111111111111111111111111111111111111111111111111111111";
+	n = data.len();
+
+	crc16_start <= 1;
+	in = data.getc(0);
+	s_in <= in.atoi();
+	en <= 1;
+	$display("s_in is %s", in);
+	@(posedge clk);
+	crc16_start <= 0;
+
+		for(int i = 1; i < n-1; i++) begin
+			in = data.getc(i);
+			$display("s_in is %s", in);
+			s_in <= in.atoi();
+			@(posedge clk);
+		end
+	
+	in = data.getc(n-1);
+	s_in <= in.atoi();
+	$display("s_in is %s", in);
+	@(posedge clk);
+	en <= 0;
+	@(posedge clk);
+	@(posedge clk);
+	@(posedge clk);
+	assert(crc16_val == (16'b0000001100100011));
+	@(posedge clk);
+	#2 $finish;
+	end
+
+
+/*
     initial begin
     crc16_start <= 1;
     en <= 0;
@@ -98,6 +143,6 @@ module tb;
     $display("State is %s",crc16_inst.fsm_inst.cs.name); 
     $finish;
     end
-
+*/
 
 endmodule:tb

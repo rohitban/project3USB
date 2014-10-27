@@ -3,38 +3,37 @@
 `define TOKEN_SIZE 6'd27
 `define HSHAKE_SIZE 5'd16 
 
-`define DATA 2'b11
+/* outputs to bit stream encoder */
+`define NONE 2'b00
 `define TOKEN 2'b01
+`define DATA 2'b11
 `define HSHAKE 2'b10
 
-`define SYNC 8'b0000_0001
+
+`define SYNC_IN 8'b00000001
 
 module bs_encoder(
 		input  logic        clk, rst_n,
 
-	    /* inputs from ProtocolFSM */
+	  /* inputs from ProtocolFSM */
 		input  logic [1:0]  pkt_type,
-
 	    /* 00 - no packet
 	     * 01 - data
-		 * 10 - token
-		 * 11 - handshake */
-
+		   * 10 - token
+		   * 11 - handshake */
 
 		input  logic [71:0] data,   /* Data type */
 		input  logic [18:0] token,  /* Token type */
 		input  logic [7:0]  hshake, /* Handshake type */
 
-
-		/* outputs to ProtocolFSM */
-		output logic        pkt_received, 
+		/* outputs to ProtocolFSM */ 
 		output logic        free_inbound, /* ready to receive */
 			
 		/* inputs from dpdm */
 		input  logic 				sent_pkt,
 
 		/* outputs to crc*/
-        output logic [1:0]  pkt_in,
+    output logic [1:0]  pkt_in,
 		output logic        endr, /* start/end crc*/
 		output logic        s_out /* serial out */
 		);
@@ -43,23 +42,27 @@ module bs_encoder(
 		logic [6:0] count;
 		logic 			clr, ld_d, ld_t, ld_h;
 		logic				d_shft, t_shft, h_shft;
-
-	
+		logic [79:0]  data_out;
+		logic [26:0]  token_out;
+		logic [15:0]  hshake_out;
 
 		/* data piso */
 		piso_register  #(`DATA_SIZE,0)  dpiso(.clk, .rst_n, .clr,.ld(ld_d), 
                                               .left(d_shft),.s_out(d_out), 
-                                              .D({`SYNC,data}), .Q());
+                                              .D({`SYNC_IN, data}), 
+                                              .Q(data_out));
 
 		/* token piso */
 		piso_register  #(`TOKEN_SIZE,0)  tpiso(.clk, .rst_n, .clr,.ld(ld_t),
                                                .left(t_shft),.s_out(t_out), 
-                                               .D({`SYNC,token}), .Q());
+                                               .D({`SYNC_IN,token}), 
+                                               .Q(token_out));
 
 		/* handshake piso */
 		piso_register  #(`HSHAKE_SIZE,0)   hpiso(.clk, .rst_n, .clr,.ld(ld_h), 
                                                  .left(h_shft),.s_out(h_out), 
-                                                 .D({`SYNC,hshake}), .Q());
+                                                 .D({`SYNC_IN,hshake}), 
+                                                 .Q(hshake_out));
 
 		/* counts the number of bits of data/token/handshake */
 		counter  #(7)  bcount(.clk, .rst_n, .clr,.en(incr), .count);
@@ -85,9 +88,8 @@ module BSfsm(
 	input  logic [1:0] pkt_type,
 	/* outputs to ProtocolFSM */
 	output logic       free_inbound,
-	output logic       pkt_received,
 
-
+    input logic [79:0] data_out,
 /* bitStuff */
 	/* outputs to bitstuff */
     output logic [1:0] pkt_in,
@@ -136,28 +138,24 @@ module BSfsm(
         endr = 0;
 		free_inbound = 0;
 		ld_h = 0; ld_t = 0; ld_d = 0;
-		pkt_received = 0;
 		case(cs)
 			
 			/* WAIT state */
 			WAIT : begin
 				if(pkt_type == `HSHAKE) begin
 					ns = HS0;
-					ld_h = 1;
 					free_inbound = 0;
-					pkt_received = 1;
+                    ld_h = 1;
 				end
 				else if(pkt_type == `TOKEN) begin
 					ns = TOK0;
 					ld_t = 1;
 					free_inbound = 0;
-					pkt_received = 1;
 				end
 				else if(pkt_type == `DATA) begin
 					ns = DATA0;
 					ld_d = 1;
-					free_inbound = 0;
-					pkt_received = 1;
+              		free_inbound = 0;
 				end
 				else begin
 					ns = WAIT;
@@ -238,7 +236,7 @@ module BSfsm(
 				else if(count < `DATA_SIZE) begin
 					ns = DATA1;
 					incr = 1;
-					t_shft = 1;
+					d_shft = 1;
 				end
 			end
 			DATA_WAIT : begin
@@ -256,4 +254,3 @@ module BSfsm(
 	end
 
 endmodule : BSfsm 
-

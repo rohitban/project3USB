@@ -27,19 +27,27 @@ module rc_dpdm
 		 /* ouputs to protocolFSM */
 		 output logic 		 EOP_error,      //EOP error
 		 output logic 		 got_sync, 		 //found SYNC!
-	
+		 output logic      rc_dpdm_wait,	
     	 input  logic [1:0]  bus_in,
      	 input  logic        enable);
 
     enum logic [3:0] {WAIT,ONLYK,KJ,KJK,KJKJ,KJKJK,KJKJKJ,KJKJKJK,
                       RC_HS,RC_DATA,EOP1,EOP2,ERROR} cs,ns;
     
+    //logic s_out;
+
     logic seen_J, seen_K, seen_X;
 
-
+    
     assign seen_J = (~enable && (bus_in == `J));
     assign seen_K = (~enable && (bus_in == `K));
     assign seen_X = (~enable && (bus_in == `X));
+
+
+    /*
+    mult_dff m1(.clk,.rst_n,.sync_set( ),.rd(1'b1),.clr,
+                .d(s_out),.q(buffered_out));
+    */
 
     //Counter logic
     logic clr,en;
@@ -71,7 +79,9 @@ module rc_dpdm
           cs <= ns;
 
     always_comb begin
-        s_out = 0;
+        rc_dpdm_wait = 0;
+		  
+		  s_out = 0;
         end_rc_nrzi = 0;
         start_rc_nrzi = 0;
         EOP_error = 0;
@@ -88,13 +98,16 @@ module rc_dpdm
                   ns = ONLYK;
                   sel_hs = 1;
                   ld = 1;
+						rc_dpdm_wait = 0;
                 end
                 else if(seen_K&&receive_data) begin
                   ns = ONLYK;
                   ld = 1;
+						rc_dpdm_wait = 0;
                 end
                 else begin
                   ns = WAIT;
+						rc_dpdm_wait = 1;
                 end
 			end
             ONLYK: begin
@@ -188,6 +201,7 @@ module rc_dpdm
                 EOP_error = (seen_J)?0:1;
             end
             ERROR: begin
+                $display("BLOOOOOODDYYYYY MURDERRRRRR!!");
                 ns = (abort)?WAIT:ERROR;
                 EOP_error = 1;                
             end

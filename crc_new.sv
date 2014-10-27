@@ -49,6 +49,7 @@ module crc(
     /*Delay counter*/
 		logic incr, clr;
 		logic [5:0] delay_count;
+		logic [5:0] qcount;
 
 	crc5			tcrc(.clk, .rst_n, 
 								 .s_in,
@@ -62,7 +63,7 @@ module crc(
 								 .crc16_out, .crc16_rec);
 
 
-	fifo					q(.clk, .rst_n,
+	fifo					q(.clk, .rst_n, .count(qcount),
 									.we, .re,
 									.bit_in, .bit_out(s_out),
 									.full, .empty);
@@ -91,6 +92,7 @@ module crc_master_fsm
     output logic re, we,
     //Queue status
 	  input logic empty,
+	  logic [5:0] qcount,
 
     //MUX control
     output logic sel_16,
@@ -125,7 +127,7 @@ module crc_master_fsm
     input logic clk, rst_n);
 
    
-    enum logic [3:0] {WAIT,TOK0,TOK1,TOK2,TOK3,DATA0,DATA1,DATA2,DATA3,
+    enum logic [3:0] {WAIT,TOK0,TOK1,TOK2,TOK3,DATA0,DATA1,DATA2,DATA3,DATA4,
 											HS0, HS1, HS2, HS3} crc_cs,crc_ns;
 
     always_ff@(posedge clk, negedge rst_n)
@@ -176,7 +178,8 @@ module crc_master_fsm
                 end
             end
             TOK1: begin
-								re = 1;
+				//re = 1;
+                re = (pause)?0:1;
                 if(endr) begin
                   crc_ns = TOK2;
                   //start_b = 1;
@@ -213,12 +216,10 @@ module crc_master_fsm
                   crc16_start = 1;
                   clr = 1;
                   start_b = 1;
-									sel_16 = 1;
                 end
             end
             DATA1: begin
-								sel_16 = 1;
-								re = 1;
+				re = (pause)?0:1;
                 if(endr) begin
                   crc_ns = DATA2;
                   //start_b = 1;
@@ -230,7 +231,7 @@ module crc_master_fsm
                 end
             end
             DATA2: begin
-							sel_16 = 1;
+			  sel_16 = 1;
               crc_ns = (crc16_done)? DATA3 : DATA2;
               re = (pause)? 1'b0 : 1'b1;
               we = (crc16_ready)? 1'b1 : 1'b0;
@@ -238,8 +239,7 @@ module crc_master_fsm
               crc16_rec = (crc16_done)? 1'b1 : 1'b0;
             end
             DATA3: begin
-							 sel_16 =1;
-               crc_ns = (empty)?WAIT : DATA3;
+			  crc_ns = (empty)?WAIT : DATA3;
                endb = (empty)? 1'b1 : 1'b0;
                re = (~empty & ~pause)? 1'b1 : 1'b0;
             end
@@ -281,48 +281,5 @@ module crc_master_fsm
 
 endmodule: crc_master_fsm
 
-
-module fifo
-  (input  logic        clk, rst_n,
-   input  logic        we, re,
-   input  logic        bit_in,
-   output logic        full, empty,
-   output logic        bit_out);
-	
-  logic [5:0] count;
-  bit [31:0] Q;
-  logic [4:0]  putPtr, getPtr; //pointers wrap
-
-  assign empty = (count == 0),
-         full  = (count == 6'd32),
-         bit_out = Q[getPtr];
-
-  //always_ff@(posedge clk, negedge rst_b)
-  always_ff@(posedge clk, negedge rst_n)
-  begin
-    if (~rst_n) begin
-      count <= 0;
-      getPtr <= 0;
-      putPtr <= 0;
-    end
-    else begin
-      if(we & re & (!full) & (!empty)) begin
-        Q[putPtr] <= bit_in;
-        putPtr <= putPtr + 1;
-        getPtr <= getPtr + 1;
-      end
-      else if(we & (!full)) begin
-        Q[putPtr] <= bit_in;
-        putPtr <= putPtr + 1;
-        count <= count + 1;
-      end
-      else if(re & (!empty)) begin
-        getPtr <= getPtr + 1;
-        count <= count - 1;
-      end
-    end
-  end
-
-endmodule : fifo
 
 

@@ -22,12 +22,12 @@ module rc_dpdm_tb;
                          .got_sync,.bus_in,.enable);
 
     //nrzi stuff
-    logic end_unstuff, nrzi_out;
-    logic start_unstuff;
+    logic end_unstuffer, nrzi_out;
+    logic start_unstuffer;
 
     decode_nrzi nrzi_rec(.clk,.rst_n,.s_in(s_out),.s_out(nrzi_out),
                   .start_rc_nrzi,.end_rc_nrzi,
-                  .start_unstuff,.end_unstuff);
+                  .start_unstuffer,.end_unstuffer);
 
     //SIPO stuff
     logic [7:0] Q;
@@ -76,7 +76,7 @@ module rc_dpdm_tb;
         bus_in <= `J;
         en <= 1;
         @(posedge clk);
-        $display("Before shifting in start_unstuff is %b",start_unstuff);
+        $display("Before shifting in start_unstuffer is %b",start_unstuffer);
         for(int i = 1; i < data.len();i++) begin
           in = data[i];
             if(in == "K")
